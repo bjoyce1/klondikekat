@@ -122,6 +122,12 @@ export function Header() {
           </a>
         </nav>
       )}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -bottom-px h-px origin-left bg-primary transition-transform duration-150 ease-out"
+        style={{ transform: `scaleX(${progress})` }}
+      />
     </header>
+
   );
 }
