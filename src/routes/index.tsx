@@ -62,7 +62,7 @@ function Home() {
           src={heroBg.url}
           alt="Klondike Kat standing beside a blue Cadillac lowrider at sunset"
           fetchPriority="high"
-          className="absolute inset-0 -z-10 size-full object-cover object-center"
+          className="absolute inset-0 -z-10 size-full object-cover object-[center_15%]"
         />
         <div
           className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/70 to-background/20"
