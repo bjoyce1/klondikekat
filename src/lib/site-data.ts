@@ -1,0 +1,342 @@
+import albumDiamondDre from "@/assets/album-diamond-dre.jpg.asset.json";
+import albumAlt from "@/assets/album-alt.jpg.asset.json";
+import merchHoodie from "@/assets/merch-hoodie.jpg.asset.json";
+import merchTshirt from "@/assets/merch-tshirt.jpg.asset.json";
+import merchCaps from "@/assets/merch-caps.jpg.asset.json";
+import beats from "@/assets/beats.jpg.asset.json";
+import ticket from "@/assets/ticket.jpg.asset.json";
+import festival from "@/assets/festival.jpg.asset.json";
+import heroPortrait from "@/assets/hero-portrait.jpg.asset.json";
+import bioPortrait from "@/assets/bio-portrait.jpg.asset.json";
+import bioSquare from "@/assets/bio-square.jpg.asset.json";
+import katAlt from "@/assets/kat-alt.jpg.asset.json";
+import studioSession from "@/assets/studio-session.jpg.asset.json";
+import cookingUp from "@/assets/cooking-up.jpg.asset.json";
+import collab from "@/assets/collab.jpg.asset.json";
+import videoYouWrong from "@/assets/video-you-wrong.jpg.asset.json";
+
+export const site = {
+  name: "Klondike Kat",
+  tagline: "The Lyrical Lion",
+  city: "South Park, Houston, TX",
+  bookingEmail: "klondikekatbooking@gmail.com",
+  legacyStore: "https://www.klondikekat.com",
+};
+
+export const images = {
+  hero: heroPortrait.url,
+  bioPortrait: bioPortrait.url,
+  bioSquare: bioSquare.url,
+  katAlt: katAlt.url,
+  studioSession: studioSession.url,
+  cookingUp: cookingUp.url,
+  collab: collab.url,
+  videoYouWrong: videoYouWrong.url,
+};
+
+export type Product = {
+  handle: string;
+  title: string;
+  price: number;
+  compareAt?: number;
+  image: string;
+  category: "Singles" | "Albums" | "Merch" | "Tickets" | "Production";
+  blurb: string;
+  externalUrl: string;
+  options?: { name: string; values: string[] };
+};
+
+const P = "https://www.klondikekat.com/product-page";
+
+export const products: Product[] = [
+  {
+    handle: "hold-you-down",
+    title: "Hold You Down",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/hold-you-down-exclusive-single-from-diamond-dre-album`,
+  },
+  {
+    handle: "back-on-the-block",
+    title: "Back On The Block",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/back-on-the-block-exclusive-single-from-diamond-dre-album`,
+  },
+  {
+    handle: "sex-ed",
+    title: "Sex Ed",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/copy-of-copy-of-copy-of-copy-of-copy-of-exclusive-diamond-dre-album`,
+  },
+  {
+    handle: "who-kat",
+    title: "Who Kat",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/copy-of-copy-of-copy-of-copy-of-exclusive-diamond-dre-album`,
+  },
+  {
+    handle: "slippin",
+    title: "Slippin'",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/copy-of-copy-of-copy-of-exclusive-diamond-dre-album`,
+  },
+  {
+    handle: "dont-cha",
+    title: "Don't Cha",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/copy-of-copy-of-exclusive-diamond-dre-album`,
+  },
+  {
+    handle: "everything",
+    title: "Everything",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Singles",
+    blurb: "Exclusive single from the Diamond Dre album.",
+    externalUrl: `${P}/copy-of-exclusive-diamond-dre-album`,
+  },
+  {
+    handle: "exclusive-diamond-dre-album",
+    title: "Exclusive Diamond Dre Album",
+    price: 1.99,
+    image: albumDiamondDre.url,
+    category: "Albums",
+    blurb: "The full Diamond Dre project, straight from the Kat.",
+    externalUrl: `${P}/exclusive-diamond-dre-album`,
+  },
+  {
+    handle: "diamond-dre-album-physical",
+    title: "Exclusive Diamond Dre Album — Physical",
+    price: 20,
+    compareAt: 25,
+    image: albumAlt.url,
+    category: "Albums",
+    blurb: "Physical copy of the Diamond Dre album. On sale.",
+    externalUrl: `${P}/country-vibes-ep`,
+  },
+  {
+    handle: "albums-and-singles",
+    title: "Albums & Singles Bundle",
+    price: 20,
+    image: albumDiamondDre.url,
+    category: "Albums",
+    blurb: "Bundle of albums and singles from the catalog.",
+    externalUrl: `${P}/vip-meet-greet`,
+  },
+  {
+    handle: "signature-hoodie",
+    title: "Signature Hoodie",
+    price: 40,
+    image: merchHoodie.url,
+    category: "Merch",
+    blurb: "Heavyweight hoodie with the Klondike Kat signature mark.",
+    externalUrl: `${P}/signature-hoodie`,
+    options: { name: "Size", values: ["S", "M", "L", "XL", "2XL"] },
+  },
+  {
+    handle: "klondike-kat-t-shirt",
+    title: "Klondike Kat T-Shirt",
+    price: 20,
+    image: merchTshirt.url,
+    category: "Merch",
+    blurb: "Classic tee repping the Lyrical Lion.",
+    externalUrl: `${P}/klondike-kat-t-shirt`,
+    options: { name: "Size", values: ["S", "M", "L", "XL", "2XL"] },
+  },
+  {
+    handle: "limited-edition-cap",
+    title: "Limited Edition Caps",
+    price: 25,
+    image: merchCaps.url,
+    category: "Merch",
+    blurb: "Limited run caps. Once they're gone, they're gone.",
+    externalUrl: `${P}/limited-edition-cap`,
+  },
+  {
+    handle: "concert-ticket",
+    title: "Concert Ticket",
+    price: 50,
+    image: ticket.url,
+    category: "Tickets",
+    blurb: "General admission to a Klondike Kat live show.",
+    externalUrl: `${P}/concert-ticket`,
+  },
+  {
+    handle: "festival-pass",
+    title: "Festival Pass",
+    price: 75,
+    image: festival.url,
+    category: "Tickets",
+    blurb: "Full festival access pass.",
+    externalUrl: `${P}/festival-pass`,
+  },
+  {
+    handle: "beats-for-days",
+    title: "Beats for Days",
+    price: 250,
+    image: beats.url,
+    category: "Production",
+    blurb: "Beat pack produced by Klondike Kat.",
+    externalUrl: `${P}/beats-for-days`,
+  },
+];
+
+export const productCategories = [
+  "All",
+  "Singles",
+  "Albums",
+  "Merch",
+  "Tickets",
+  "Production",
+] as const;
+
+export type Release = {
+  title: string;
+  year?: string;
+  kind: "Album" | "EP" | "Single";
+  image: string;
+  note: string;
+  shopHandle?: string;
+};
+
+export const releases: Release[] = [
+  {
+    title: "Exclusive Diamond Dre Album",
+    kind: "Album",
+    image: albumDiamondDre.url,
+    note: "The current project. Eight exclusive singles available individually or as the full album.",
+    shopHandle: "exclusive-diamond-dre-album",
+  },
+  {
+    title: "The Lyrical Lion",
+    year: "1993",
+    kind: "EP",
+    image: albumAlt.url,
+    note: "The debut. Home of the classic S.P.C. click record \u201cMurder Script.\u201d",
+  },
+  {
+    title: "Mobbin' Muzik Melodies",
+    year: "1997",
+    kind: "Album",
+    image: albumAlt.url,
+    note: "Released on Beatbox Records. Production from Icey Hott, Mo' Dangerous, Stro, Richard Johnson and Klondike Kat.",
+  },
+  {
+    title: "Biography Of A Made Man",
+    kind: "Album",
+    image: albumAlt.url,
+    note: "Another entry in a catalog spanning three decades of Houston underground rap.",
+  },
+];
+
+export const singles = [
+  "Hold You Down",
+  "Back On The Block",
+  "Sex Ed",
+  "Who Kat",
+  "Slippin'",
+  "Don't Cha",
+  "Everything",
+];
+
+export type VideoItem = {
+  title: string;
+  image: string;
+  description: string;
+};
+
+export const videos: VideoItem[] = [
+  {
+    title: "You Wrong — Main Edit",
+    image: videoYouWrong.url,
+    description: "The official main edit visual for \u201cYou Wrong.\u201d",
+  },
+];
+
+export type ServiceItem = {
+  title: string;
+  from: number;
+  image: string;
+  description: string;
+};
+
+export const services: ServiceItem[] = [
+  {
+    title: "Custom Beat Production",
+    from: 200,
+    image: cookingUp.url,
+    description:
+      "An original beat built to your direction \u2014 tempo, key, reference records and all. Twangy guitars, heavy bass and forceful synths are the house sound.",
+  },
+  {
+    title: "Mixing & Mastering",
+    from: 150,
+    image: studioSession.url,
+    description:
+      "Full mix and master on your record, handled by an engineer with a thirty-year catalog behind him.",
+  },
+  {
+    title: "Collaboration Session",
+    from: 200,
+    image: collab.url,
+    description:
+      "Book studio time with Kat. Verses, hooks, writing, or a full session start to finish.",
+  },
+];
+
+export type EventItem = {
+  title: string;
+  venue?: string;
+  city?: string;
+  detail: string;
+  url: string;
+};
+
+export const events: EventItem[] = [
+  {
+    title: "Klondike Kat Live In Concert",
+    detail:
+      "Registration is open through the official event page. Dates and venue announced there.",
+    url: "https://www.klondikekat.com/event-details-registration/klondike-kat-live-in-concert",
+  },
+];
+
+export const bio = {
+  intro:
+    "Klondike Kat is a multi-talented artist from the neighborhood of South Park in Houston, TX. He's a genuine lyricist, a marvelous producer and an excellent singer. He has been in the business for over twenty years and is very well respected. He also holds membership in the legendary South Park Coalition as well as the infamous Killa Klan.",
+  paragraphs: [
+    "He debuted in 1993 with the album \u201cThe Lyrical Lion.\u201d Mobbin' Muzik Melodies is his sophomore effort and it was released in 1997 on Beatbox Records. Production on the album is managed by Icey Hott of Street Military, Mo' Dangerous, Stro, Richard Johnson and Klondike Kat. The beats are assembled with twangy guitars, an ample amount of bass and forceful synths. The array of tracks are soundly mixed and they carry the album especially well.",
+    "Kat can deliver his rhymes with an approximate sense of ease. His style is unique and his verses flourish with broad subjects. He possesses a vivid vocabulary and leisurely displays it on every ballad. Along with that, he boldly sings most of the hooks and choruses. Guest appearances are made by members of the Killa Klan and the South Park Coalition, including Pharoah, Icey Hott, Lil' Flea, Burton Boyz, Fakkulty, K-Rino, Dope-E, Point Blank, Ganksta NIP, Ice Lord, PSK-13, A.C. Chill, Blunt, Jam, Big 20 and Felony.",
+    "The album also contains two of the most notorious cuts that have ever graced a record. One is an eight minute long anthem of the superior Killa Klan known as \u201cLoc'ed Out Drop Top.\u201d The other is a nine minute long S.P.C. tribute, the next installment to the original \u201cMurder Script.\u201d",
+    "All in all the record can simply be justified as a melodic classic. Klondike Kat showcases his capability as a pure artist and he certainly provides the underground with a complete masterpiece.",
+    "Klondike Kat is one of the rap pioneers in H-Town and one of the rap legends in Houston. He joined the S.P.C. in 1992, but he was a well respected artist long before that. He is also a member of the Killa Klan alongside Street Military, The Fakkulty, Bam, G-Rapp and Z-Ro. Kat recently became the fourth member of the almighty Wreckless Klan and will be releasing two solo albums, \u201cThe Ultimate Underground\u201d and \u201cThe Takeover.\u201d",
+  ],
+  closing:
+    "With a passion for music that transcends unlimited boundaries, Klondike Kat is on a mission to share his unique sounds with the world. Associated with pioneer underground hip-hop groups Street Military and the South Park Coalition, and having worked with DJ Screw, he continues to showcase his skills as a solo artist.",
+};
+
+export const affiliations = [
+  "South Park Coalition",
+  "Killa Klan",
+  "Wreckless Klan",
+  "Street Military",
+  "DJ Screw",
+  "Beatbox Records",
+];
