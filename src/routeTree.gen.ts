@@ -14,6 +14,7 @@ import { Route as MusicRouteImport } from './routes/music'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as VideosRouteImport } from './routes/videos'
 import { Route as ShopIndexRouteImport } from './routes/shop.index'
+import { Route as ShopHandleRouteImport } from './routes/shop.$handle'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,18 +41,25 @@ const ShopIndexRoute = ShopIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ShopRoute,
 } as any)
+const ShopHandleRoute = ShopHandleRouteImport.update({
+  id: '/$handle',
+  path: '/$handle',
+  getParentRoute: () => ShopRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRouteWithChildren
   '/videos': typeof VideosRoute
+  '/shop/$handle': typeof ShopHandleRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/music': typeof MusicRoute
   '/videos': typeof VideosRoute
+  '/shop/$handle': typeof ShopHandleRoute
   '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
@@ -60,14 +68,22 @@ export interface FileRoutesById {
   '/music': typeof MusicRoute
   '/shop': typeof ShopRouteWithChildren
   '/videos': typeof VideosRoute
+  '/shop/$handle': typeof ShopHandleRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/music' | '/shop' | '/videos' | '/shop/'
+  fullPaths: '/' | '/music' | '/shop' | '/videos' | '/shop/$handle' | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/music' | '/videos' | '/shop'
-  id: '__root__' | '/' | '/music' | '/shop' | '/videos' | '/shop/'
+  to: '/' | '/music' | '/videos' | '/shop/$handle' | '/shop'
+  id:
+    | '__root__'
+    | '/'
+    | '/music'
+    | '/shop'
+    | '/videos'
+    | '/shop/$handle'
+    | '/shop/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -114,14 +130,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopIndexRouteImport
       parentRoute: typeof ShopRoute
     }
+    '/shop/$handle': {
+      id: '/shop/$handle'
+      path: '/$handle'
+      fullPath: '/shop/$handle'
+      preLoaderRoute: typeof ShopHandleRouteImport
+      parentRoute: typeof ShopRoute
+    }
   }
 }
 
 interface ShopRouteChildren {
+  ShopHandleRoute: typeof ShopHandleRoute
   ShopIndexRoute: typeof ShopIndexRoute
 }
 
 const ShopRouteChildren: ShopRouteChildren = {
+  ShopHandleRoute: ShopHandleRoute,
   ShopIndexRoute: ShopIndexRoute,
 }
 
