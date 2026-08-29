@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as MusicRouteImport } from './routes/music'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as VideosRouteImport } from './routes/videos'
@@ -19,6 +20,11 @@ import { Route as ShopHandleRouteImport } from './routes/shop.$handle'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MusicRoute = MusicRouteImport.update({
@@ -49,6 +55,7 @@ const ShopHandleRoute = ShopHandleRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/events': typeof EventsRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRouteWithChildren
   '/videos': typeof VideosRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/events': typeof EventsRoute
   '/music': typeof MusicRoute
   '/videos': typeof VideosRoute
   '/shop/$handle': typeof ShopHandleRoute
@@ -65,6 +73,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/events': typeof EventsRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRouteWithChildren
   '/videos': typeof VideosRoute
@@ -73,12 +82,20 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/music' | '/shop' | '/videos' | '/shop/$handle' | '/shop/'
+  fullPaths:
+    | '/'
+    | '/events'
+    | '/music'
+    | '/shop'
+    | '/videos'
+    | '/shop/$handle'
+    | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/music' | '/videos' | '/shop/$handle' | '/shop'
+  to: '/' | '/events' | '/music' | '/videos' | '/shop/$handle' | '/shop'
   id:
     | '__root__'
     | '/'
+    | '/events'
     | '/music'
     | '/shop'
     | '/videos'
@@ -88,6 +105,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EventsRoute: typeof EventsRoute
   MusicRoute: typeof MusicRoute
   ShopRoute: typeof ShopRouteWithChildren
   VideosRoute: typeof VideosRoute
@@ -100,6 +118,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/music': {
@@ -154,6 +179,7 @@ const ShopRouteWithChildren = ShopRoute._addFileChildren(ShopRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EventsRoute: EventsRoute,
   MusicRoute: MusicRoute,
   ShopRoute: ShopRouteWithChildren,
   VideosRoute: VideosRoute,
