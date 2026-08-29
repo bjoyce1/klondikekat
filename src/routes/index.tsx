@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Play } from "lucide-react";
 import { Marquee } from "@/components/site/Marquee";
+import { Reveal } from "@/components/site/Reveal";
+import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProductCard, formatPrice } from "@/components/site/ProductCard";
 import heroBg from "@/assets/hero-lowrider.png.asset.json";
 import { events, images, products, releases, services, site, singles } from "@/lib/site-data";
@@ -108,7 +110,7 @@ function Home() {
       {/* Featured release */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-16">
-          <div className="grain overflow-hidden border border-border bg-surface">
+          <div className="grain media-zoom card-elevated rounded-sm">
             <img
               src={featured.image}
               alt={`Cover artwork for ${featured.title}`}
@@ -117,12 +119,7 @@ function Home() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">
-              Featured release
-            </p>
-            <h2 className="mt-4 text-4xl sm:text-6xl">
-              <span className="text-gold">{featured.title}</span>
-            </h2>
+            <SectionHeading eyebrow="Featured release" title={featured.title} />
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">{featured.note}</p>
             <ul className="mt-8 grid gap-x-8 gap-y-1 sm:grid-cols-2">
               {singles.map((s, i) => (
@@ -160,10 +157,7 @@ function Home() {
       <section className="border-y border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_minmax(0,460px)] lg:items-center lg:gap-16">
           <div>
-            <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">The history</p>
-            <h2 className="mt-4 text-4xl sm:text-6xl">
-              <span className="text-gold">Thirty years deep</span>
-            </h2>
+            <SectionHeading eyebrow="The history" title="Thirty years deep" />
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
               Klondike Kat debuted in 1993 with “The Lyrical Lion,” home of the classic S.P.C. click
               record “Murder Script.” He joined the South Park Coalition in 1992 and has been one of
@@ -177,7 +171,7 @@ function Home() {
               <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
           </div>
-          <div className="grain overflow-hidden border border-border">
+          <div className="grain media-zoom card-elevated rounded-sm">
             <img
               src={images.bioSquare}
               alt="Portrait of Klondike Kat"
@@ -190,20 +184,18 @@ function Home() {
 
       {/* Shop preview */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">The store</p>
-            <h2 className="mt-3 text-4xl sm:text-6xl">
-              <span className="text-gold">Merch & music</span>
-            </h2>
-          </div>
-          <Link
-            to="/shop"
-            className="link-sweep min-h-11 cursor-pointer text-sm font-bold tracking-[0.14em] text-primary uppercase"
-          >
-            Shop all
-          </Link>
-        </div>
+        <SectionHeading
+          eyebrow="The store"
+          title="Merch & music"
+          action={
+            <Link
+              to="/shop"
+              className="link-sweep min-h-11 cursor-pointer text-sm font-bold tracking-[0.14em] text-primary uppercase"
+            >
+              Shop all
+            </Link>
+          }
+        />
         <div className="snap-rail -mx-4 mt-8 px-4 sm:mx-0 sm:mt-10 sm:grid sm:gap-5 sm:px-0 sm:grid-cols-2 lg:grid-cols-4">
           {shopPreview.map((p) => (
             <ProductCard key={p.handle} product={p} />
@@ -215,13 +207,10 @@ function Home() {
       <section className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2">
           <div>
-            <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">On stage</p>
-            <h2 className="mt-3 text-4xl sm:text-5xl">
-              <span className="text-gold">Upcoming shows</span>
-            </h2>
+            <SectionHeading eyebrow="On stage" title="Upcoming shows" />
             <ul className="mt-8 space-y-4">
               {events.map((e) => (
-                <li key={e.title} className="border border-border bg-background p-5">
+                <li key={e.title} className="card-elevated hover-lift rounded-sm bg-background p-5">
                   <h3 className="text-2xl text-foreground">{e.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{e.detail}</p>
                   <a
@@ -239,10 +228,7 @@ function Home() {
           </div>
 
           <div>
-            <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">In the lab</p>
-            <h2 className="mt-3 text-4xl sm:text-5xl">
-              <span className="text-gold">Work with Kat</span>
-            </h2>
+            <SectionHeading eyebrow="In the lab" title="Work with Kat" />
             <ul className="mt-8 divide-y divide-border border-y border-border">
               {services.map((s) => (
                 <li key={s.title} className="flex items-center justify-between gap-4 py-4">
