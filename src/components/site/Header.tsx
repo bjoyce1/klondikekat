@@ -47,6 +47,7 @@ export function Header() {
   }, [open]);
 
   return (
+    <>
     <header
       data-scrolled={scrolled || undefined}
       className="pt-safe sticky top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color] duration-300 border-transparent bg-background/40 data-[scrolled]:border-border data-[scrolled]:bg-background/95"
@@ -94,7 +95,8 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
+    </header>
+    {open && (
         <nav
           aria-label="Mobile"
           className="sheet-in fixed inset-x-0 top-14 bottom-0 z-40 overflow-y-auto border-t border-border bg-background px-4 pt-4 pb-16 sm:px-6 lg:hidden"
