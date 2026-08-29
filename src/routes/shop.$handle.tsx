@@ -151,7 +151,10 @@ function ProductPage() {
       )}
 
       {/* Sticky mobile buy bar, sits above the tab bar */}
-      <div className="fixed inset-x-0 bottom-[calc(3.75rem+env(safe-area-inset-bottom,0px))] z-40 border-t border-border bg-background/95 px-4 py-3 backdrop-blur-xl lg:hidden">
+      <div
+        style={{ bottom: "calc(3.75rem + env(safe-area-inset-bottom, 0px))" }}
+        className="fixed inset-x-0 z-40 border-t border-border bg-background/95 px-4 py-3 backdrop-blur-xl lg:hidden"
+      >
         <div className="flex items-center gap-3">
           <div className="min-w-0">
             <p className="truncate text-xs text-muted-foreground">{product.title}</p>
