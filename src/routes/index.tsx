@@ -158,7 +158,7 @@ function Home() {
 
       {/* Bio strip */}
       <section className="border-y border-border bg-surface">
-        <Reveal className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_minmax(0,460px)] lg:items-center lg:gap-16">
+        <Reveal className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 sm:py-20 lg:grid-cols-[1fr_minmax(0,460px)] lg:items-center lg:gap-16">
           <div>
             <SectionHeading eyebrow="The history" title="Thirty years deep" />
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
@@ -187,7 +187,7 @@ function Home() {
 
 
       {/* Shop preview */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-24">
         <SectionHeading
           eyebrow="The store"
           title="Merch & music"
@@ -211,7 +211,7 @@ function Home() {
 
       {/* Events + services */}
       <section className="border-t border-border bg-surface">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 sm:py-20 lg:grid-cols-2">
           <div>
             <SectionHeading eyebrow="On stage" title="Upcoming shows" />
             <ul className="mt-8 space-y-4">
