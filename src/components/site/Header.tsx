@@ -120,16 +120,10 @@ export function Header() {
             onClick={() => setOpen(false)}
             className="tap-none mt-5 inline-flex min-h-13 w-full cursor-pointer items-center justify-center rounded-lg bg-primary px-5 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground"
           >
-            Book Kat
+          Book Kat
           </a>
         </nav>
       )}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -bottom-px h-px origin-left bg-primary transition-transform duration-150 ease-out"
-        style={{ transform: `scaleX(${progress})` }}
-      />
-    </header>
-
+    </>
   );
 }
