@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
-import { bookingEmail, images, services } from "@/lib/site-data";
+import { images, services, site } from "@/lib/site-data";
 import { formatPrice } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/booking")({
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/booking")({
 });
 
 function mailto(subject: string) {
-  return `mailto:${bookingEmail}?subject=${encodeURIComponent(subject)}`;
+  return `mailto:${site.bookingEmail}?subject=${encodeURIComponent(subject)}`;
 }
 
 function BookingPage() {
@@ -40,7 +40,7 @@ function BookingPage() {
           className="mt-8 inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
         >
           <Mail className="size-4" aria-hidden="true" />
-          {bookingEmail}
+          {site.bookingEmail}
         </a>
       </PageHero>
 
@@ -54,7 +54,7 @@ function BookingPage() {
               <h2 className="text-2xl text-foreground">{s.title}</h2>
               <p className="mt-3 flex-1 text-sm text-muted-foreground">{s.description}</p>
               <p className="mt-6 font-display text-3xl text-primary">
-                From {formatPrice(s.priceFrom)}
+                From {formatPrice(s.from)}
               </p>
               <a
                 href={mailto(`${s.title} — enquiry`)}
@@ -71,7 +71,7 @@ function BookingPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="grain overflow-hidden border border-border">
             <img
-              src={images.collaboration}
+              src={images.collab}
               alt="Collaboration session in the studio"
               loading="lazy"
               className="aspect-4/3 w-full object-cover"
