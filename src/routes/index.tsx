@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Play } from "lucide-react";
 import { Marquee } from "@/components/site/Marquee";
 import { ProductCard, formatPrice } from "@/components/site/ProductCard";
+import heroBg from "@/assets/hero-lowrider.png.asset.json";
 import { events, images, products, releases, services, site, singles } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
