@@ -138,11 +138,11 @@ function ProductPage() {
       </section>
 
       {related.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+        <section className="mx-auto max-w-7xl px-4 pb-28 sm:px-6 lg:pb-20">
           <h2 className="text-3xl sm:text-4xl">
             <span className="text-gold">More {product.category.toLowerCase()}</span>
           </h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-5 lg:grid-cols-4">
             {related.slice(0, 4).map((p) => (
               <ProductCard key={p.handle} product={p} />
             ))}
