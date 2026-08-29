@@ -70,7 +70,7 @@ function Home() {
           className="absolute inset-0 -z-10 hidden bg-gradient-to-t from-background via-background/70 to-background/20 sm:block"
           aria-hidden="true"
         />
-        <div className="grain relative mx-auto flex max-w-7xl flex-col justify-end px-4 py-10 sm:min-h-[78svh] sm:px-6 sm:py-20 lg:min-h-[85vh] lg:py-24">
+        <div className="grain relative mx-auto flex max-w-7xl flex-col justify-end px-4 py-10 sm:min-h-[78svh] sm:px-6 sm:py-20 lg:min-h-[min(85svh,820px)] lg:py-24">
           <p className="text-[0.65rem] font-bold tracking-[0.26em] text-primary uppercase sm:text-xs sm:tracking-[0.3em]">
             South Park · Houston, Texas
           </p>
