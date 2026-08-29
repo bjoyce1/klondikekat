@@ -126,12 +126,12 @@ function ProductPage() {
             href={product.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-9 inline-flex min-h-13 cursor-pointer items-center justify-center gap-2 rounded-sm bg-primary px-8 py-3 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
+            className="tap-none mt-9 hidden min-h-13 cursor-pointer items-center justify-center gap-2 rounded-sm bg-primary px-8 py-3 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85 lg:inline-flex"
           >
             Buy now
             <ExternalLink className="size-4" aria-hidden="true" />
           </a>
-          <p className="mt-3 text-xs text-muted-foreground">
+          <p className="mt-3 hidden text-xs text-muted-foreground lg:block">
             Checkout is handled on the secure Klondike Kat store.
           </p>
         </div>
