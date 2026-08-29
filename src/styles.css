@@ -251,6 +251,35 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Themed scrollbars — thin gold thumb on the dark page surface */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--primary) 55%, var(--surface)) var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--primary) 45%, var(--surface));
+  border: 3px solid var(--background);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
 @keyframes kk-sheet-in {
   from {
     opacity: 0;
