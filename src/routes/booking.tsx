@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { images, services, site } from "@/lib/site-data";
 import { formatPrice } from "@/components/site/ProductCard";
