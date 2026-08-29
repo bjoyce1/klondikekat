@@ -43,7 +43,7 @@ function BioPage() {
           </div>
 
           <aside className="space-y-8">
-            <div className="grain overflow-hidden border border-border">
+            <div className="grain media-zoom card-elevated rounded-sm">
               <img
                 src={images.bioPortrait}
                 alt="Portrait of Klondike Kat"
@@ -51,7 +51,7 @@ function BioPage() {
                 className="w-full object-cover"
               />
             </div>
-            <div className="border border-border bg-surface p-6">
+            <div className="card-elevated rounded-sm p-6">
               <h2 className="text-2xl text-foreground">Crews & affiliations</h2>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {affiliations.map((a) => (
@@ -64,7 +64,7 @@ function BioPage() {
                 ))}
               </ul>
             </div>
-            <div className="border border-border bg-surface p-6">
+            <div className="card-elevated rounded-sm p-6">
               <h2 className="text-2xl text-foreground">Selected discography</h2>
               <ul className="mt-4 space-y-3 text-sm">
                 {releases.map((r) => (
