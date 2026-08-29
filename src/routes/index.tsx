@@ -200,10 +200,13 @@ function Home() {
           }
         />
         <div className="snap-rail -mx-4 mt-8 px-4 sm:mx-0 sm:mt-10 sm:grid sm:gap-5 sm:px-0 sm:grid-cols-2 lg:grid-cols-4">
-          {shopPreview.map((p) => (
-            <ProductCard key={p.handle} product={p} />
+          {shopPreview.map((p, i) => (
+            <Reveal key={p.handle} index={i} className="contents sm:block">
+              <ProductCard product={p} />
+            </Reveal>
           ))}
         </div>
+
       </section>
 
       {/* Events + services */}
