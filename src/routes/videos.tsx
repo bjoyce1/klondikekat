@@ -34,7 +34,7 @@ function VideosPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid items-start gap-8 lg:grid-cols-2">
           {videos.map((v) => (
             <article key={v.title} className="card-elevated hover-lift overflow-hidden rounded-sm">
               <a
