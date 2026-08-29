@@ -35,13 +35,24 @@ function BookingPage() {
         title="Book Kat"
         lead="Studio work and live bookings, handled personally. Tell us what you need and we'll quote it."
       >
-        <a
-          href={mailto("Booking enquiry — Klondike Kat")}
-          className="mt-8 inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
-        >
-          <Mail className="size-4" aria-hidden="true" />
-          {site.bookingEmail}
-        </a>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={mailto("Booking enquiry — Klondike Kat")}
+            className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-sm bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
+          >
+            <Mail className="size-4" aria-hidden="true" />
+            {site.bookingEmail}
+          </a>
+          <a
+            href="https://bookspc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-sm border border-border px-6 text-sm font-bold tracking-[0.12em] uppercase text-foreground transition-colors duration-200 hover:border-primary hover:text-primary"
+          >
+            <ExternalLink className="size-4" aria-hidden="true" />
+            Book a show on BookSPC
+          </a>
+        </div>
       </PageHero>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
