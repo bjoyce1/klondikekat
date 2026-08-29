@@ -15,12 +15,28 @@ const NAV = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const y = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        setScrolled(y > 24);
+        setProgress(max > 0 ? Math.min(1, y / max) : 0);
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -35,6 +51,7 @@ export function Header() {
       data-scrolled={scrolled || undefined}
       className="pt-safe sticky top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color] duration-300 border-transparent bg-background/40 data-[scrolled]:border-border data-[scrolled]:bg-background/95"
     >
+
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
         <Link
           to="/"
@@ -105,6 +122,12 @@ export function Header() {
           </a>
         </nav>
       )}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -bottom-px h-px origin-left bg-primary transition-transform duration-150 ease-out"
+        style={{ transform: `scaleX(${progress})` }}
+      />
     </header>
+
   );
 }

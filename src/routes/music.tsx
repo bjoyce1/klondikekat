@@ -64,7 +64,7 @@ function MusicPage() {
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {releases.map((r) => (
             <article key={r.title} className="flex flex-col">
-              <div className="grain overflow-hidden border border-border bg-surface">
+              <div className="grain media-zoom card-elevated rounded-sm">
                 <img
                   src={r.image}
                   alt={`Artwork for ${r.title}`}

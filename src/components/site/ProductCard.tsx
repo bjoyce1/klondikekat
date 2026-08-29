@@ -6,25 +6,35 @@ export function formatPrice(value: number) {
 }
 
 export function ProductCard({ product }: { product: Product }) {
+  const onSale = product.compareAt !== undefined && product.compareAt > product.price;
+
   return (
     <Link
       to="/shop/$handle"
       params={{ handle: product.handle }}
-      className="tap-none group flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors duration-200 hover:border-primary active:border-primary sm:rounded-sm"
+      className="tap-none card-elevated hover-lift group flex cursor-pointer flex-col overflow-hidden rounded-xl sm:rounded-sm"
     >
-      <div className="grain relative aspect-square overflow-hidden bg-surface-2">
+      <div className="grain media-zoom relative aspect-square bg-surface-2">
         <img
           src={product.image}
           alt={product.title}
           loading="lazy"
-          className="size-full object-cover transition-opacity duration-300 group-hover:opacity-85"
+          decoding="async"
+          className="size-full object-cover"
         />
-        <span className="absolute top-2.5 left-2.5 rounded-full bg-background/85 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-primary uppercase sm:top-3 sm:left-3 sm:rounded-none sm:text-[0.65rem] sm:tracking-[0.16em]">
+        <span className="absolute top-2.5 left-2.5 z-10 rounded-full bg-background/80 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-primary uppercase backdrop-blur-sm sm:top-3 sm:left-3 sm:rounded-none sm:text-[0.65rem] sm:tracking-[0.16em]">
           {product.category}
         </span>
+        {onSale && (
+          <span className="absolute top-2.5 right-2.5 z-10 rounded-full bg-ember px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-background uppercase sm:top-3 sm:right-3 sm:rounded-none">
+            Sale
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-3.5 sm:p-4">
-        <h3 className="text-base leading-tight text-foreground sm:text-lg">{product.title}</h3>
+        <h3 className="text-base leading-tight text-foreground transition-colors duration-200 group-hover:text-primary sm:text-lg">
+          {product.title}
+        </h3>
         <p className="mt-1.5 flex-1 text-sm text-muted-foreground sm:mt-2">{product.blurb}</p>
         <p className="mt-3 flex items-baseline gap-2 sm:mt-4">
           <span className="font-display text-xl text-primary sm:text-2xl">

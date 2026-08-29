@@ -67,7 +67,7 @@ function ProductPage() {
       </div>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:py-16">
-        <div className="grain overflow-hidden border border-border bg-surface">
+        <div className="grain media-zoom card-elevated rounded-sm">
           <img
             src={product.image}
             alt={product.title}

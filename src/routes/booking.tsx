@@ -60,7 +60,7 @@ function BookingPage() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="flex flex-col border border-border bg-surface p-7 transition-colors duration-200 hover:border-primary"
+              className="card-elevated hover-lift flex flex-col rounded-sm p-7"
             >
               <h2 className="text-2xl text-foreground">{s.title}</h2>
               <p className="mt-3 flex-1 text-sm text-muted-foreground">{s.description}</p>
@@ -80,7 +80,7 @@ function BookingPage() {
 
       <section className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div className="grain overflow-hidden border border-border">
+          <div className="grain media-zoom card-elevated rounded-sm">
             <img
               src={images.collab}
               alt="Collaboration session in the studio"

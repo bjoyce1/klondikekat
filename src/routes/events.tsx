@@ -39,7 +39,7 @@ function EventsPage() {
           {events.map((e) => (
             <li
               key={e.title}
-              className="flex flex-col gap-5 border border-border bg-surface p-6 sm:flex-row sm:items-center sm:justify-between"
+              className="card-elevated hover-lift flex flex-col gap-5 rounded-sm p-6 sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="flex items-start gap-4">
                 <CalendarDays className="mt-1 size-6 shrink-0 text-primary" aria-hidden="true" />
@@ -93,7 +93,7 @@ function EventsPage() {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
-        <div className="grain overflow-hidden border border-border">
+        <div className="grain media-zoom card-elevated rounded-sm">
           <img
             src={images.katAlt}
             alt="Klondike Kat on stage"

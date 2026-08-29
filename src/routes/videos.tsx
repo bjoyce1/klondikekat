@@ -34,9 +34,9 @@ function VideosPage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid items-start gap-8 lg:grid-cols-2">
           {videos.map((v) => (
-            <article key={v.title} className="border border-border bg-surface">
+            <article key={v.title} className="card-elevated hover-lift overflow-hidden rounded-sm">
               <a
                 href={YT_SEARCH}
                 target="_blank"
@@ -71,20 +71,24 @@ function VideosPage() {
             </article>
           ))}
 
-          <article className="grain relative overflow-hidden border border-border">
-            <img
-              src={images.studioSession}
-              alt="Klondike Kat during a studio session"
-              loading="lazy"
-              className="aspect-video size-full object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-background to-transparent p-5 pt-16">
+          <article className="card-elevated hover-lift overflow-hidden rounded-sm">
+            <div className="grain media-zoom relative aspect-video">
+              <img
+                src={images.studioSession}
+                alt="Klondike Kat during a studio session"
+                loading="lazy"
+                decoding="async"
+                className="size-full object-cover"
+              />
+            </div>
+            <div className="p-5">
               <h2 className="text-2xl text-foreground">In the studio</h2>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Behind the boards on the Ties That Bind Us sessions.
               </p>
             </div>
           </article>
+
         </div>
       </section>
     </>
