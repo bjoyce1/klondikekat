@@ -151,8 +151,9 @@ function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
+
 
       {/* Bio strip */}
       <section className="border-y border-border bg-surface">
