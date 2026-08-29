@@ -104,7 +104,7 @@ export function Header() {
     {open && (
         <nav
           aria-label="Mobile"
-          className="sheet-in fixed inset-x-0 top-14 bottom-0 z-40 overflow-y-auto border-t border-border bg-background px-4 pt-4 pb-16 sm:px-6 lg:hidden"
+          className="sheet-in fixed inset-x-0 top-14 bottom-0 z-[60] overflow-y-auto border-t border-border bg-background px-4 pt-4 pb-24 sm:top-16 sm:px-6 lg:hidden"
         >
           <ul className="flex flex-col gap-2">
             {NAV.map((item) => (
