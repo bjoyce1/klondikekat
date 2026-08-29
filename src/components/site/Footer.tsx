@@ -5,8 +5,9 @@ import { affiliations, site } from "@/lib/site-data";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[2fr_1fr_1fr]">
-        <div>
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[2fr_1fr_1fr]">
+        <div className="col-span-2 lg:col-span-1">
+
           <h2 className="font-display text-3xl leading-none">
             <span className="text-gold">Klondike Kat</span>
           </h2>
@@ -19,7 +20,7 @@ export function Footer() {
           </p>
           <a
             href={`mailto:${site.bookingEmail}`}
-            className="link-sweep mt-6 inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-semibold text-primary"
+            className="link-sweep mt-5 inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-semibold break-all text-primary sm:mt-6"
           >
             <Mail className="size-4" aria-hidden="true" />
             {site.bookingEmail}

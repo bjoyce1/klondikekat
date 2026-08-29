@@ -33,16 +33,19 @@ function BioPage() {
         lead={bio.intro}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-16">
-          <div className="max-w-prose space-y-6 text-lg leading-relaxed text-muted-foreground">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-20">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-16">
+          <div className="max-w-prose space-y-4 text-base leading-relaxed text-muted-foreground sm:space-y-6 sm:text-lg">
             {bio.paragraphs.map((p) => (
               <p key={p.slice(0, 40)}>{p}</p>
             ))}
-            <p className="border-l-2 border-primary pl-6 text-foreground italic">{bio.closing}</p>
+            <p className="border-l-2 border-primary pl-4 text-foreground italic sm:pl-6">
+              {bio.closing}
+            </p>
           </div>
 
-          <aside className="space-y-8">
+          <aside className="space-y-5 sm:space-y-8">
+
             <div className="grain media-zoom card-elevated rounded-sm">
               <img
                 src={images.bioPortrait}
