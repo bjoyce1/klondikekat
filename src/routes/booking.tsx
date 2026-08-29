@@ -85,7 +85,8 @@ function BookingPage() {
 
 
       <section className="border-t border-border bg-surface">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:gap-10 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
+
           <div className="grain media-zoom card-elevated rounded-sm">
             <img
               src={images.collab}

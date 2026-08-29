@@ -108,8 +108,9 @@ function Home() {
       <Marquee />
 
       {/* Featured release */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <Reveal className="grid gap-10 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-16">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-24">
+        <Reveal className="grid gap-6 sm:gap-10 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-16">
+
           <div className="grain media-zoom card-elevated rounded-sm">
 
             <img
