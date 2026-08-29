@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { MobileTabBar } from "@/components/site/MobileTabBar";
+import { BackToTop } from "@/components/site/BackToTop";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -142,6 +143,7 @@ function RootComponent() {
         <Footer />
       </div>
       <MobileTabBar />
+      <BackToTop />
       <Toaster />
     </QueryClientProvider>
   );
