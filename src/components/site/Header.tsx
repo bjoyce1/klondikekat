@@ -47,6 +47,7 @@ export function Header() {
   }, [open]);
 
   return (
+    <>
     <header
       data-scrolled={scrolled || undefined}
       className="pt-safe sticky top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color] duration-300 border-transparent bg-background/40 data-[scrolled]:border-border data-[scrolled]:bg-background/95"
@@ -94,10 +95,16 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -bottom-px h-px origin-left bg-primary transition-transform duration-150 ease-out"
+        style={{ transform: `scaleX(${progress})` }}
+      />
+    </header>
+    {open && (
         <nav
           aria-label="Mobile"
-          className="sheet-in fixed inset-x-0 top-14 bottom-0 z-40 overflow-y-auto border-t border-border bg-background px-4 pt-4 pb-16 sm:px-6 lg:hidden"
+          className="sheet-in fixed inset-x-0 top-14 bottom-0 z-[60] overflow-y-auto border-t border-border bg-background px-4 pt-4 pb-24 sm:top-16 sm:px-6 lg:hidden"
         >
           <ul className="flex flex-col gap-2">
             {NAV.map((item) => (
@@ -118,16 +125,10 @@ export function Header() {
             onClick={() => setOpen(false)}
             className="tap-none mt-5 inline-flex min-h-13 w-full cursor-pointer items-center justify-center rounded-lg bg-primary px-5 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground"
           >
-            Book Kat
+          Book Kat
           </a>
         </nav>
       )}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -bottom-px h-px origin-left bg-primary transition-transform duration-150 ease-out"
-        style={{ transform: `scaleX(${progress})` }}
-      />
-    </header>
-
+    </>
   );
 }
