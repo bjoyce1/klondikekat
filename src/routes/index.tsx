@@ -56,53 +56,51 @@ function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
-          <div>
-            <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">
-              South Park · Houston, Texas
-            </p>
-            <h1 className="mt-5 text-6xl leading-[0.85] sm:text-8xl lg:text-[7.5rem]">
-              <span className="text-gold">Klondike</span>
-              <br />
-              <span className="text-gold">Kat</span>
-            </h1>
-            <p className="mt-4 font-display text-2xl tracking-[0.22em] text-foreground sm:text-3xl">
-              The Lyrical Lion
-            </p>
-            <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              Thirty years of Houston underground rap. Lyricist, producer, singer. South Park
-              Coalition, Killa Klan, Wreckless Klan.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/music"
-                className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
-              >
-                <Play className="size-4" aria-hidden="true" />
-                Hear the catalog
-              </Link>
-              <Link
-                to="/shop"
-                className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm border border-border px-6 text-sm font-bold tracking-[0.12em] uppercase text-foreground transition-colors duration-200 hover:border-primary hover:text-primary"
-              >
-                Shop the store
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="grain relative overflow-hidden border border-border">
-            <img
-              src={images.hero}
-              alt="Klondike Kat performing live, holding a microphone under stage lights"
-              width={1200}
-              height={1440}
-              className="w-full object-cover"
-            />
+      <section className="relative isolate overflow-hidden border-b border-border">
+        <img
+          src={heroBg.url}
+          alt="Klondike Kat standing beside a blue Cadillac lowrider at sunset"
+          fetchPriority="high"
+          className="absolute inset-0 -z-10 size-full object-cover object-center"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/70 to-background/20"
+          aria-hidden="true"
+        />
+        <div className="grain relative mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-end px-4 py-14 sm:px-6 sm:py-20 lg:min-h-[85vh] lg:py-24">
+          <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">
+            South Park · Houston, Texas
+          </p>
+          <h1 className="sr-only">Klondike Kat — The Lyrical Lion</h1>
+          <p
+            aria-hidden="true"
+            className="mt-4 font-display text-3xl tracking-[0.22em] text-foreground sm:text-5xl"
+          >
+            The Lyrical Lion
+          </p>
+          <p className="mt-5 max-w-lg text-lg text-muted-foreground">
+            Thirty years of Houston underground rap. Lyricist, producer, singer. South Park
+            Coalition, Killa Klan, Wreckless Klan.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link
+              to="/music"
+              className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
+            >
+              <Play className="size-4" aria-hidden="true" />
+              Hear the catalog
+            </Link>
+            <Link
+              to="/shop"
+              className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm border border-border bg-background/40 px-6 text-sm font-bold tracking-[0.12em] uppercase text-foreground backdrop-blur-sm transition-colors duration-200 hover:border-primary hover:text-primary"
+            >
+              Shop the store
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
+
 
       <Marquee />
 
