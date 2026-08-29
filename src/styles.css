@@ -313,3 +313,104 @@ html {
     overscroll-behavior-y: none;
   }
 }
+
+/* ---- Refinement layer: elevation, motion, rhythm ---- */
+
+@layer base {
+  body {
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+
+  :focus-visible {
+    outline-color: var(--color-primary);
+    border-radius: 2px;
+  }
+}
+
+/* Elevated surface card */
+@utility card-elevated {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-elevated);
+  transition:
+    border-color 220ms var(--ease-out-expo),
+    box-shadow 220ms var(--ease-out-expo),
+    transform 220ms var(--ease-out-expo);
+
+  &:hover {
+    border-color: color-mix(in oklch, var(--primary) 60%, var(--border));
+    box-shadow: var(--glow-gold);
+  }
+}
+
+/* Subtle lift on pointer devices only */
+@utility hover-lift {
+  transition: transform 240ms var(--ease-out-expo);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* Thin gold rule used to open sections */
+@utility rule-gold {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklch, var(--primary) 70%, transparent),
+    transparent 70%
+  );
+}
+
+/* Image zoom container helper */
+@utility media-zoom {
+  overflow: hidden;
+
+  & img {
+    transition:
+      transform 600ms var(--ease-out-expo),
+      opacity 300ms ease;
+    will-change: transform;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover img {
+      transform: scale(1.045);
+    }
+  }
+}
+
+/* Bottom scrim so text stays legible over photography */
+@utility media-scrim {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to top, oklch(0.135 0.008 60 / 0.72), transparent 55%);
+  }
+}
+
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
