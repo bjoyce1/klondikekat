@@ -68,32 +68,32 @@ function Home() {
           className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/70 to-background/20"
           aria-hidden="true"
         />
-        <div className="grain relative mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-end px-4 py-14 sm:px-6 sm:py-20 lg:min-h-[85vh] lg:py-24">
-          <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase">
+        <div className="grain relative mx-auto flex min-h-[78svh] max-w-7xl flex-col justify-end px-4 py-10 sm:px-6 sm:py-20 lg:min-h-[85vh] lg:py-24">
+          <p className="text-[0.65rem] font-bold tracking-[0.26em] text-primary uppercase sm:text-xs sm:tracking-[0.3em]">
             South Park · Houston, Texas
           </p>
           <h1 className="sr-only">Klondike Kat — The Lyrical Lion</h1>
           <p
             aria-hidden="true"
-            className="mt-4 font-display text-3xl tracking-[0.22em] text-foreground sm:text-5xl"
+            className="mt-3 font-display text-[2rem] leading-none tracking-[0.16em] text-foreground sm:mt-4 sm:text-5xl sm:tracking-[0.22em]"
           >
             The Lyrical Lion
           </p>
-          <p className="mt-5 max-w-lg text-lg text-muted-foreground">
+          <p className="mt-4 max-w-lg text-base text-muted-foreground sm:mt-5 sm:text-lg">
             Thirty years of Houston underground rap. Lyricist, producer, singer. South Park
             Coalition, Killa Klan, Wreckless Klan.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-7 grid grid-cols-1 gap-3 sm:mt-9 sm:flex sm:flex-wrap">
             <Link
               to="/music"
-              className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
+              className="tap-none inline-flex min-h-13 cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85 sm:rounded-sm"
             >
               <Play className="size-4" aria-hidden="true" />
               Hear the catalog
             </Link>
             <Link
               to="/shop"
-              className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-sm border border-border bg-background/40 px-6 text-sm font-bold tracking-[0.12em] uppercase text-foreground backdrop-blur-sm transition-colors duration-200 hover:border-primary hover:text-primary"
+              className="tap-none inline-flex min-h-13 cursor-pointer items-center justify-center gap-2 rounded-xl border border-border bg-background/40 px-6 text-sm font-bold tracking-[0.12em] uppercase text-foreground backdrop-blur-sm transition-colors duration-200 hover:border-primary hover:text-primary sm:rounded-sm"
             >
               Shop the store
               <ArrowRight className="size-4" aria-hidden="true" />
@@ -204,7 +204,7 @@ function Home() {
             Shop all
           </Link>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="snap-rail -mx-4 mt-8 px-4 sm:mx-0 sm:mt-10 sm:grid sm:gap-5 sm:px-0 sm:grid-cols-2 lg:grid-cols-4">
           {shopPreview.map((p) => (
             <ProductCard key={p.handle} product={p} />
           ))}

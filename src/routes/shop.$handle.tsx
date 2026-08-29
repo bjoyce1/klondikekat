@@ -126,29 +126,53 @@ function ProductPage() {
             href={product.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-9 inline-flex min-h-13 cursor-pointer items-center justify-center gap-2 rounded-sm bg-primary px-8 py-3 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85"
+            className="tap-none mt-9 hidden min-h-13 cursor-pointer items-center justify-center gap-2 rounded-sm bg-primary px-8 py-3 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85 lg:inline-flex"
           >
             Buy now
             <ExternalLink className="size-4" aria-hidden="true" />
           </a>
-          <p className="mt-3 text-xs text-muted-foreground">
+          <p className="mt-3 hidden text-xs text-muted-foreground lg:block">
             Checkout is handled on the secure Klondike Kat store.
           </p>
         </div>
       </section>
 
       {related.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+        <section className="mx-auto max-w-7xl px-4 pb-28 sm:px-6 lg:pb-20">
           <h2 className="text-3xl sm:text-4xl">
             <span className="text-gold">More {product.category.toLowerCase()}</span>
           </h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:gap-5 lg:grid-cols-4">
             {related.slice(0, 4).map((p) => (
               <ProductCard key={p.handle} product={p} />
             ))}
           </div>
         </section>
       )}
+
+      {/* Sticky mobile buy bar, sits above the tab bar */}
+      <div
+        style={{ bottom: "calc(3.75rem + env(safe-area-inset-bottom, 0px))" }}
+        className="fixed inset-x-0 z-40 border-t border-border bg-background/95 px-4 py-3 backdrop-blur-xl lg:hidden"
+      >
+        <div className="flex items-center gap-3">
+          <div className="min-w-0">
+            <p className="truncate text-xs text-muted-foreground">{product.title}</p>
+            <p className="font-display text-xl leading-none text-primary">
+              {formatPrice(product.price)}
+            </p>
+          </div>
+          <a
+            href={product.externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tap-none ml-auto inline-flex min-h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground"
+          >
+            Buy now
+            <ExternalLink className="size-4" aria-hidden="true" />
+          </a>
+        </div>
+      </div>
     </>
   );
 }

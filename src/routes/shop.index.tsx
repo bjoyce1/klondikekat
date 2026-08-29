@@ -35,11 +35,11 @@ function ShopPage() {
         lead="Music, merch and tickets straight from the Kat. Every order supports independent Houston rap."
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-16">
         <div
           role="group"
           aria-label="Filter products by category"
-          className="flex flex-wrap gap-2"
+          className="-mx-4 flex snap-x gap-2 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0"
         >
           {productCategories.map((c) => {
             const active = c === category;
@@ -49,7 +49,7 @@ function ShopPage() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => setCategory(c)}
-                className={`inline-flex min-h-11 cursor-pointer items-center rounded-sm border px-4 text-xs font-bold tracking-[0.14em] uppercase transition-colors duration-200 ${
+                className={`tap-none inline-flex min-h-11 shrink-0 cursor-pointer items-center rounded-full border px-4 text-xs font-bold tracking-[0.14em] whitespace-nowrap uppercase transition-colors duration-200 sm:rounded-sm ${
                   active
                     ? "border-primary bg-primary text-primary-foreground"
                     : "border-border text-muted-foreground hover:border-primary hover:text-primary"
@@ -61,7 +61,7 @@ function ShopPage() {
           })}
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-5 lg:grid-cols-4">
           {list.map((p) => (
             <ProductCard key={p.handle} product={p} />
           ))}
