@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BioRouteImport } from './routes/bio'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as MusicRouteImport } from './routes/music'
 import { Route as ShopRouteImport } from './routes/shop'
@@ -20,6 +21,11 @@ import { Route as ShopHandleRouteImport } from './routes/shop.$handle'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BioRoute = BioRouteImport.update({
+  id: '/bio',
+  path: '/bio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -55,6 +61,7 @@ const ShopHandleRoute = ShopHandleRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bio': typeof BioRoute
   '/events': typeof EventsRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRouteWithChildren
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bio': typeof BioRoute
   '/events': typeof EventsRoute
   '/music': typeof MusicRoute
   '/videos': typeof VideosRoute
@@ -73,6 +81,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bio': typeof BioRoute
   '/events': typeof EventsRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRouteWithChildren
@@ -84,6 +93,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/bio'
     | '/events'
     | '/music'
     | '/shop'
@@ -91,10 +101,12 @@ export interface FileRouteTypes {
     | '/shop/$handle'
     | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/events' | '/music' | '/videos' | '/shop/$handle' | '/shop'
+  to:
+    '/' | '/bio' | '/events' | '/music' | '/videos' | '/shop/$handle' | '/shop'
   id:
     | '__root__'
     | '/'
+    | '/bio'
     | '/events'
     | '/music'
     | '/shop'
@@ -105,6 +117,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BioRoute: typeof BioRoute
   EventsRoute: typeof EventsRoute
   MusicRoute: typeof MusicRoute
   ShopRoute: typeof ShopRouteWithChildren
@@ -118,6 +131,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bio': {
+      id: '/bio'
+      path: '/bio'
+      fullPath: '/bio'
+      preLoaderRoute: typeof BioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -179,6 +199,7 @@ const ShopRouteWithChildren = ShopRoute._addFileChildren(ShopRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BioRoute: BioRoute,
   EventsRoute: EventsRoute,
   MusicRoute: MusicRoute,
   ShopRoute: ShopRouteWithChildren,
