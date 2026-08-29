@@ -14,6 +14,14 @@ const NAV = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -23,7 +31,10 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="pt-safe sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+    <header
+      data-scrolled={scrolled || undefined}
+      className="pt-safe sticky top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color] duration-300 border-transparent bg-background/40 data-[scrolled]:border-border data-[scrolled]:bg-background/95"
+    >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
         <Link
           to="/"
