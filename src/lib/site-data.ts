@@ -33,6 +33,8 @@ import audioHeavyweight from "@/assets/HEAVY_WEIGHT.mp3.asset.json";
 import audioFoolish from "@/assets/FOOLISH.mp3.asset.json";
 import audioFlowrocious from "@/assets/FLOWROCIOUS_feat_Joy_the_Explorer.mp3.asset.json";
 import audioGunSmoke from "@/assets/GUN_SMOKE.mp3.asset.json";
+import artWeShallReign from "@/assets/We_Shall_Reign.webp.asset.json";
+import audioWeShallReign from "@/assets/WE_SHALL_REIGN_feat_Krino.mp3.asset.json";
 
 export const site = {
   name: "Klondike Kat",
@@ -293,6 +295,7 @@ export const newSingles: NewSingle[] = [
   { title: "Ride Like The Wind", image: artRideLikeTheWind.url },
   { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone", audioUrl: audioTheTakeover.url },
   { title: "Foolish", image: artFoolish.url, credit: "Klondike KT", audioUrl: audioFoolish.url },
+  { title: "We Shall Reign", image: artWeShallReign.url, credit: "Klondike Kat feat. K-Rino", audioUrl: audioWeShallReign.url },
 ];
 
 export type VideoItem = {
