@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Marquee } from "@/components/site/Marquee";
-import { products, releases, singles } from "@/lib/site-data";
+import { newSingles, products, releases, singles } from "@/lib/site-data";
 import { formatPrice } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/music")({
