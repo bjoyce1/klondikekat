@@ -72,97 +72,63 @@ export type Product = {
 
 const P = "https://www.klondikekat.com/product-page";
 
+export type BundleTrack = {
+  title: string;
+  externalUrl: string;
+  audioUrl?: string;
+};
+
+export const diamondDre = {
+  handle: "diamond-dre",
+  title: "Exclusive Diamond Dre Album",
+  image: albumDiamondDre.url,
+  cdImage: albumAlt.url,
+  blurb:
+    "The Diamond Dre project in one place — grab the physical CD, download the full album, or pick up songs one at a time.",
+  cdPrice: 19.99,
+  cdCompareAt: 25,
+  albumPrice: 1.99,
+  singlePrice: 1.99,
+  cdUrl: `${P}/country-vibes-ep`,
+  albumUrl: `${P}/exclusive-diamond-dre-album`,
+  bundleUrl: `${P}/vip-meet-greet`,
+  bundlePrice: 20,
+  tracks: [
+    { title: "Hold You Down", externalUrl: `${P}/hold-you-down-exclusive-single-from-diamond-dre-album` },
+    { title: "Back On The Block", externalUrl: `${P}/back-on-the-block-exclusive-single-from-diamond-dre-album` },
+    { title: "Sex Ed", externalUrl: `${P}/copy-of-copy-of-copy-of-copy-of-copy-of-exclusive-diamond-dre-album` },
+    { title: "Who Kat", externalUrl: `${P}/copy-of-copy-of-copy-of-copy-of-exclusive-diamond-dre-album` },
+    { title: "Slippin'", externalUrl: `${P}/copy-of-copy-of-copy-of-exclusive-diamond-dre-album` },
+    { title: "Don't Cha", externalUrl: `${P}/copy-of-copy-of-exclusive-diamond-dre-album` },
+    { title: "Everything", externalUrl: `${P}/copy-of-exclusive-diamond-dre-album` },
+  ] as BundleTrack[],
+};
+
+/** Retired listings now folded into the Diamond Dre bundle page. */
+export const productAliases: Record<string, string> = Object.fromEntries(
+  [
+    "hold-you-down",
+    "back-on-the-block",
+    "sex-ed",
+    "who-kat",
+    "slippin",
+    "dont-cha",
+    "everything",
+    "exclusive-diamond-dre-album",
+    "diamond-dre-album-physical",
+    "albums-and-singles",
+  ].map((h) => [h, diamondDre.handle]),
+);
+
 export const products: Product[] = [
   {
-    handle: "hold-you-down",
-    title: "Hold You Down",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/hold-you-down-exclusive-single-from-diamond-dre-album`,
-  },
-  {
-    handle: "back-on-the-block",
-    title: "Back On The Block",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/back-on-the-block-exclusive-single-from-diamond-dre-album`,
-  },
-  {
-    handle: "sex-ed",
-    title: "Sex Ed",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/copy-of-copy-of-copy-of-copy-of-copy-of-exclusive-diamond-dre-album`,
-  },
-  {
-    handle: "who-kat",
-    title: "Who Kat",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/copy-of-copy-of-copy-of-copy-of-exclusive-diamond-dre-album`,
-  },
-  {
-    handle: "slippin",
-    title: "Slippin'",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/copy-of-copy-of-copy-of-exclusive-diamond-dre-album`,
-  },
-  {
-    handle: "dont-cha",
-    title: "Don't Cha",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/copy-of-copy-of-exclusive-diamond-dre-album`,
-  },
-  {
-    handle: "everything",
-    title: "Everything",
-    price: 1.99,
-    image: albumDiamondDre.url,
-    category: "Singles",
-    blurb: "Exclusive single from the Diamond Dre album.",
-    externalUrl: `${P}/copy-of-exclusive-diamond-dre-album`,
-  },
-  {
-    handle: "exclusive-diamond-dre-album",
-    title: "Exclusive Diamond Dre Album",
-    price: 1.99,
-    image: albumDiamondDre.url,
+    handle: diamondDre.handle,
+    title: diamondDre.title,
+    price: diamondDre.singlePrice,
+    image: diamondDre.image,
     category: "Albums",
-    blurb: "The full Diamond Dre project, straight from the Kat.",
-    externalUrl: `${P}/exclusive-diamond-dre-album`,
-  },
-  {
-    handle: "diamond-dre-album-physical",
-    title: "Exclusive Diamond Dre Album — Physical CD",
-    price: 19.99,
-    compareAt: 25,
-    image: albumAlt.url,
-    category: "Albums",
-    blurb: "Physical CD of the Diamond Dre album. On sale.",
-    externalUrl: `${P}/country-vibes-ep`,
-  },
-  {
-    handle: "albums-and-singles",
-    title: "Albums & Singles Bundle",
-    price: 20,
-    image: albumDiamondDre.url,
-    category: "Albums",
-    blurb: "Bundle of albums and singles from the catalog.",
-    externalUrl: `${P}/vip-meet-greet`,
+    blurb: diamondDre.blurb,
+    externalUrl: diamondDre.albumUrl,
   },
   {
     handle: "the-lyrical-lion-cd",
