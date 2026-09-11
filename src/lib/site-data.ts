@@ -217,7 +217,7 @@ export const products: Product[] = [
 
 export const productCategories = [
   "All",
-  "Singles",
+  
   "Albums",
   "Merch",
   "Tickets",
