@@ -77,7 +77,7 @@ export function SinglesGrid({ singles }: { singles: NewSingle[] }) {
                 />
                 {s.audioUrl && (
                   <>
-                    <span className="absolute top-0 left-0 bg-primary px-2 py-0.5 font-heading text-[10px] tracking-[0.2em] text-primary-foreground">
+                    <span className="absolute top-0 left-0 bg-primary px-2 py-0.5 font-display text-[10px] tracking-[0.2em] text-primary-foreground">
                       PREVIEW
                     </span>
                     <button
@@ -151,7 +151,7 @@ export function SinglesGrid({ singles }: { singles: NewSingle[] }) {
               className="size-10 shrink-0 rounded-[1px] border border-primary/25 object-cover sm:size-12"
             />
             <div className="min-w-0 flex-1">
-              <p className="truncate font-heading text-lg leading-none tracking-wide text-primary uppercase sm:text-2xl">
+              <p className="truncate font-display text-lg leading-none tracking-wide text-primary uppercase sm:text-2xl">
                 {active.title}
               </p>
               <p className="mt-1 truncate text-[9px] font-bold tracking-[0.15em] text-muted-foreground uppercase">
@@ -160,7 +160,7 @@ export function SinglesGrid({ singles }: { singles: NewSingle[] }) {
             </div>
 
             <div className="hidden text-right leading-none sm:block">
-              <p className="font-heading text-lg text-primary">${SINGLE_PRICE.toFixed(2)}</p>
+              <p className="font-display text-lg text-primary">${SINGLE_PRICE.toFixed(2)}</p>
               <p className="mt-0.5 text-[8px] font-bold tracking-tighter text-muted-foreground uppercase">
                 Digital single
               </p>
