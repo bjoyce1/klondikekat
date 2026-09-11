@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Marquee } from "@/components/site/Marquee";
-import { newSingles, products, releases, singles } from "@/lib/site-data";
+import { diamondDre, newSingles, releases, singles } from "@/lib/site-data";
 import { formatPrice } from "@/components/site/ProductCard";
 import { SINGLE_PRICE, SinglesGrid } from "@/components/site/SinglesGrid";
 
@@ -33,7 +33,7 @@ const STREAMING = [
 ];
 
 function MusicPage() {
-  const singleProducts = products.filter((p) => p.category === "Singles");
+  return (
 
   return (
     <>
