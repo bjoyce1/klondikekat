@@ -252,20 +252,20 @@ export const releases: Release[] = [
     title: "The Lyrical Lion",
     year: "1993",
     kind: "EP",
-    image: albumAlt.url,
+    image: coverTheLyricalLion.url,
     note: "The debut. Home of the classic S.P.C. click record \u201cMurder Script.\u201d",
   },
   {
     title: "Mobbin' Muzik Melodies",
     year: "1997",
     kind: "Album",
-    image: albumAlt.url,
+    image: coverMobbinMuzikMelodies.url,
     note: "Released on Beatbox Records. Production from Icey Hott, Mo' Dangerous, Stro, Richard Johnson and Klondike Kat.",
   },
   {
     title: "Biography Of A Made Man",
     kind: "Album",
-    image: albumAlt.url,
+    image: coverBiographyOfAMadeMan.url,
     note: "Another entry in a catalog spanning three decades of Houston underground rap.",
   },
 ];
