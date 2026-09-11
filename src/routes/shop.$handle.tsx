@@ -59,6 +59,25 @@ function ProductPage() {
     (p) => p.category === product.category && p.handle !== product.handle,
   );
 
+  if (product.handle === diamondDre.handle) {
+    return (
+      <>
+        <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
+          <Link
+            to="/shop"
+            className="link-sweep inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-bold tracking-[0.14em] text-muted-foreground uppercase transition-colors hover:text-primary"
+          >
+            <ArrowLeft className="size-4" aria-hidden="true" />
+            Shop
+          </Link>
+        </div>
+        <DiamondDreBundle />
+      </>
+    );
+  }
+
+
+
   return (
     <>
       <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
