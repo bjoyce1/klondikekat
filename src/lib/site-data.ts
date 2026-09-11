@@ -295,6 +295,7 @@ export const newSingles: NewSingle[] = [
   { title: "Ride Like The Wind", image: artRideLikeTheWind.url },
   { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone", audioUrl: audioTheTakeover.url },
   { title: "Foolish", image: artFoolish.url, credit: "Klondike KT", audioUrl: audioFoolish.url },
+  { title: "We Shall Reign", image: artWeShallReign.url, credit: "Klondike Kat feat. K-Rino", audioUrl: audioWeShallReign.url },
 ];
 
 export type VideoItem = {
