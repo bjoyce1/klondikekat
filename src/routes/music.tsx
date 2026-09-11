@@ -34,8 +34,6 @@ const STREAMING = [
 
 function MusicPage() {
   return (
-
-  return (
     <>
       <PageHero
         eyebrow="Discography"
