@@ -147,12 +147,12 @@ export const products: Product[] = [
   },
   {
     handle: "diamond-dre-album-physical",
-    title: "Exclusive Diamond Dre Album — Physical",
-    price: 20,
+    title: "Exclusive Diamond Dre Album — Physical CD",
+    price: 19.99,
     compareAt: 25,
     image: albumAlt.url,
     category: "Albums",
-    blurb: "Physical copy of the Diamond Dre album. On sale.",
+    blurb: "Physical CD of the Diamond Dre album. On sale.",
     externalUrl: `${P}/country-vibes-ep`,
   },
   {
@@ -163,6 +163,33 @@ export const products: Product[] = [
     category: "Albums",
     blurb: "Bundle of albums and singles from the catalog.",
     externalUrl: `${P}/vip-meet-greet`,
+  },
+  {
+    handle: "the-lyrical-lion-cd",
+    title: "The Lyrical Lion — Physical CD",
+    price: 19.99,
+    image: coverTheLyricalLion.url,
+    category: "Albums",
+    blurb: "Physical CD of the 1993 debut EP. Home of the classic S.P.C. click record.",
+    externalUrl: `${P}/the-lyrical-lion-cd`,
+  },
+  {
+    handle: "mobbin-muzik-melodies-cd",
+    title: "Mobbin' Muzik Melodies — Physical CD",
+    price: 19.99,
+    image: coverMobbinMuzikMelodies.url,
+    category: "Albums",
+    blurb: "Physical CD of the 1997 Beatbox Records release.",
+    externalUrl: `${P}/mobbin-muzik-melodies-cd`,
+  },
+  {
+    handle: "biography-of-a-made-man-cd",
+    title: "Biography Of A Made Man — Physical CD",
+    price: 19.99,
+    image: coverBiographyOfAMadeMan.url,
+    category: "Albums",
+    blurb: "Physical CD of the Biography Of A Made Man album.",
+    externalUrl: `${P}/biography-of-a-made-man-cd`,
   },
   {
     handle: "signature-hoodie",
@@ -237,7 +264,8 @@ export type Release = {
   kind: "Album" | "EP" | "Single";
   image: string;
   note: string;
-  shopHandle?: string;
+  shopHandle: string;
+  cdPrice: number;
 };
 
 export const releases: Release[] = [
@@ -247,6 +275,7 @@ export const releases: Release[] = [
     image: albumDiamondDre.url,
     note: "The current project. Eight exclusive singles available individually or as the full album.",
     shopHandle: "exclusive-diamond-dre-album",
+    cdPrice: 1.99,
   },
   {
     title: "The Lyrical Lion",
@@ -254,6 +283,8 @@ export const releases: Release[] = [
     kind: "EP",
     image: coverTheLyricalLion.url,
     note: "The debut. Home of the classic S.P.C. click record \u201cMurder Script.\u201d",
+    shopHandle: "the-lyrical-lion-cd",
+    cdPrice: 19.99,
   },
   {
     title: "Mobbin' Muzik Melodies",
@@ -261,12 +292,16 @@ export const releases: Release[] = [
     kind: "Album",
     image: coverMobbinMuzikMelodies.url,
     note: "Released on Beatbox Records. Production from Icey Hott, Mo' Dangerous, Stro, Richard Johnson and Klondike Kat.",
+    shopHandle: "mobbin-muzik-melodies-cd",
+    cdPrice: 19.99,
   },
   {
     title: "Biography Of A Made Man",
     kind: "Album",
     image: coverBiographyOfAMadeMan.url,
     note: "Another entry in a catalog spanning three decades of Houston underground rap.",
+    shopHandle: "biography-of-a-made-man-cd",
+    cdPrice: 19.99,
   },
 ];
 
