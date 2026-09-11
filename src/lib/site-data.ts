@@ -24,6 +24,15 @@ import artOG from "@/assets/OG.webp.asset.json";
 import artRememberMe from "@/assets/Remember_Me.webp.asset.json";
 import artRideLikeTheWind from "@/assets/Ride_Like_The_Wind.webp.asset.json";
 import artTakeover from "@/assets/Takeover.webp.asset.json";
+import audioTheReturn from "@/assets/THE_RETURN.mp3.asset.json";
+import audioForever from "@/assets/Forever.mp3.asset.json";
+import audioOG from "@/assets/OG_feat._Flea_the_Boss_Dog.mp3.asset.json";
+import audioRememberMe from "@/assets/REMEMBER_ME_feat._Krino.mp3.asset.json";
+import audioTheTakeover from "@/assets/THE_TAKEOVER.mp3.asset.json";
+import audioHeavyweight from "@/assets/HEAVY_WEIGHT.mp3.asset.json";
+import audioFoolish from "@/assets/FOOLISH.mp3.asset.json";
+import audioFlowrocious from "@/assets/FLOWROCIOUS_feat_Joy_the_Explorer.mp3.asset.json";
+import audioGunSmoke from "@/assets/GUN_SMOKE.mp3.asset.json";
 
 export const site = {
   name: "Klondike Kat",
@@ -274,16 +283,16 @@ export type NewSingle = {
 };
 
 export const newSingles: NewSingle[] = [
-  { title: "Mob Manuscript: The Return", image: artMobManuscript.url },
-  { title: "Heavyweight", image: artHeavyweight.url },
-  { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea" },
-  { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino" },
-  { title: "Flowrocious", image: artFlowrocious.url, credit: "feat. Joy, The MF Explorer" },
-  { title: "Forever", image: artForever.url },
-  { title: "Gun Smoke", image: artGunSmoke.url },
+  { title: "Mob Manuscript: The Return", image: artMobManuscript.url, audioUrl: audioTheReturn.url },
+  { title: "Heavyweight", image: artHeavyweight.url, audioUrl: audioHeavyweight.url },
+  { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea", audioUrl: audioOG.url },
+  { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino", audioUrl: audioRememberMe.url },
+  { title: "Flowrocious", image: artFlowrocious.url, credit: "feat. Joy, The MF Explorer", audioUrl: audioFlowrocious.url },
+  { title: "Forever", image: artForever.url, audioUrl: audioForever.url },
+  { title: "Gun Smoke", image: artGunSmoke.url, audioUrl: audioGunSmoke.url },
   { title: "Ride Like The Wind", image: artRideLikeTheWind.url },
-  { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone" },
-  { title: "Foolish", image: artFoolish.url, credit: "Klondike KT" },
+  { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone", audioUrl: audioTheTakeover.url },
+  { title: "Foolish", image: artFoolish.url, credit: "Klondike KT", audioUrl: audioFoolish.url },
 ];
 
 export type VideoItem = {
