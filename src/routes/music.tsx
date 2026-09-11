@@ -119,33 +119,34 @@ function MusicPage() {
           <span className="text-gold">Exclusive singles</span>
         </h2>
         <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:mt-4 sm:text-base">
-          Eight exclusives from the Diamond Dre album, available one at a time.
+          Seven exclusives from the Diamond Dre album. Buy them one at a time, download the full
+          album, or grab the physical CD — all on one page.
         </p>
         <ul className="mt-5 divide-y divide-border border-y border-border sm:mt-10">
-          {singleProducts.map((p, i) => (
+          {diamondDre.tracks.map((t, i) => (
             <li
-              key={p.handle}
+              key={t.title}
               className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1 py-3 sm:gap-x-4 sm:py-4"
             >
               <span className="font-display text-xl text-primary sm:text-2xl">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="min-w-0 text-base font-semibold text-foreground sm:text-lg">
-                {p.title}
+                {t.title}
               </span>
               <span className="font-display text-lg whitespace-nowrap text-primary sm:text-xl">
-                {formatPrice(p.price)}
+                {formatPrice(diamondDre.singlePrice)}
               </span>
-              <Link
-                to="/shop/$handle"
-                params={{ handle: p.handle }}
-                className="tap-none col-start-2 col-end-4 inline-flex min-h-10 w-fit cursor-pointer items-center rounded-full border border-border px-4 text-[0.7rem] font-bold tracking-[0.14em] uppercase text-foreground transition-colors duration-200 hover:border-primary hover:text-primary sm:col-auto sm:min-h-11 sm:rounded-sm sm:text-xs"
-              >
-                Buy
-              </Link>
             </li>
           ))}
         </ul>
+        <Link
+          to="/shop/$handle"
+          params={{ handle: diamondDre.handle }}
+          className="tap-none mt-5 inline-flex min-h-12 cursor-pointer items-center justify-center rounded-sm bg-primary px-6 text-xs font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85 sm:text-sm"
+        >
+          Get Diamond Dre — CD, album or singles
+        </Link>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-24">
