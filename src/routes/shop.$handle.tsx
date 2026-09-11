@@ -1,11 +1,16 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { ProductCard, formatPrice } from "@/components/site/ProductCard";
-import { products } from "@/lib/site-data";
+import { DiamondDreBundle } from "@/components/site/DiamondDreBundle";
+import { diamondDre, productAliases, products } from "@/lib/site-data";
 
 export const Route = createFileRoute("/shop/$handle")({
   loader: ({ params }) => {
+    const alias = productAliases[params.handle];
+    if (alias) {
+      throw redirect({ to: "/shop/$handle", params: { handle: alias } });
+    }
     const product = products.find((p) => p.handle === params.handle);
     if (!product) throw notFound();
     return { product };
@@ -53,6 +58,25 @@ function ProductPage() {
   const related = products.filter(
     (p) => p.category === product.category && p.handle !== product.handle,
   );
+
+  if (product.handle === diamondDre.handle) {
+    return (
+      <>
+        <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
+          <Link
+            to="/shop"
+            className="link-sweep inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-bold tracking-[0.14em] text-muted-foreground uppercase transition-colors hover:text-primary"
+          >
+            <ArrowLeft className="size-4" aria-hidden="true" />
+            Shop
+          </Link>
+        </div>
+        <DiamondDreBundle />
+      </>
+    );
+  }
+
+
 
   return (
     <>
