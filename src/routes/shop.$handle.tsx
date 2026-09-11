@@ -1,11 +1,16 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import { ProductCard, formatPrice } from "@/components/site/ProductCard";
-import { products } from "@/lib/site-data";
+import { DiamondDreBundle } from "@/components/site/DiamondDreBundle";
+import { diamondDre, productAliases, products } from "@/lib/site-data";
 
 export const Route = createFileRoute("/shop/$handle")({
   loader: ({ params }) => {
+    const alias = productAliases[params.handle];
+    if (alias) {
+      throw redirect({ to: "/shop/$handle", params: { handle: alias } });
+    }
     const product = products.find((p) => p.handle === params.handle);
     if (!product) throw notFound();
     return { product };
