@@ -85,14 +85,14 @@ export const diamondDre = {
   cdImage: albumAlt.url,
   blurb:
     "The Diamond Dre project in one place — grab the physical CD, download the full album, or pick up songs one at a time.",
-  cdPrice: 19.99,
-  cdCompareAt: 25,
-  albumPrice: 1.99,
+  cdPrice: 23.99,
+  cdCompareAt: 29.99,
+  albumPrice: 19.99,
   singlePrice: 1.99,
   cdUrl: `${P}/country-vibes-ep`,
   albumUrl: `${P}/exclusive-diamond-dre-album`,
   bundleUrl: `${P}/vip-meet-greet`,
-  bundlePrice: 20,
+  bundlePrice: 23.99,
   tracks: [
     { title: "Hold You Down", externalUrl: `${P}/hold-you-down-exclusive-single-from-diamond-dre-album` },
     { title: "Back On The Block", externalUrl: `${P}/back-on-the-block-exclusive-single-from-diamond-dre-album` },
@@ -241,7 +241,7 @@ export const releases: Release[] = [
     image: albumDiamondDre.url,
     note: "The current project. Eight exclusive singles available individually or as the full album.",
     shopHandle: diamondDre.handle,
-    cdPrice: 19.99,
+    cdPrice: 23.99,
   },
   {
     title: "The Lyrical Lion",
