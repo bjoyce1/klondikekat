@@ -266,6 +266,26 @@ export const singles = [
   "Everything",
 ];
 
+export type NewSingle = {
+  title: string;
+  image: string;
+  credit?: string;
+  audioUrl?: string;
+};
+
+export const newSingles: NewSingle[] = [
+  { title: "Mob Manuscript: The Return", image: artMobManuscript.url },
+  { title: "Heavyweight", image: artHeavyweight.url },
+  { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea" },
+  { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino" },
+  { title: "Flowrocious", image: artFlowrocious.url, credit: "feat. Joy, The MF Explorer" },
+  { title: "Forever", image: artForever.url },
+  { title: "Gun Smoke", image: artGunSmoke.url },
+  { title: "Ride Like The Wind", image: artRideLikeTheWind.url },
+  { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone" },
+  { title: "Foolish", image: artFoolish.url, credit: "Klondike KT" },
+];
+
 export type VideoItem = {
   title: string;
   image: string;
