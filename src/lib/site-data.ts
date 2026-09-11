@@ -240,7 +240,7 @@ export const releases: Release[] = [
     kind: "Album",
     image: albumDiamondDre.url,
     note: "The current project. Eight exclusive singles available individually or as the full album.",
-    shopHandle: "diamond-dre-album-physical",
+    shopHandle: diamondDre.handle,
     cdPrice: 19.99,
   },
   {
