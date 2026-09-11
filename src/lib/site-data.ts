@@ -241,7 +241,7 @@ export const releases: Release[] = [
     image: albumDiamondDre.url,
     note: "The current project. Eight exclusive singles available individually or as the full album.",
     shopHandle: diamondDre.handle,
-    cdPrice: 19.99,
+    cdPrice: 23.99,
   },
   {
     title: "The Lyrical Lion",
