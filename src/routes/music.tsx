@@ -62,10 +62,13 @@ function MusicPage() {
         <h2 className="text-2xl sm:text-5xl">
           <span className="text-gold">Albums & EPs</span>
         </h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:mt-4 sm:text-base">
+          Physical CDs available for every release. Ships from the Klondike Kat store.
+        </p>
         <div className="mt-5 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-8 lg:grid-cols-4">
           {releases.map((r) => (
-            <article key={r.title} className="flex flex-col">
-              <div className="grain media-zoom card-elevated rounded-sm">
+            <article key={r.title} className="card-elevated hover-lift flex flex-col overflow-hidden rounded-sm">
+              <div className="grain media-zoom relative">
                 <img
                   src={r.image}
                   alt={`Artwork for ${r.title}`}
@@ -73,26 +76,37 @@ function MusicPage() {
                   decoding="async"
                   className="aspect-square w-full object-cover"
                 />
+                <span className="absolute top-2.5 left-2.5 z-10 rounded-full bg-background/80 px-2.5 py-1 text-[0.6rem] font-bold tracking-[0.14em] text-primary uppercase backdrop-blur-sm sm:top-3 sm:left-3 sm:rounded-none sm:text-[0.65rem]">
+                  CD
+                </span>
               </div>
-              <p className="mt-3 text-[0.6rem] font-bold tracking-[0.18em] text-primary uppercase sm:mt-4 sm:text-xs">
-                {r.kind}
-                {r.year ? ` · ${r.year}` : ""}
-              </p>
-              <h3 className="mt-1.5 text-lg leading-tight text-foreground sm:mt-2 sm:text-2xl">
-                {r.title}
-              </h3>
-              <p className="mt-1.5 flex-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">
-                {r.note}
-              </p>
-              {r.shopHandle && (
+              <div className="flex flex-1 flex-col p-3 sm:p-4">
+                <p className="text-[0.6rem] font-bold tracking-[0.18em] text-primary uppercase sm:text-xs">
+                  {r.kind}
+                  {r.year ? ` · ${r.year}` : ""}
+                </p>
+                <h3 className="mt-1.5 text-lg leading-tight text-foreground sm:mt-2 sm:text-2xl">
+                  {r.title}
+                </h3>
+                <p className="mt-1.5 flex-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">
+                  {r.note}
+                </p>
+                <p className="mt-3 flex items-baseline gap-2 sm:mt-4">
+                  <span className="font-display text-xl text-primary sm:text-2xl">
+                    {formatPrice(r.cdPrice)}
+                  </span>
+                  <span className="text-[0.65rem] font-bold tracking-[0.12em] text-muted-foreground uppercase sm:text-xs">
+                    CD
+                  </span>
+                </p>
                 <Link
                   to="/shop/$handle"
                   params={{ handle: r.shopHandle }}
-                  className="link-sweep mt-2 inline-flex min-h-11 cursor-pointer items-center text-xs font-bold tracking-[0.14em] text-primary uppercase sm:mt-4 sm:text-sm"
+                  className="tap-none mt-3 inline-flex min-h-11 cursor-pointer items-center justify-center rounded-sm border border-primary bg-primary px-4 text-xs font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85 sm:mt-4 sm:text-sm"
                 >
-                  Buy
+                  Buy CD
                 </Link>
-              )}
+              </div>
             </article>
           ))}
         </div>
