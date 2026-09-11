@@ -283,16 +283,16 @@ export type NewSingle = {
 };
 
 export const newSingles: NewSingle[] = [
-  { title: "Mob Manuscript: The Return", image: artMobManuscript.url },
-  { title: "Heavyweight", image: artHeavyweight.url },
-  { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea" },
-  { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino" },
-  { title: "Flowrocious", image: artFlowrocious.url, credit: "feat. Joy, The MF Explorer" },
-  { title: "Forever", image: artForever.url },
-  { title: "Gun Smoke", image: artGunSmoke.url },
+  { title: "Mob Manuscript: The Return", image: artMobManuscript.url, audioUrl: audioTheReturn.url },
+  { title: "Heavyweight", image: artHeavyweight.url, audioUrl: audioHeavyweight.url },
+  { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea", audioUrl: audioOG.url },
+  { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino", audioUrl: audioRememberMe.url },
+  { title: "Flowrocious", image: artFlowrocious.url, credit: "feat. Joy, The MF Explorer", audioUrl: audioFlowrocious.url },
+  { title: "Forever", image: artForever.url, audioUrl: audioForever.url },
+  { title: "Gun Smoke", image: artGunSmoke.url, audioUrl: audioGunSmoke.url },
   { title: "Ride Like The Wind", image: artRideLikeTheWind.url },
-  { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone" },
-  { title: "Foolish", image: artFoolish.url, credit: "Klondike KT" },
+  { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone", audioUrl: audioTheTakeover.url },
+  { title: "Foolish", image: artFoolish.url, credit: "Klondike KT", audioUrl: audioFoolish.url },
 ];
 
 export type VideoItem = {
