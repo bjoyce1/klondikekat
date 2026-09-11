@@ -14,6 +14,16 @@ import studioSession from "@/assets/studio-session.jpg.asset.json";
 import cookingUp from "@/assets/cooking-up.jpg.asset.json";
 import collab from "@/assets/collab.jpg.asset.json";
 import videoYouWrong from "@/assets/video-you-wrong.jpg.asset.json";
+import artFlowrocious from "@/assets/Flowrocious.webp.asset.json";
+import artFoolish from "@/assets/Foolish.webp.asset.json";
+import artForever from "@/assets/Forever.webp.asset.json";
+import artGunSmoke from "@/assets/Gun_Smoke.webp.asset.json";
+import artHeavyweight from "@/assets/Heavyweight.webp.asset.json";
+import artMobManuscript from "@/assets/Mob_Manuscript.webp.asset.json";
+import artOG from "@/assets/OG.webp.asset.json";
+import artRememberMe from "@/assets/Remember_Me.webp.asset.json";
+import artRideLikeTheWind from "@/assets/Ride_Like_The_Wind.webp.asset.json";
+import artTakeover from "@/assets/Takeover.webp.asset.json";
 
 export const site = {
   name: "Klondike Kat",
@@ -254,6 +264,26 @@ export const singles = [
   "Slippin'",
   "Don't Cha",
   "Everything",
+];
+
+export type NewSingle = {
+  title: string;
+  image: string;
+  credit?: string;
+  audioUrl?: string;
+};
+
+export const newSingles: NewSingle[] = [
+  { title: "Mob Manuscript: The Return", image: artMobManuscript.url },
+  { title: "Heavyweight", image: artHeavyweight.url },
+  { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea" },
+  { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino" },
+  { title: "Flowrocious", image: artFlowrocious.url, credit: "feat. Joy, The MF Explorer" },
+  { title: "Forever", image: artForever.url },
+  { title: "Gun Smoke", image: artGunSmoke.url },
+  { title: "Ride Like The Wind", image: artRideLikeTheWind.url },
+  { title: "Takeover", image: artTakeover.url, credit: "Big Boss Kill 'Em All vs BG Capone" },
+  { title: "Foolish", image: artFoolish.url, credit: "Klondike KT" },
 ];
 
 export type VideoItem = {

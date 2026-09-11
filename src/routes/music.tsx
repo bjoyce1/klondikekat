@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Marquee } from "@/components/site/Marquee";
-import { products, releases, singles } from "@/lib/site-data";
+import { newSingles, products, releases, singles } from "@/lib/site-data";
 import { formatPrice } from "@/components/site/ProductCard";
 
 export const Route = createFileRoute("/music")({
@@ -133,6 +133,44 @@ function MusicPage() {
         </ul>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-24">
+        <h2 className="text-2xl sm:text-5xl">
+          <span className="text-gold">New singles</span>
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:mt-4 sm:text-base">
+          The latest run of Mob Manuscript releases. Audio drops here as each one goes live.
+        </p>
+        <div className="mt-5 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-8 lg:grid-cols-4">
+          {newSingles.map((s) => (
+            <article key={s.title} className="flex flex-col">
+              <div className="grain media-zoom card-elevated rounded-sm">
+                <img
+                  src={s.image}
+                  alt={`Cover art for the single ${s.title}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
+              <h3 className="mt-3 text-base leading-tight text-foreground sm:mt-4 sm:text-2xl">
+                {s.title}
+              </h3>
+              {s.credit && (
+                <p className="mt-1 text-[0.65rem] font-bold tracking-[0.14em] text-primary uppercase sm:text-xs">
+                  {s.credit}
+                </p>
+              )}
+              {s.audioUrl ? (
+                <audio controls preload="none" src={s.audioUrl} className="mt-3 w-full">
+                  Your browser does not support audio playback.
+                </audio>
+              ) : (
+                <p className="mt-2 text-xs text-muted-foreground sm:text-sm">Coming soon</p>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
