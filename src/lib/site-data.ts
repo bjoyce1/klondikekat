@@ -35,6 +35,9 @@ import audioFlowrocious from "@/assets/FLOWROCIOUS_feat_Joy_the_Explorer.mp3.ass
 import audioGunSmoke from "@/assets/GUN_SMOKE.mp3.asset.json";
 import artWeShallReign from "@/assets/We_Shall_Reign.webp.asset.json";
 import audioWeShallReign from "@/assets/WE_SHALL_REIGN_feat_Krino.mp3.asset.json";
+import coverBiographyOfAMadeMan from "@/assets/Biography_of_a_Made_Man.png.asset.json";
+import coverMobbinMuzikMelodies from "@/assets/Mobbin_Muzik_Melodies.png.asset.json";
+import coverTheLyricalLion from "@/assets/The_Lyrical_Lion.png.asset.json";
 
 export const site = {
   name: "Klondike Kat",
