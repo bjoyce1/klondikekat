@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, BookOpen, Gauge, Headphones, Lightbulb, Mic2, Pause, Play, Volume2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
 import {
   motion,
   useInView,
@@ -139,7 +140,7 @@ function PodcastPage() {
           <motion.div aria-hidden="true" className="podcast-eye-glow absolute left-1/2 top-[24%] h-12 w-36 -translate-x-1/2" animate={reduce ? false : { opacity: [0.2, 0.72, 0.2], scale: [0.94, 1.04, 0.94] }} transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }} />
           <div className="podcast-smoke pointer-events-none absolute inset-x-0 bottom-0 h-2/5" aria-hidden="true" />
           <div className="podcast-embers pointer-events-none absolute inset-0" aria-hidden="true">
-            {Array.from({ length: 18 }).map((_, index) => <i key={index} style={{ "--ember-x": `${(index * 37) % 100}%`, "--ember-delay": `${(index % 7) * -0.8}s`, "--ember-duration": `${5 + (index % 5)}s` } as React.CSSProperties} />)}
+            {Array.from({ length: 18 }).map((_, index) => <i key={index} style={{ "--ember-x": `${(index * 37) % 100}%`, "--ember-delay": `${(index % 7) * -0.8}s`, "--ember-duration": `${5 + (index % 5)}s` } as CSSProperties} />)}
           </div>
           <div className="absolute inset-x-0 bottom-12 z-10 mx-auto max-w-6xl px-5 sm:bottom-8 sm:px-8">
             <div className="mx-auto flex max-w-2xl items-end gap-4">

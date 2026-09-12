@@ -8,13 +8,14 @@ type GearProps = {
 
 export function Gear({ className = "", rotation, reverse = false }: GearProps) {
   const reduce = useReducedMotion();
+  const motionStyle = reduce || !rotation ? {} : { rotate: rotation };
 
   return (
     <motion.svg
       viewBox="0 0 120 120"
       className={className}
       aria-hidden="true"
-      style={reduce || !rotation ? undefined : { rotate: rotation }}
+      style={motionStyle}
     >
       <defs>
         <radialGradient id="gear-metal" cx="36%" cy="28%">
