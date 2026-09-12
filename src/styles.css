@@ -43,6 +43,7 @@
   --color-surface-2: var(--surface-2);
   --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-podcast: "Abril Fatface", Georgia, serif;
 }
 
 :root {
@@ -170,6 +171,13 @@
   );
   background-clip: text;
   color: transparent;
+}
+
+@utility font-podcast {
+  font-family: var(--font-podcast);
+  letter-spacing: 0;
+  line-height: 0.96;
+  text-transform: none;
 }
 
 @utility marquee-track {
