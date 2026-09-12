@@ -63,7 +63,9 @@ function PodcastPage() {
   const horsepowerRef = useRef<HTMLElement>(null);
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const reduce = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion();
+  const [hydrated, setHydrated] = useState(false);
+  const reduce = hydrated && Boolean(prefersReducedMotion);
   const horsepowerActive = useInView(horsepowerRef, { amount: 0.28 });
   const { scrollYProgress: pageProgress } = useScroll();
   const smoothPageProgress = useSpring(pageProgress, { stiffness: 100, damping: 24, mass: 0.3 });
@@ -79,6 +81,10 @@ function PodcastPage() {
   const wheelRotation = useTransform(machineProgress, [0, 1], [0, 1320]);
   const bikeX = useTransform(machineProgress, [0, 1], [reduce ? 0 : -160, reduce ? 0 : 180]);
   const featuredTrack = newSingles.find((single) => single.title === "Mob Manuscript: The Return");
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;

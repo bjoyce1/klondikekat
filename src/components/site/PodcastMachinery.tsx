@@ -1,4 +1,12 @@
 import { motion, useReducedMotion, type MotionValue } from "motion/react";
+import { useEffect, useState } from "react";
+
+function useStableReducedMotion() {
+  const prefersReducedMotion = useReducedMotion();
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+  return hydrated && Boolean(prefersReducedMotion);
+}
 
 type GearProps = {
   className?: string;
@@ -7,7 +15,7 @@ type GearProps = {
 };
 
 export function Gear({ className = "", rotation, reverse = false }: GearProps) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const motionStyle = reduce || !rotation ? {} : { rotate: rotation };
 
   return (
@@ -48,7 +56,7 @@ export function Gear({ className = "", rotation, reverse = false }: GearProps) {
 }
 
 export function DragTree({ active = false }: { active?: boolean }) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const lights = ["bg-primary/25", "bg-primary/25", "bg-primary/25", "bg-signal-green/25"];
 
   return (
@@ -74,7 +82,7 @@ export function DragTree({ active = false }: { active?: boolean }) {
 }
 
 export function Motorcycle({ className = "", wheelRotation }: { className?: string; wheelRotation?: MotionValue<number> }) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const wheelStyle = reduce || !wheelRotation ? undefined : { rotate: wheelRotation };
 
   return (
@@ -105,7 +113,7 @@ export function Motorcycle({ className = "", wheelRotation }: { className?: stri
 }
 
 export function Waveform({ className = "", active = true }: { className?: string; active?: boolean }) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   const bars = [18, 38, 24, 54, 76, 32, 64, 90, 44, 70, 28, 58, 84, 42, 68, 22, 50, 34, 72, 30, 58, 82, 40, 64];
 
   return (
@@ -124,7 +132,7 @@ export function Waveform({ className = "", active = true }: { className?: string
 }
 
 export function VuMeter({ active, label }: { active: boolean; label: string }) {
-  const reduce = useReducedMotion();
+  const reduce = useStableReducedMotion();
   return (
     <div className="podcast-vu">
       <div className="flex justify-between text-[0.55rem] font-bold tracking-[0.2em] text-muted-foreground uppercase">
