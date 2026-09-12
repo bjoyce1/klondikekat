@@ -239,7 +239,7 @@ export const releases: Release[] = [
     title: "Exclusive Diamond Dre Album",
     kind: "Album",
     image: albumDiamondDre.url,
-    note: "The current project. Eight exclusive singles available individually or as the full album.",
+    note: `The current project. ${diamondDre.tracks.length} exclusive singles available individually or as the full album.`,
     shopHandle: diamondDre.handle,
     cdPrice: 23.99,
   },
