@@ -44,7 +44,7 @@
   --color-signal-green: var(--signal-green);
   --font-display: "Anton", "Arial Narrow", sans-serif;
   --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
-  --font-podcast: "Abril Fatface", Georgia, serif;
+  --font-podcast: "Roboto Slab", Rockwell, Georgia, serif;
 }
 
 :root {
@@ -178,8 +178,8 @@
 @utility font-podcast {
   font-family: var(--font-podcast);
   letter-spacing: 0;
-  line-height: 0.96;
-  text-transform: none;
+  line-height: 0.9;
+  text-transform: uppercase;
 }
 
 @utility podcast-kicker {
@@ -201,19 +201,40 @@
 
 .podcast-page {
   --podcast-red: var(--ember);
-  background-image: radial-gradient(circle at 50% 0%, color-mix(in oklch, var(--primary) 5%, transparent), transparent 35%);
+  position: relative;
+  background:
+    linear-gradient(90deg, color-mix(in oklch, var(--foreground) 2%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, color-mix(in oklch, var(--primary) 7%, transparent), transparent 35%),
+    var(--background);
+  background-size: 5rem 100%, auto, auto;
 }
 
 .podcast-manifesto {
   background:
-    linear-gradient(90deg, transparent 0 49.92%, color-mix(in oklch, var(--primary) 8%, transparent) 50%, transparent 50.08%),
+    linear-gradient(90deg, transparent 0 49.92%, color-mix(in oklch, var(--primary) 7%, transparent) 50%, transparent 50.08%),
+    radial-gradient(circle at 50% 44%, color-mix(in oklch, var(--primary) 5%, transparent), transparent 48%),
     var(--background);
+}
+
+.podcast-hero {
+  background: var(--background);
+}
+
+.podcast-hero-halo {
+  opacity: 0.7;
+  background: radial-gradient(circle at 50% 35%, color-mix(in oklch, var(--primary) 18%, transparent), transparent 25%);
+}
+
+.podcast-hero-vignette {
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--background) 18%, transparent), transparent 30%, color-mix(in oklch, var(--background) 88%, transparent)),
+    radial-gradient(ellipse at 50% 40%, transparent 20%, color-mix(in oklch, var(--background) 72%, transparent) 86%);
 }
 
 .podcast-eye-glow {
   border-radius: 50%;
-  background: radial-gradient(ellipse, color-mix(in oklch, var(--ember) 80%, transparent), transparent 68%);
-  filter: blur(13px);
+  background: radial-gradient(ellipse, color-mix(in oklch, var(--ember) 92%, transparent), transparent 64%);
+  filter: blur(11px);
   mix-blend-mode: screen;
 }
 
@@ -241,13 +262,72 @@
   animation: podcast-ember-rise var(--ember-duration) linear var(--ember-delay) infinite;
 }
 
+@utility podcast-forged-title {
+  font-family: var(--font-podcast);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: transparent;
+  background-image: linear-gradient(180deg, oklch(0.94 0.08 92), var(--primary) 42%, oklch(0.56 0.12 62) 68%, oklch(0.84 0.13 80));
+  background-clip: text;
+  filter: drop-shadow(0 2px 0 color-mix(in oklch, var(--background) 80%, transparent)) drop-shadow(0 8px 18px color-mix(in oklch, var(--primary) 12%, transparent));
+}
+
+.podcast-red-signal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  border-block: 1px solid color-mix(in oklch, var(--ember) 22%, transparent);
+  background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--ember) 8%, transparent), transparent);
+}
+
+.podcast-red-signal::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: color-mix(in oklch, var(--ember) 60%, transparent);
+  box-shadow: 0 0 10px color-mix(in oklch, var(--ember) 45%, transparent);
+}
+
+.podcast-badge-panel,
+.podcast-transmission {
+  position: relative;
+  border: 1px solid color-mix(in oklch, var(--primary) 45%, var(--border));
+  clip-path: polygon(1.4rem 0, calc(100% - 1.4rem) 0, 100% 1.4rem, 100% calc(100% - 1.4rem), calc(100% - 1.4rem) 100%, 1.4rem 100%, 0 calc(100% - 1.4rem), 0 1.4rem);
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--primary) 9%, transparent), transparent 22%),
+    repeating-linear-gradient(90deg, transparent 0 5rem, color-mix(in oklch, var(--foreground) 2%, transparent) 5rem 5.04rem),
+    linear-gradient(155deg, var(--surface-2), var(--background) 50%, var(--surface));
+  box-shadow: inset 0 0 0 4px var(--background), inset 0 0 0 5px color-mix(in oklch, var(--primary) 16%, transparent), var(--shadow-elevated);
+}
+
+.podcast-badge-panel::after,
+.podcast-transmission::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(112deg, transparent 22%, color-mix(in oklch, var(--primary) 8%, transparent) 48%, transparent 72%);
+  transform: translateX(-80%);
+  transition: transform 800ms var(--ease-out-expo);
+}
+
+.podcast-badge-panel:hover::after,
+.podcast-transmission:hover::after { transform: translateX(80%); }
+
 .podcast-console {
   position: relative;
-  border: 1px solid color-mix(in oklch, var(--primary) 48%, var(--border));
+  border: 1px solid color-mix(in oklch, var(--primary) 58%, var(--border));
+  clip-path: polygon(1.4rem 0, calc(100% - 1.4rem) 0, 100% 1.4rem, 100% calc(100% - 1.4rem), calc(100% - 1.4rem) 100%, 1.4rem 100%, 0 calc(100% - 1.4rem), 0 1.4rem);
   background:
-    repeating-linear-gradient(90deg, transparent 0 5rem, color-mix(in oklch, var(--primary) 3%, transparent) 5rem 5.05rem),
-    linear-gradient(160deg, var(--surface-2), var(--background) 48%, var(--surface));
-  box-shadow: inset 0 1px color-mix(in oklch, var(--primary) 35%, transparent), inset 0 -18px 40px color-mix(in oklch, var(--background) 85%, transparent), var(--glow-gold);
+    repeating-linear-gradient(90deg, transparent 0 5rem, color-mix(in oklch, var(--primary) 3%, transparent) 5rem 5.04rem),
+    linear-gradient(160deg, color-mix(in oklch, var(--surface-2) 82%, var(--primary)), var(--background) 48%, var(--surface));
+  box-shadow: inset 0 0 0 5px var(--background), inset 0 0 0 6px color-mix(in oklch, var(--primary) 15%, transparent), inset 0 -18px 40px color-mix(in oklch, var(--background) 85%, transparent), var(--glow-gold);
 }
 
 .podcast-console::before,
@@ -264,6 +344,30 @@
 .podcast-console::before { left: 8px; }
 .podcast-console::after { right: 8px; }
 
+.podcast-console-top { border-bottom: 1px solid color-mix(in oklch, var(--primary) 28%, transparent); }
+
+.podcast-mic-grille {
+  border-block: 1px solid color-mix(in oklch, var(--primary) 22%, transparent);
+  background:
+    repeating-linear-gradient(90deg, color-mix(in oklch, var(--primary) 14%, transparent) 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(0deg, color-mix(in oklch, var(--foreground) 6%, transparent) 0 1px, transparent 1px 6px),
+    var(--background);
+  box-shadow: inset 0 8px 18px color-mix(in oklch, var(--background) 75%, transparent);
+}
+
+.podcast-status-lamp {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--primary) 24%, var(--background));
+  border: 1px solid color-mix(in oklch, var(--primary) 45%, var(--border));
+}
+
+.podcast-status-lamp.is-live {
+  background: var(--color-ember);
+  box-shadow: 0 0 14px var(--color-ember);
+}
+
 .podcast-play {
   background: radial-gradient(circle at 38% 30%, var(--primary), color-mix(in oklch, var(--primary) 58%, var(--background)) 58%, var(--background));
   box-shadow: inset 0 1px color-mix(in oklch, var(--foreground) 45%, transparent), 0 0 0 8px color-mix(in oklch, var(--primary) 8%, transparent), var(--glow-gold);
@@ -273,6 +377,16 @@
   padding: 0.65rem;
   border: 1px solid color-mix(in oklch, var(--primary) 18%, var(--border));
   background: color-mix(in oklch, var(--background) 80%, transparent);
+}
+
+.podcast-knob {
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 1px solid color-mix(in oklch, var(--primary) 42%, var(--border));
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 30%, color-mix(in oklch, var(--foreground) 38%, var(--surface-2)), var(--background) 72%);
+  box-shadow: inset 0 1px color-mix(in oklch, var(--foreground) 32%, transparent), 0 4px 8px color-mix(in oklch, var(--background) 80%, transparent);
 }
 
 .podcast-light-sweep {
@@ -288,38 +402,55 @@
     linear-gradient(180deg, var(--background), transparent 40%, var(--background));
 }
 
-.podcast-ledger {
-  background:
-    repeating-linear-gradient(90deg, transparent 0 4.5rem, color-mix(in oklch, var(--primary) 3%, transparent) 4.5rem 4.55rem),
-    color-mix(in oklch, var(--background) 72%, var(--surface));
-  box-shadow: inset 0 1px color-mix(in oklch, var(--primary) 18%, transparent), var(--shadow-elevated);
+.podcast-stage-nav {
+  position: fixed;
+  inset-inline: 0.75rem;
+  top: 3.75rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
+  background: color-mix(in oklch, var(--background) 92%, transparent);
+  box-shadow: 0 18px 35px color-mix(in oklch, var(--background) 82%, transparent), inset 0 0 18px color-mix(in oklch, var(--primary) 5%, transparent);
 }
 
-.podcast-ledger > li {
-  transition: background-color 220ms ease, border-color 220ms ease;
-}
+.podcast-stage-nav ol { display: flex; align-items: center; gap: 0.8rem; }
+.podcast-stage-nav a { display: flex; min-width: 1.7rem; min-height: 1.7rem; align-items: center; justify-content: center; color: var(--color-muted-foreground); }
+.podcast-stage-bulb { display: block; width: 0.75rem; height: 0.75rem; flex: none; border-radius: 50%; border: 1px solid color-mix(in oklch, var(--primary) 42%, var(--border)); background: color-mix(in oklch, var(--primary) 12%, var(--background)); }
+.podcast-stage-bulb.is-passed { background: color-mix(in oklch, var(--primary) 72%, var(--background)); box-shadow: 0 0 8px color-mix(in oklch, var(--primary) 48%, transparent); }
+.podcast-stage-bulb.is-active { background: var(--color-signal-green); border-color: var(--color-signal-green); box-shadow: 0 0 14px color-mix(in oklch, var(--signal-green) 70%, transparent); }
+.podcast-stage-name, .podcast-stage-label { display: none; font-family: var(--font-display); font-size: 0.45rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.podcast-stage-label { color: var(--color-primary); text-align: center; }
 
-.podcast-ledger > li:hover,
-.podcast-ledger > li:focus-within {
-  background: color-mix(in oklch, var(--primary) 4%, transparent);
-}
+.podcast-automotive > .podcast-red-signal { position: absolute; inset-inline: 0; top: 41%; }
+.podcast-city-reflection { opacity: 0.22; filter: blur(8px); background: repeating-linear-gradient(90deg, transparent 0 2.2rem, color-mix(in oklch, var(--primary) 18%, transparent) 2.2rem 2.32rem, transparent 2.32rem 5rem); mask-image: linear-gradient(to bottom, var(--background), transparent); }
+.podcast-asphalt { background: linear-gradient(180deg, transparent, color-mix(in oklch, var(--foreground) 4%, var(--background))), repeating-linear-gradient(96deg, transparent 0 5rem, color-mix(in oklch, var(--foreground) 3%, transparent) 5rem 5.1rem); }
+.podcast-speed-lines { opacity: 0.3; background: repeating-linear-gradient(172deg, transparent 0 1.4rem, color-mix(in oklch, var(--primary) 22%, transparent) 1.42rem 1.46rem, transparent 1.48rem 3.5rem); mask-image: linear-gradient(90deg, transparent, var(--background), transparent); }
+.podcast-headlight-field { position: absolute; right: -10%; bottom: 10%; width: 62%; height: 35%; opacity: 0; background: conic-gradient(from 248deg at 100% 50%, transparent 0deg, color-mix(in oklch, var(--primary) 12%, transparent) 18deg, transparent 34deg); transition: opacity 900ms ease; }
+.podcast-headlight-field.is-lit { opacity: 1; }
+.podcast-headlights { opacity: 0.25; transition: opacity 800ms ease, filter 800ms ease; }
+.car-awake .podcast-headlights { opacity: 1; filter: drop-shadow(0 0 14px var(--color-primary)); }
 
-.podcast-emblem {
-  display: grid;
-  width: 5rem;
-  height: 5rem;
-  place-items: center;
-  transform: rotate(45deg);
-  border: 1px solid color-mix(in oklch, var(--primary) 55%, var(--border));
-  box-shadow: inset 0 0 20px color-mix(in oklch, var(--primary) 12%, transparent), var(--glow-gold);
-}
+.podcast-art-tree { display: grid; width: 5rem; justify-items: center; gap: 0.4rem; padding: 0.8rem; border: 1px solid color-mix(in oklch, var(--primary) 36%, var(--border)); background: var(--background); box-shadow: var(--shadow-elevated); }
+.podcast-art-tree span { font-family: var(--font-display); font-size: 0.42rem; letter-spacing: 0.12em; color: var(--color-primary); text-transform: uppercase; }
+.podcast-art-tree i { display: block; width: 1.45rem; height: 1.45rem; border-radius: 50%; border: 1px solid color-mix(in oklch, var(--primary) 42%, var(--border)); background: color-mix(in oklch, var(--primary) 10%, var(--background)); }
+.podcast-art-tree.is-running i:nth-of-type(1), .podcast-art-tree.is-running i:nth-of-type(2), .podcast-art-tree.is-running i:nth-of-type(3), .podcast-art-tree.is-running i:nth-of-type(4) { animation: podcast-tree-amber 3.2s ease forwards; }
+.podcast-art-tree.is-running i:nth-of-type(2) { animation-delay: 0.35s; }
+.podcast-art-tree.is-running i:nth-of-type(3) { animation-delay: 0.7s; }
+.podcast-art-tree.is-running i:nth-of-type(4) { animation-delay: 1.05s; }
+.podcast-art-tree.is-running i:nth-of-type(5) { animation: podcast-tree-green 3.2s 1.4s ease forwards; }
 
-.podcast-emblem > * { transform: rotate(-45deg); }
+.podcast-tachometer { position: relative; }
+.podcast-tachometer svg { width: 100%; }
+.podcast-tachometer > span { position: absolute; inset-inline: 0; bottom: 0.5rem; text-align: center; font-family: var(--font-display); font-size: 0.48rem; letter-spacing: 0.2em; color: var(--color-muted-foreground); }
 
-.podcast-gauge {
-  background: color-mix(in oklch, var(--background) 88%, transparent);
-  box-shadow: 0 0 24px color-mix(in oklch, var(--background) 85%, transparent);
-}
+.podcast-mini-bulb { display: block; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: color-mix(in oklch, var(--primary) 14%, var(--background)); border: 1px solid color-mix(in oklch, var(--primary) 35%, var(--border)); }
+.podcast-mini-bulb.is-amber { background: var(--color-primary); box-shadow: 0 0 9px color-mix(in oklch, var(--primary) 62%, transparent); }
+.podcast-status-plate { width: fit-content; border: 1px solid color-mix(in oklch, var(--primary) 42%, var(--border)); padding: 0.65rem 0.85rem; font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.18em; color: var(--color-primary); text-transform: uppercase; }
+.podcast-crest { display: grid; width: 7.5rem; height: 7.5rem; place-items: center; clip-path: polygon(50% 0, 92% 20%, 84% 78%, 50% 100%, 16% 78%, 8% 20%); background: linear-gradient(145deg, color-mix(in oklch, var(--primary) 20%, var(--surface)), var(--background)); border: 1px solid var(--color-primary); box-shadow: inset 0 0 24px color-mix(in oklch, var(--primary) 14%, transparent), var(--glow-gold); }
+.podcast-cta { clip-path: polygon(0.65rem 0, calc(100% - 0.65rem) 0, 100% 50%, calc(100% - 0.65rem) 100%, 0.65rem 100%, 0 50%); }
 
 @keyframes podcast-smoke-drift {
   from { transform: translate3d(-2%, 1%, 0) scale(1); }
@@ -337,9 +468,32 @@
   to { transform: translate3d(18%, 0, 0); }
 }
 
+@keyframes podcast-tree-amber {
+  0%, 100% { background: color-mix(in oklch, var(--primary) 10%, var(--background)); box-shadow: none; }
+  18%, 72% { background: var(--color-primary); box-shadow: 0 0 18px var(--color-primary); }
+}
+
+@keyframes podcast-tree-green {
+  0%, 32% { background: color-mix(in oklch, var(--signal-green) 10%, var(--background)); box-shadow: none; }
+  45%, 100% { background: var(--color-signal-green); box-shadow: 0 0 18px var(--color-signal-green); }
+}
+
 @media (max-width: 767px) {
   .podcast-smoke { animation: none; opacity: 0.38; }
   .podcast-embers i:nth-child(n + 9) { display: none; }
+  .podcast-page { background-size: 3rem 100%, auto, auto; }
+  .podcast-hero-halo { opacity: 0.42; }
+  .podcast-forged-title { filter: drop-shadow(0 2px 0 var(--background)); }
+  .podcast-badge-panel { min-height: 25rem; }
+  .podcast-automotive > .podcast-red-signal { top: 36%; }
+  .podcast-headlight-field { width: 90%; }
+}
+
+@media (min-width: 1024px) {
+  .podcast-stage-nav { inset-inline: auto 1rem; top: 50%; display: block; width: 5.4rem; padding: 0.8rem 0.65rem; transform: translateY(-50%); }
+  .podcast-stage-nav ol { display: grid; gap: 0.6rem; margin-block: 0.7rem; }
+  .podcast-stage-nav a { justify-content: flex-start; min-height: 2.4rem; gap: 0.5rem; }
+  .podcast-stage-name, .podcast-stage-label { display: block; }
 }
 
 @utility marquee-track {
