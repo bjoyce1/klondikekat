@@ -14,6 +14,7 @@ import { Route as BioRouteImport } from './routes/bio'
 import { Route as BookingRouteImport } from './routes/booking'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as MusicRouteImport } from './routes/music'
+import { Route as PodcastRouteImport } from './routes/podcast'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as VideosRouteImport } from './routes/videos'
 import { Route as ShopIndexRouteImport } from './routes/shop.index'
@@ -44,6 +45,11 @@ const MusicRoute = MusicRouteImport.update({
   path: '/music',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PodcastRoute = PodcastRouteImport.update({
+  id: '/podcast',
+  path: '/podcast',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/booking': typeof BookingRoute
   '/events': typeof EventsRoute
   '/music': typeof MusicRoute
+  '/podcast': typeof PodcastRoute
   '/shop': typeof ShopRouteWithChildren
   '/videos': typeof VideosRoute
   '/shop/$handle': typeof ShopHandleRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/booking': typeof BookingRoute
   '/events': typeof EventsRoute
   '/music': typeof MusicRoute
+  '/podcast': typeof PodcastRoute
   '/videos': typeof VideosRoute
   '/shop/$handle': typeof ShopHandleRoute
   '/shop': typeof ShopIndexRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/booking': typeof BookingRoute
   '/events': typeof EventsRoute
   '/music': typeof MusicRoute
+  '/podcast': typeof PodcastRoute
   '/shop': typeof ShopRouteWithChildren
   '/videos': typeof VideosRoute
   '/shop/$handle': typeof ShopHandleRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
     | '/booking'
     | '/events'
     | '/music'
+    | '/podcast'
     | '/shop'
     | '/videos'
     | '/shop/$handle'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
     | '/booking'
     | '/events'
     | '/music'
+    | '/podcast'
     | '/videos'
     | '/shop/$handle'
     | '/shop'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/booking'
     | '/events'
     | '/music'
+    | '/podcast'
     | '/shop'
     | '/videos'
     | '/shop/$handle'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   BookingRoute: typeof BookingRoute
   EventsRoute: typeof EventsRoute
   MusicRoute: typeof MusicRoute
+  PodcastRoute: typeof PodcastRoute
   ShopRoute: typeof ShopRouteWithChildren
   VideosRoute: typeof VideosRoute
 }
@@ -178,6 +191,13 @@ declare module '@tanstack/react-router' {
       path: '/music'
       fullPath: '/music'
       preLoaderRoute: typeof MusicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/podcast': {
+      id: '/podcast'
+      path: '/podcast'
+      fullPath: '/podcast'
+      preLoaderRoute: typeof PodcastRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop': {
@@ -229,6 +249,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookingRoute: BookingRoute,
   EventsRoute: EventsRoute,
   MusicRoute: MusicRoute,
+  PodcastRoute: PodcastRoute,
   ShopRoute: ShopRouteWithChildren,
   VideosRoute: VideosRoute,
 }

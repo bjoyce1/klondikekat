@@ -5,6 +5,7 @@ import { site } from "@/lib/site-data";
 
 const NAV = [
   { to: "/music", label: "Music" },
+  { to: "/podcast", label: "Podcast" },
   { to: "/videos", label: "Videos" },
   { to: "/shop", label: "Shop" },
   { to: "/events", label: "Events" },

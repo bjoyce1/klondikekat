@@ -32,6 +32,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {[
               { to: "/music", label: "Music" },
+              { to: "/podcast", label: "Podcast" },
               { to: "/videos", label: "Videos" },
               { to: "/shop", label: "Shop" },
               { to: "/events", label: "Events" },

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowDown,
   BookOpen,
@@ -278,10 +278,10 @@ function PodcastPage() {
           <h2 className="mx-auto mt-5 max-w-3xl text-4xl text-foreground sm:text-7xl">The mic is warming up</h2>
           <p className="mx-auto mt-5 max-w-xl text-muted-foreground">Episodes and listening destinations will be announced here. Until then, explore the catalog that built the voice behind the show.</p>
           <Button asChild variant="outline" size="lg" className="mt-7 min-h-12 rounded-sm px-6 font-bold tracking-[0.12em] uppercase">
-            <a href="/music">
+            <Link to="/music">
               <BookOpen aria-hidden="true" />
               Explore the music
-            </a>
+            </Link>
           </Button>
         </div>
       </section>
