@@ -14,7 +14,7 @@ export function Gear({ className = "", reverse = false, duration = 18 }: GearPro
       viewBox="0 0 120 120"
       className={className}
       aria-hidden="true"
-      animate={reduce ? undefined : { rotate: reverse ? -360 : 360 }}
+      animate={reduce ? false : { rotate: reverse ? -360 : 360 }}
       transition={{ duration, repeat: Infinity, ease: "linear" }}
     >
       <g fill="currentColor">
@@ -56,7 +56,7 @@ export function RacingLights() {
 
 export function Motorcycle({ className = "" }: { className?: string }) {
   const reduce = useReducedMotion();
-  const wheelMotion = reduce ? undefined : { rotate: 360 };
+  const wheelMotion = reduce ? false : { rotate: 360 };
 
   return (
     <svg viewBox="0 0 520 210" className={className} aria-hidden="true">
@@ -85,6 +85,7 @@ export function Motorcycle({ className = "" }: { className?: string }) {
 }
 
 export function Waveform({ className = "" }: { className?: string }) {
+  const reduce = useReducedMotion();
   const bars = [18, 38, 24, 54, 76, 32, 64, 90, 44, 70, 28, 58, 84, 42, 68, 22, 50, 34];
 
   return (
@@ -94,7 +95,7 @@ export function Waveform({ className = "" }: { className?: string }) {
           key={`${height}-${index}`}
           className="w-1 bg-ember"
           style={{ height: `${height}%` }}
-          animate={{ scaleY: [0.45, 1, 0.55] }}
+          animate={reduce ? false : { scaleY: [0.45, 1, 0.55] }}
           transition={{ duration: 0.9, delay: index * 0.05, repeat: Infinity, repeatType: "mirror" }}
         />
       ))}

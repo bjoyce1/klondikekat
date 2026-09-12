@@ -163,12 +163,12 @@ function PodcastPage() {
         <motion.div
           aria-hidden="true"
           className="absolute top-[23%] left-1/2 h-16 w-48 -translate-x-1/2 bg-ember/15 blur-2xl"
-          animate={reduce ? undefined : { opacity: [0.15, 0.48, 0.15], scale: [0.88, 1.08, 0.88] }}
+          animate={reduce ? false : { opacity: [0.15, 0.48, 0.15], scale: [0.88, 1.08, 0.88] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
         <div className="absolute inset-x-0 bottom-5 z-10 flex flex-col items-center gap-2 text-center sm:bottom-8">
           <span className="text-[0.65rem] font-bold tracking-[0.28em] text-primary uppercase">Scroll to enter</span>
-          <motion.div animate={reduce ? undefined : { y: [0, 7, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
+          <motion.div animate={reduce ? false : { y: [0, 7, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
             <ArrowDown className="size-5 text-primary" aria-hidden="true" />
           </motion.div>
         </div>
