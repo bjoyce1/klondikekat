@@ -144,8 +144,12 @@ function PodcastPage() {
       setPlaying(false);
       return;
     }
-    await audio.play();
-    setPlaying(true);
+    try {
+      await audio.play();
+      setPlaying(true);
+    } catch {
+      setPlaying(false);
+    }
   };
 
   return (
@@ -166,7 +170,7 @@ function PodcastPage() {
           animate={reduce ? false : { opacity: [0.15, 0.48, 0.15], scale: [0.88, 1.08, 0.88] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
-        <div className="absolute inset-x-0 bottom-5 z-10 flex flex-col items-center gap-2 text-center sm:bottom-8">
+        <div className="absolute inset-x-0 bottom-20 z-10 flex flex-col items-center gap-2 text-center sm:bottom-8">
           <span className="text-[0.65rem] font-bold tracking-[0.28em] text-primary uppercase">Scroll to enter</span>
           <motion.div animate={reduce ? false : { y: [0, 7, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
             <ArrowDown className="size-5 text-primary" aria-hidden="true" />
@@ -222,7 +226,7 @@ function PodcastPage() {
                   {playing ? <Pause aria-hidden="true" /> : <Play aria-hidden="true" />}
                 </Button>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-podcast text-2xl normal-case text-foreground sm:text-4xl">Mob Manuscript: The Return</p>
+                  <p className="font-podcast text-xl leading-tight normal-case text-foreground sm:text-4xl">Mob Manuscript: The Return</p>
                   <p className="mt-1 text-[0.65rem] font-bold tracking-[0.16em] text-muted-foreground uppercase">Featured music bed · 60 sec</p>
                   <div className="mt-5 h-1 bg-surface-2" aria-hidden="true">
                     <div className="h-full bg-primary transition-[width] duration-100" style={{ width: `${progress}%` }} />
