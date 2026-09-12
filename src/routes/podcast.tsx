@@ -180,14 +180,14 @@ function PodcastPage() {
       </section>
 
       <section id="listen" className="relative overflow-hidden border-b border-border bg-surface py-20 sm:py-32">
-        <div className="podcast-light-sweep absolute inset-0" aria-hidden="true" />
+        <div className="podcast-light-sweep pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <motion.div initial={reduce ? false : { opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10 max-w-3xl">
             <p className="podcast-kicker">Control room · signal one</p>
             <h2 className="mt-4 font-podcast text-5xl normal-case text-gold sm:text-7xl">Hear the engine turn over.</h2>
             <p className="mt-5 max-w-xl text-muted-foreground">A 60-second music-bed preview while the first full podcast transmission is prepared.</p>
           </motion.div>
-          <motion.div initial={reduce ? false : { opacity: 0, clipPath: "inset(0 50% 0 50%)" }} whileInView={{ opacity: 1, clipPath: "inset(0 0% 0 0%)" }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.9 }} className="podcast-console p-4 sm:p-8 lg:p-10">
+          <div className="podcast-console p-4 sm:p-8 lg:p-10">
             <audio ref={audioRef} src="/audio/lions-den-preview.mp3" preload="metadata" />
             <div className="mb-7 flex items-center justify-between border-b border-primary/25 pb-4">
               <span className="podcast-kicker">Broadcast console · LX–001</span>
@@ -208,9 +208,9 @@ function PodcastPage() {
             </div>
             <div className="mt-7">
               <div className="flex justify-between text-[0.55rem] font-bold tracking-[0.18em] text-muted-foreground uppercase"><span>Program</span><span>{Math.min(60, Math.round(progress * 0.6)).toString().padStart(2, "0")} / 60</span></div>
-              <div className="mt-2 h-1 bg-background"><div className="h-full bg-primary shadow-[0_0_10px_currentColor] transition-[width] duration-100" style={{ width: `${progress}%` }} /></div>
+              <div className="mt-2 h-1 bg-background" role="progressbar" aria-label="Preview playback progress" aria-valuemin={0} aria-valuemax={60} aria-valuenow={Math.min(60, Math.round(progress * 0.6))}><div className="h-full bg-primary shadow-[0_0_10px_currentColor] transition-[width] duration-100" style={{ width: `${progress}%` }} /></div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -248,7 +248,7 @@ function PodcastPage() {
       </section>
 
       <section className="grain relative isolate min-h-[46rem] overflow-hidden py-24 sm:min-h-[54rem] sm:py-36">
-        <motion.img initial={reduce ? false : { scale: 1.1, opacity: 0.12 }} whileInView={{ scale: 1, opacity: 0.28 }} viewport={{ once: true }} transition={{ duration: 1.5 }} src={images.studioSession} alt="Klondike Kat in the studio" loading="lazy" className="absolute inset-0 -z-30 size-full object-cover" />
+        <motion.img initial={reduce ? false : { scale: 1.1, opacity: 0.12 }} whileInView={{ scale: 1, opacity: 0.28 }} viewport={{ once: true }} transition={{ duration: 1.5 }} src={images.studioSession} alt="" loading="lazy" className="absolute inset-0 -z-30 size-full object-cover" />
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_50%_44%,transparent,var(--background)_72%)]" />
         <img src={podcastArtwork.url} alt="" loading="lazy" className="absolute left-1/2 top-1/2 -z-10 h-[85%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-15" />
         <div className="relative mx-auto flex min-h-[30rem] max-w-5xl flex-col items-center justify-center px-4 text-center sm:px-6">
