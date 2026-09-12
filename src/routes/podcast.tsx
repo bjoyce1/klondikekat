@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  ArrowDown,
   BookOpen,
   Gauge,
   Headphones,
@@ -8,9 +7,9 @@ import {
   Mic2,
   Pause,
   Play,
-  Radio,
   Volume2,
 } from "lucide-react";
+import podcastArtwork from "@/assets/lions-den-podcast.jpg.asset.json";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -141,50 +140,22 @@ function PodcastPage() {
 
   return (
     <>
-      <section className="grain relative isolate min-h-[calc(100svh-3.5rem)] overflow-hidden border-b border-border bg-background sm:min-h-[46rem]">
+      <section className="relative isolate overflow-hidden border-b border-border bg-background">
+        <h1 className="sr-only">The Lion’s Den Podcast</h1>
         <img
-          src={images.bioPortrait}
-          alt="Klondike Kat, host of The Lion’s Den Podcast"
-          className="absolute inset-0 -z-20 size-full object-cover object-[58%_center] opacity-45 sm:object-[72%_center] sm:opacity-55"
+          src={podcastArtwork.url}
+          alt="The Lion’s Den Podcast artwork featuring a roaring lion, vintage microphone, drag racing lights and a black muscle car"
+          className="absolute inset-0 -z-20 size-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--color-background)_0%,color-mix(in_oklch,var(--color-background)_88%,transparent)_42%,color-mix(in_oklch,var(--color-background)_28%,transparent)_78%,var(--color-background)_100%)]" />
-        <div className="absolute inset-x-0 bottom-0 -z-10 h-2/5 bg-[linear-gradient(to_top,var(--color-background),transparent)]" />
-
-        <div className="mx-auto grid min-h-[calc(100svh-3.5rem)] max-w-7xl content-end px-4 pt-24 pb-12 sm:min-h-[46rem] sm:grid-cols-[minmax(0,1fr)_18rem] sm:items-end sm:gap-12 sm:px-6 sm:pt-32 sm:pb-16 lg:grid-cols-[minmax(0,1fr)_24rem]">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 text-[0.65rem] font-bold tracking-[0.28em] text-primary uppercase sm:text-xs">
-              <Radio className="size-4" aria-hidden="true" />
-              A new transmission from Klondike Kat
-            </div>
-            <h1 className="mt-5 max-w-4xl text-[clamp(4rem,13vw,9.5rem)] leading-[0.78] sm:mt-7">
-              <span className="block text-foreground">The Lion’s</span>
-              <span className="block text-gold">Den</span>
-              <span className="mt-3 block text-[0.34em] leading-none text-foreground">Podcast</span>
-            </h1>
-            <p className="mt-6 font-display text-lg tracking-[0.18em] text-primary uppercase sm:text-2xl">
-              Music <span className="text-destructive">•</span> Wisdom{" "}
-              <span className="text-destructive">•</span> Horsepower
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="min-h-12 rounded-sm px-6 font-bold tracking-[0.12em] uppercase">
-                <a href="#listen">
-                  <Headphones aria-hidden="true" />
-                  Enter the Den
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="min-h-12 rounded-sm px-6 font-bold tracking-[0.12em] uppercase">
-                <a href="#transmissions">
-                  Latest transmissions
-                  <ArrowDown aria-hidden="true" />
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          <div className="mt-10 border-l-2 border-destructive pl-4 sm:mt-0 sm:mb-2">
-            <p className="text-[0.65rem] font-bold tracking-[0.2em] text-destructive uppercase">Signal status</p>
-            <p className="mt-1 font-display text-2xl text-foreground">Pre-stage</p>
-            <p className="mt-2 text-sm text-muted-foreground">The show is being tuned. First episode details coming soon.</p>
+        <div className="absolute inset-0 -z-10 bg-background/70" />
+        <div className="mx-auto flex min-h-[calc(100svh-7.25rem)] max-w-7xl items-center justify-center sm:min-h-[46rem]">
+          <div className="relative h-[calc(100svh-7.25rem)] min-h-[34rem] w-full sm:h-[46rem]">
+            <img
+              src={podcastArtwork.url}
+              alt=""
+              aria-hidden="true"
+              className="size-full object-contain"
+            />
           </div>
         </div>
       </section>
