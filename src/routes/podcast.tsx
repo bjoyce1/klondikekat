@@ -274,7 +274,7 @@ function PodcastPage() {
         <div className="absolute left-1/2 top-0 size-[44rem] -translate-x-1/2 -translate-y-1/2 text-primary/8" aria-hidden="true"><HaloRings className="size-full" /></div>
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <p className="podcast-kicker">Broadcast ledger · incoming</p>
-          <h2 className="podcast-forged-title mt-5 text-5xl sm:text-7xl">Upcoming transmissions</h2>
+          <h2 className="podcast-forged-title mt-5 text-4xl sm:text-7xl">Upcoming transmissions</h2>
           <ol className="mt-12 grid gap-6">
             {transmissions.map((item, index) => (
               <motion.li key={item.number} initial={reduce ? false : { opacity: 0, y: 28, clipPath: "inset(8% 4% 8% 4%)" }} whileInView={{ opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0%)" }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.7, delay: index * 0.08 }} className="podcast-transmission group grid gap-5 p-6 sm:grid-cols-[6rem_minmax(0,1fr)_auto] sm:items-center sm:gap-8 sm:p-9">
