@@ -216,7 +216,7 @@ function PodcastPage() {
               <p className="mt-5 max-w-md text-muted-foreground">A 60-second music-bed preview while the first full podcast transmission is prepared.</p>
             </motion.div>
             <motion.div initial={reduce ? false : { opacity: 0, y: 35 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }} className="relative border border-primary/45 bg-background p-5 shadow-[var(--glow-gold)] sm:p-8">
-              <audio ref={audioRef} src={featuredTrack?.audioUrl} preload="metadata" />
+              <audio ref={audioRef} src="/audio/lions-den-preview.mp3" preload="metadata" />
               <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
                 <span className="text-xs font-bold tracking-[0.24em] text-primary uppercase">Control room · live preview</span>
                 <Volume2 className="size-5 text-primary" aria-hidden="true" />
