@@ -48,7 +48,7 @@ export function Gear({ className = "", rotation, reverse = false }: GearProps) {
 
 export function DragTree({ active = false }: { active?: boolean }) {
   const reduce = useReducedMotion();
-  const lights = ["bg-primary/25", "bg-primary/25", "bg-primary/25", "bg-emerald-500/25"];
+  const lights = ["bg-primary/25", "bg-primary/25", "bg-primary/25", "bg-signal-green/25"];
 
   return (
     <div className="podcast-metal-panel relative w-20 px-3 py-5" aria-label="Drag racing start sequence">
