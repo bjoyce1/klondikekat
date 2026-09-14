@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { images } from "@/lib/site-data";
 import lowrider from "@/assets/hero-lowrider.png.asset.json";
 
 const marks = [

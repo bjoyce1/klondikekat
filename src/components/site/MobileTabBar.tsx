@@ -13,7 +13,7 @@ export function MobileTabBar() {
   return (
     <nav
       aria-label="Primary"
-      className="pb-safe fixed inset-x-0 bottom-0 z-50 border-t border-primary/25 bg-background/95 backdrop-blur-xl lg:hidden"
+      className="mobile-tab-bar pb-safe fixed inset-x-0 bottom-0 z-50 border-t border-primary/25 bg-background/95 backdrop-blur-xl lg:hidden"
     >
       <ul className="mx-auto flex max-w-md items-stretch justify-between px-1">
         {TABS.map(({ to, label, icon: Icon, exact }) => (

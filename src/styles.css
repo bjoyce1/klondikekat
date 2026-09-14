@@ -148,6 +148,42 @@
   }
 }
 
+@media (max-width: 639px) {
+  :root { --radius: 0.125rem; }
+
+  body { font-size: 0.9375rem; line-height: 1.55; }
+
+  .mobile-masthead {
+    border-color: color-mix(in oklab, var(--primary) 45%, var(--border));
+    background: color-mix(in oklab, var(--background) 96%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-masthead > div { height: 4.35rem; }
+  .mobile-masthead-mark { width: 1.85rem; height: 1.85rem; border: 1px solid var(--primary); background: transparent; transform: rotate(45deg); }
+  .mobile-wordmark { font-size: 1.45rem; line-height: 0.82; }
+  .mobile-wordmark > span { display: flex; flex-direction: column; }
+  .mobile-menu-trigger { border: 0; border-radius: 0; color: var(--primary); }
+  .mobile-menu-trigger svg { width: 1.85rem; height: 1.85rem; stroke-width: 2.5; }
+
+  .mobile-tab-bar {
+    background: color-mix(in oklab, var(--background) 98%, transparent);
+    box-shadow: 0 -8px 24px color-mix(in oklab, var(--background) 90%, transparent);
+  }
+
+  .mobile-tab-bar a { min-height: 3.2rem; padding-block: 0.35rem; }
+  .mobile-tab-bar a > span:nth-child(2) { width: 1.45rem; height: 1.45rem; }
+  .mobile-tab-bar svg { width: 1rem; height: 1rem; }
+  .mobile-tab-bar a > span:last-child { font-size: 0.52rem; }
+
+  footer .grain { padding-block: 2rem; gap: 1.5rem; }
+  footer .grain > div:first-child p:nth-of-type(2),
+  footer .grain > div:first-child p:nth-of-type(3),
+  footer .grain > div:first-child a { display: none; }
+  footer nav ul,
+  footer .grain > div:last-child ul { margin-top: 0.65rem; }
+}
+
 /* Film-grain overlay for photography */
 @utility grain {
   position: relative;
