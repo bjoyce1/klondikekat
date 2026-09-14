@@ -1,0 +1,431 @@
+/* THE LIVE STAGE — concert venue, tour board, ticket booth, backstage laminate. */
+.live-page {
+  --live-black: #0a0806;
+  --live-ink: #f2ead9;
+  --live-muted: #a89d89;
+  --live-gold: #d8ab5c;
+  --live-gold-bright: #f0c785;
+  --live-line: #352c1f;
+  --live-red: #c23a2d;
+  background: var(--live-black);
+  color: var(--live-ink);
+  overflow: clip;
+}
+.live-page :is(h1, h2, h3) {
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0;
+}
+.live-gold {
+  color: var(--live-gold);
+}
+.live-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font: 700 10px/1.5 "Courier New", monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--live-gold);
+}
+.live-tally {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: var(--live-red);
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--live-red) 70%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .live-tally {
+    animation: live-pulse 2.6s ease-in-out infinite;
+  }
+}
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* ---------- Hero ---------- */
+.live-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--live-line);
+}
+.live-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.live-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: brightness(0.55) saturate(1.05) contrast(1.05);
+}
+.live-hero-fog {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 100%, color-mix(in srgb, var(--live-gold) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, color-mix(in srgb, var(--live-red) 14%, transparent), transparent 70%);
+  mix-blend-mode: screen;
+}
+.live-hero-beams {
+  position: absolute;
+  inset: 0;
+  background:
+    conic-gradient(from 200deg at 30% -10%, transparent 0deg, color-mix(in srgb, var(--live-gold) 16%, transparent) 8deg, transparent 20deg, transparent 360deg),
+    conic-gradient(from 250deg at 75% -10%, transparent 0deg, color-mix(in srgb, var(--live-red) 12%, transparent) 6deg, transparent 18deg, transparent 360deg);
+  opacity: 0.8;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .live-hero-beams {
+    animation: live-sway 9s ease-in-out infinite alternate;
+  }
+}
+@keyframes live-sway {
+  from { opacity: 0.55; transform: translateX(-1%); }
+  to { opacity: 0.9; transform: translateX(1%); }
+}
+.live-hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, var(--live-black) 96%);
+}
+.live-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6.5% 64px;
+}
+.live-hero-title {
+  font-size: clamp(72px, 15vw, 190px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--live-ink);
+  text-shadow: 0 0 40px color-mix(in srgb, var(--live-gold) 45%, transparent);
+}
+.live-hero-lead {
+  margin-top: 18px;
+  max-width: 480px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--live-muted);
+}
+
+/* speaker grille texture, used sparingly on goods media */
+.live-goods-grille {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #000c 1px, transparent 1.4px);
+  background-size: 6px 6px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ---------- Show bill / tour board ---------- */
+.live-bill {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 6.5%;
+}
+.live-bill-head {
+  margin-bottom: 40px;
+}
+.live-bill-title {
+  font-size: clamp(34px, 4.4vw, 58px);
+  letter-spacing: -0.01em;
+}
+.live-bill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.live-ticket-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(100deg, #17130d, #100d09 60%);
+  border: 1px solid var(--live-line);
+  border-radius: 4px;
+  padding: 20px;
+  overflow: hidden;
+}
+.live-ticket-row::before {
+  content: "";
+  position: absolute;
+  left: 138px;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 2px dashed color-mix(in srgb, var(--live-gold) 40%, transparent);
+}
+.live-ticket-row::after {
+  content: "";
+  position: absolute;
+  left: 128px;
+  top: -10px;
+  bottom: -10px;
+  width: 20px;
+  background:
+    radial-gradient(circle, var(--live-black) 5px, transparent 5.5px) 0 -5px / 20px 20px repeat-y;
+}
+.live-ticket-stub {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 108px;
+}
+.live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--live-red);
+  color: var(--live-ink);
+  font: 700 10px/1 "Courier New", monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+  border-radius: 2px;
+}
+.live-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--live-ink);
+}
+.live-ticket-serial {
+  font: 700 9px/1.4 "Courier New", monospace;
+  letter-spacing: 0.12em;
+  color: var(--live-muted);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.live-ticket-main {
+  min-width: 0;
+}
+.live-ticket-title {
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.15;
+  color: var(--live-ink);
+}
+.live-ticket-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font: 700 10px/1.4 "Courier New", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--live-gold);
+}
+.live-ticket-detail {
+  margin-top: 8px;
+  max-width: 46ch;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--live-muted);
+}
+.live-ticket-action {
+  justify-self: end;
+}
+.live-register-btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 22px;
+  border-radius: 6px;
+  background: linear-gradient(120deg, var(--live-gold-bright), var(--live-gold) 70%);
+  color: #1a1409;
+  font: 700 11px/1 sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.live-register-btn:hover {
+  filter: brightness(1.08);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .live-register-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 720px) {
+  .live-ticket-row {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+  .live-ticket-row::before,
+  .live-ticket-row::after {
+    display: none;
+  }
+  .live-ticket-stub {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+  .live-ticket-serial {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .live-ticket-action {
+    justify-self: stretch;
+  }
+  .live-register-btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Live goods (compact) ---------- */
+.live-goods {
+  border-top: 1px solid var(--live-line);
+  border-bottom: 1px solid var(--live-line);
+  background: #0d0a07;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 6.5%;
+}
+.live-goods-head {
+  margin-bottom: 32px;
+}
+.live-goods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.live-goods-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--live-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #120e09;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.live-goods-card:hover {
+  border-color: color-mix(in srgb, var(--live-gold) 55%, transparent);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .live-goods-card:hover {
+    transform: translateY(-3px);
+  }
+}
+.live-goods-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #000;
+}
+.live-goods-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.live-goods-body {
+  padding: 16px;
+}
+.live-goods-name {
+  font-size: 18px;
+  color: var(--live-ink);
+}
+.live-goods-blurb {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--live-muted);
+}
+.live-goods-price {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--live-gold);
+}
+@media (min-width: 640px) {
+  .live-goods-grid {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+  }
+}
+
+/* ---------- Promoter CTA / backstage laminate ---------- */
+.live-promo {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 6.5% 96px;
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+.live-promo-lead {
+  margin-top: 18px;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--live-muted);
+}
+.live-promo-btn {
+  margin-top: 28px;
+}
+.live-promo-media {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--live-line);
+  box-shadow: 0 30px 60px #000a;
+}
+.live-promo-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.05);
+}
+.live-promo-laminate {
+  position: absolute;
+  top: 18px;
+  right: -34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transform: rotate(30deg);
+  background: linear-gradient(120deg, var(--live-gold-bright), var(--live-gold));
+  color: #1a1409;
+  padding: 6px 44px;
+  font: 700 10px/1 "Courier New", monospace;
+  letter-spacing: 0.16em;
+  box-shadow: 0 6px 14px #0007;
+}
+.live-promo-laminate .live-tally {
+  background: var(--live-red);
+}
+
+@media (min-width: 900px) {
+  .live-promo {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-goods-grid {
+    grid-template-columns: 1fr;
+  }
+}

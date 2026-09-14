@@ -49,11 +49,5 @@ export function MobileTabBar() {
         ))}
       </ul>
     </nav>
-
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
   );
 }
