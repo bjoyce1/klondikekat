@@ -2,11 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import albumDiamondDre from "@/assets/album-diamond-dre.jpg.asset.json";
 import lionsDenPodcast from "@/assets/lions-den-podcast.jpg.asset.json";
 import merchHoodie from "@/assets/merch-hoodie.jpg.asset.json";
 import festival from "@/assets/festival.jpg.asset.json";
 import bioPortrait from "@/assets/bio-portrait.jpg.asset.json";
+import { mobManuscript } from "@/lib/site-data";
 
 type Gate = {
   key: string;
@@ -24,9 +24,9 @@ const gates: Gate[] = [
     to: "/music",
     eyebrow: "The Vault",
     title: "Music",
-    copy: "Three decades of catalog — albums, singles and the current Diamond Dre run.",
-    image: albumDiamondDre.url,
-    alt: "Cover artwork for the Exclusive Diamond Dre Album",
+    copy: "Three decades of catalog — now featuring the Mob Manuscript full album.",
+    image: mobManuscript.image,
+    alt: "Gold lion artwork for the Mob Manuscript album by Klondike Kat",
   },
   {
     key: "podcast",

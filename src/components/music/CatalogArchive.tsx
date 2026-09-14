@@ -6,7 +6,7 @@ import { ArchiveArrow, SectionMark } from "./MusicDetails";
 export function CatalogArchive() {
   return (
     <section className="mv-catalog mv-section" id="music-catalog" aria-labelledby="catalog-title">
-      <SectionMark number="01">THE ALBUM ARCHIVE</SectionMark>
+      <SectionMark number="02">THE ALBUM ARCHIVE</SectionMark>
       <div className="mv-section-heading">
         <h2 id="catalog-title">
           EVERY RECORD.
