@@ -1,0 +1,198 @@
+/* Home Command Center — cinematic front door. Namespaced hc- (home command). */
+
+.hc-page {
+  --hc-gold: oklch(0.795 0.148 79);
+  --hc-gold-bright: oklch(0.86 0.15 85);
+  overflow-x: clip;
+}
+
+/* ---------- Hero ---------- */
+.hc-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hc-hero-media {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 640px) {
+  .hc-hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+  }
+}
+
+.hc-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    var(--background) 0%,
+    color-mix(in oklab, var(--background) 78%, transparent) 42%,
+    color-mix(in oklab, var(--background) 15%, transparent) 75%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 639px) {
+  .hc-hero-scrim {
+    display: none;
+  }
+}
+
+.hc-hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 70% 55% at 78% 15%,
+    color-mix(in oklab, var(--hc-gold) 22%, transparent) 0%,
+    transparent 60%
+  );
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hc-hero-glow {
+    animation: hc-glow-breathe 9s ease-in-out infinite;
+  }
+}
+
+@keyframes hc-glow-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+.hc-signal-line {
+  position: relative;
+  display: block;
+  height: 2px;
+  width: 3.25rem;
+  background: linear-gradient(90deg, var(--hc-gold), transparent);
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hc-signal-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, var(--hc-gold-bright), transparent);
+    animation: hc-signal-sweep 3.2s ease-in-out infinite;
+  }
+}
+
+@keyframes hc-signal-sweep {
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(220%); }
+}
+
+/* ---------- World Gateway ---------- */
+.hc-gate-grid {
+  display: grid;
+  gap: 0.875rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .hc-gate-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(220px, auto));
+    gap: 1rem;
+  }
+  .hc-gate--music { grid-column: span 3; grid-row: span 2; }
+  .hc-gate--podcast { grid-column: span 3; grid-row: span 1; }
+  .hc-gate--shop { grid-column: span 3; grid-row: span 1; }
+  .hc-gate--live { grid-column: span 2; grid-row: span 1; }
+  .hc-gate--legacy { grid-column: span 4; grid-row: span 1; }
+}
+
+.hc-gate {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-height: 200px;
+  border-radius: var(--radius-sm);
+}
+
+.hc-gate-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hc-gate:hover .hc-gate-img {
+  transform: scale(1.05);
+}
+
+.hc-gate-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--background) 92%, transparent) 0%,
+    color-mix(in oklab, var(--background) 45%, transparent) 55%,
+    color-mix(in oklab, var(--background) 5%, transparent) 100%
+  );
+}
+
+.hc-gate-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  min-height: 200px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .hc-gate-body { padding: 1.75rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hc-gate-img { will-change: transform; }
+}
+
+/* ---------- Legacy strip ---------- */
+.hc-legacy-marks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hc-legacy-mark {
+  min-width: 6rem;
+}
+
+/* ---------- Store preview ---------- */
+.hc-store-rail {
+  scroll-snap-type: x mandatory;
+}
+
+.hc-store-rail > * {
+  scroll-snap-align: start;
+}
+
+/* ---------- Live & Work ---------- */
+.hc-panel {
+  position: relative;
+  overflow: hidden;
+}

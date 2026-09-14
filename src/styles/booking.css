@@ -1,0 +1,150 @@
+/* The Booking Desk: control-room atmosphere via brushed metal, faders, VU cues, patch bay. Namespaced .booking-*. */
+
+.booking-hero {
+  min-height: 22rem;
+}
+
+.booking-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.booking-hero__bg img {
+  filter: grayscale(0.35) contrast(1.05) brightness(0.55);
+}
+
+.booking-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-background) 55%, transparent) 0%, var(--color-background) 92%),
+    linear-gradient(90deg, var(--color-background) 0%, transparent 30%, transparent 70%, var(--color-background) 100%);
+}
+
+.booking-hero__rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-primary) 55%, transparent) 0 2px,
+    transparent 2px 22px
+  );
+  opacity: 0.35;
+}
+
+.booking-hero__rail--top {
+  top: 0;
+}
+
+.booking-hero__rail--bottom {
+  bottom: 0;
+}
+
+.booking-cats__dot {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* Service panels: metal rack module styling */
+.booking-panel {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 92%, white 8%) 0%, var(--color-surface) 100%);
+  position: relative;
+}
+
+.booking-panel__head {
+  background: color-mix(in srgb, var(--color-background) 70%, black 10%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.booking-panel__tag {
+  font-family: "Courier New", monospace;
+}
+
+.booking-panel__screws {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.booking-panel__screws i {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, color-mix(in srgb, var(--color-foreground) 55%, transparent), var(--color-border) 70%);
+}
+
+.booking-panel__vu {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 22px;
+  pointer-events: none;
+}
+
+.booking-panel__vu i {
+  display: block;
+  width: 3px;
+  border-radius: 1px;
+  background: var(--color-primary);
+  opacity: 0.85;
+  animation: booking-vu-bounce 1.8s ease-in-out infinite;
+}
+
+.booking-panel__vu i:nth-child(1) { height: 40%; animation-delay: 0s; }
+.booking-panel__vu i:nth-child(2) { height: 70%; animation-delay: 0.15s; }
+.booking-panel__vu i:nth-child(3) { height: 100%; animation-delay: 0.3s; }
+.booking-panel__vu i:nth-child(4) { height: 55%; animation-delay: 0.45s; }
+.booking-panel__vu i:nth-child(5) { height: 30%; animation-delay: 0.6s; }
+
+@keyframes booking-vu-bounce {
+  0%, 100% { transform: scaleY(0.5); opacity: 0.55; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* Process / signal chain fader marks */
+.booking-process__fader {
+  margin-top: 0.5rem;
+  width: 2px;
+  height: 2.5rem;
+  background: var(--color-border);
+  position: relative;
+}
+
+.booking-process__fader i {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 14px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 80%, white 10%), var(--color-primary));
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+}
+
+.booking-process__step:nth-child(2) .booking-process__fader i { top: 55%; }
+.booking-process__step:nth-child(3) .booking-process__fader i { top: 78%; }
+
+/* Pathways: patch bay jack cue */
+.booking-pathway__jack {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-bottom: 0.75rem;
+  background: radial-gradient(circle at 35% 35%, color-mix(in srgb, var(--color-primary) 70%, white 20%), var(--color-primary) 65%, color-mix(in srgb, var(--color-primary) 40%, black 30%) 100%);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-border) 70%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-panel__vu i {
+    animation: none;
+    transform: scaleY(0.8);
+  }
+}

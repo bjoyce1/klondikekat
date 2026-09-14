@@ -1,5 +1,10 @@
 # Roadmap
 
-- [x] Rebuild `/podcast` from the Lion’s Den artwork visual system.
-- [x] Remove every motorcycle reference and replace the automotive chapter with muscle-car imagery.
-- [x] Verify desktop, mobile, audio playback, reduced motion, overflow, console output, and production build.
+- [x] Music vault, Podcast (Lion's Den), Shop flagship
+- [x] Home command center
+- [x] Bio documentary archive
+- [x] Videos screening room
+- [x] Events live stage
+- [x] Booking studio desk
+- [x] Header / Footer / MobileTabBar premium pass
+- [ ] Visual QA in a real browser (sandbox browser unavailable this session)
