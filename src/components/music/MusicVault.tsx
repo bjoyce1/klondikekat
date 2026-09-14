@@ -3,7 +3,6 @@ import { Link } from "@tanstack/react-router";
 import { newSingles } from "@/lib/site-data";
 import { useMusicMotion } from "@/hooks/useMusicMotion";
 import { MusicVaultHero } from "./MusicVaultHero";
-import { MobManuscriptFeature } from "./MobManuscriptFeature";
 import { CatalogArchive } from "./CatalogArchive";
 import { DiamondDreFeature } from "./DiamondDreFeature";
 import { MusicSingles } from "./MusicSingles";
@@ -15,7 +14,6 @@ export function MusicVault() {
   return (
     <div className="mv-page" ref={root}>
       <MusicVaultHero />
-      <MobManuscriptFeature />
       <CatalogArchive />
       <DiamondDreFeature />
       <MusicSingles singles={newSingles} />

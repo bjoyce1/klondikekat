@@ -8,7 +8,7 @@ export function DiamondDreFeature() {
     <section className="mv-diamond" id="music-diamond" aria-labelledby="diamond-title">
       <div className="mv-diamond-inner">
         <div className="mv-diamond-art" data-reveal>
-      <SectionMark number="03">FEATURED PROJECT</SectionMark>
+          <SectionMark number="02">FEATURED PROJECT</SectionMark>
           <div className="mv-diamond-sleeve">
             <img
               src={diamondDre.image}

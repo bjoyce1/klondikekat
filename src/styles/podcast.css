@@ -58,14 +58,6 @@
   }
 }
 
-@media (max-width: 639px) {
-  .ld-page { overflow-x: clip; }
-  .ld-section { padding-inline: 1rem; }
-  .ld-hero { min-height: 43rem; padding-inline: 1rem; }
-  .ld-button { min-height: 2.75rem; border-radius: 0; }
-  .ld-broadcast-console { border-radius: 0; }
-}
-
 .ld-page {
   --gold: #d5a350;
   --gold-light: #f1c97f;

@@ -23,7 +23,7 @@ export function MusicSingles({ singles }: { singles: NewSingle[] }) {
       id="music-singles"
       aria-labelledby="singles-title"
     >
-      <SectionMark number="04">NEW SINGLES / THE NEXT CHAPTER</SectionMark>
+      <SectionMark number="03">NEW SINGLES / THE NEXT CHAPTER</SectionMark>
       <div className="mv-section-heading">
         <h2 id="singles-title">
           NEW

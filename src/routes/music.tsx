@@ -9,13 +9,13 @@ export const Route = createFileRoute("/music")({
       { title: "Music & Discography | Klondike Kat" },
       {
         name: "description",
-        content: `Klondike Kat's discography featuring the Mob Manuscript full album, The Lyrical Lion, Mobbin' Muzik Melodies, Biography Of A Made Man and the Exclusive Diamond Dre album with ${diamondDre.tracks.length} exclusive tracks.`,
+        content: `Klondike Kat's discography: The Lyrical Lion (1993), Mobbin' Muzik Melodies (1997), Biography Of A Made Man and the Exclusive Diamond Dre album with ${diamondDre.tracks.length} exclusive tracks.`,
       },
       { property: "og:title", content: "Music & Discography | Klondike Kat" },
       {
         property: "og:description",
         content:
-          "Mob Manuscript and three decades of Houston underground rap. Albums, EPs and exclusive singles.",
+          "Three decades of Houston underground rap. Albums, EPs and the latest exclusive singles.",
       },
     ],
     links: [
