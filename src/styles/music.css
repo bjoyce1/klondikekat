@@ -1260,7 +1260,7 @@
 }
 @media (max-width: 1023px) {
   .mv-dock {
-    bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--mobile-tabbar-offset) + 0.65rem);
   }
   .mv-page[data-player-open] {
     padding-bottom: 160px;
@@ -1548,6 +1548,13 @@
   }
 }
 @media (max-width: 600px) {
+  .mv-section { padding-block: 3.25rem; }
+  .mv-section-heading { margin-bottom: 2rem; }
+  .mv-section-heading h2 { font-size: clamp(2.6rem, 14vw, 4.5rem); }
+  .mv-release { gap: 1.1rem; padding-block: 1.35rem; }
+  .mv-singles-grid { gap: 1.5rem 0.8rem; }
+  .mv-single h3 { font-size: clamp(1.25rem, 6vw, 1.8rem); }
+  .mv-dock { width: calc(100% - 1rem); border-radius: 0; }
   .mv-page :is(section[id], article[id]) {
     scroll-margin-top: 78px;
   }

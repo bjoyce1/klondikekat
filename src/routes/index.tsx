@@ -6,6 +6,9 @@ import { FeaturedRelease } from "@/components/home/FeaturedRelease";
 import { LegacyPreview } from "@/components/home/LegacyPreview";
 import { HomeStore } from "@/components/home/HomeStore";
 import { LiveAndWork } from "@/components/home/LiveAndWork";
+import { MobileDestinationNav } from "@/components/home/MobileDestinationNav";
+import { MobileLatestMusic } from "@/components/home/MobileLatestMusic";
+import { MobileBookingBanner } from "@/components/home/MobileBookingBanner";
 import { site } from "@/lib/site-data";
 import homeCss from "@/styles/home.css?url";
 
@@ -55,12 +58,15 @@ function Home() {
   return (
     <div className="hc-page">
       <HomeHero />
+      <MobileDestinationNav />
       <Marquee />
+      <LegacyPreview />
+      <MobileLatestMusic />
       <WorldGateway />
       <FeaturedRelease />
-      <LegacyPreview />
       <HomeStore />
       <LiveAndWork />
+      <MobileBookingBanner />
     </div>
   );
 }

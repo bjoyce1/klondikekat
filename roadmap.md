@@ -7,7 +7,8 @@
 - [x] Events live stage
 - [x] Booking studio desk
 - [x] Header / Footer / MobileTabBar premium pass
-- [ ] Visual QA in a real browser (sandbox browser unavailable this session)
+- [ ] Visual QA in a real browser — blocked by the sandbox browser's missing system library
 
-- [ ] Mobile-only black/gold editorial redesign across all routes
-- [ ] Mobile responsive and fixed-control verification
+- [x] Mobile-only black/gold editorial redesign across all routes
+- [x] Mobile responsive and fixed-control code/build verification
+- [ ] Mobile screenshot verification at 360/390/430/768px — blocked by the sandbox browser's missing system library

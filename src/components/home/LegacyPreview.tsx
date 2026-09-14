@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { images } from "@/lib/site-data";
+import lowrider from "@/assets/hero-lowrider.png.asset.json";
 
 const marks = [
   { year: "1992", label: "Joined the South Park Coalition" },
@@ -11,10 +11,11 @@ const marks = [
 
 export function LegacyPreview() {
   return (
-    <section className="border-y border-border bg-surface">
+    <section className="hc-legacy border-y border-border bg-surface">
       <Reveal className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 sm:py-20 lg:grid-cols-[1fr_minmax(0,460px)] lg:items-center lg:gap-16">
         <div>
           <SectionHeading eyebrow="The history" title="Thirty years deep" />
+          <h2 className="hc-mobile-legacy-title">The legacy</h2>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Klondike Kat debuted in 1993 with "The Lyrical Lion," home of the classic S.P.C. click
             record "Murder Script." He joined the South Park Coalition in 1992 and has been one of
@@ -36,10 +37,10 @@ export function LegacyPreview() {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
-        <div className="grain media-zoom card-elevated rounded-sm">
+        <div className="hc-legacy-image grain media-zoom card-elevated rounded-sm">
           <img
-            src={images.bioPortrait}
-            alt="Portrait of Klondike Kat"
+            src={lowrider.url}
+            alt="Klondike Kat beside a blue Cadillac lowrider in Houston"
             loading="lazy"
             className="aspect-[4/5] w-full object-cover"
           />

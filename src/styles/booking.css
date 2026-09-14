@@ -148,3 +148,11 @@
     transform: scaleY(0.8);
   }
 }
+
+@media (max-width: 639px) {
+  .booking-hero { min-height: 30rem; }
+  .booking-panel { border-radius: 0; }
+  .booking-panel__head { padding-block: 0.75rem; }
+  .booking-process__step { min-height: 6rem; }
+  .booking-pathway__jack { margin-bottom: 0.45rem; }
+}

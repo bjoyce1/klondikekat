@@ -60,7 +60,7 @@ export function Header() {
     <>
       <header
         data-scrolled={scrolled || undefined}
-        className="pt-safe sticky top-0 z-50 border-b border-transparent bg-background/40 backdrop-blur-xl transition-[background-color,border-color] duration-300 data-[scrolled]:border-primary/25 data-[scrolled]:bg-background/95"
+        className="mobile-masthead pt-safe sticky top-0 z-50 border-b border-transparent bg-background/40 backdrop-blur-xl transition-[background-color,border-color] duration-300 data-[scrolled]:border-primary/25 data-[scrolled]:bg-background/95"
       >
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
           <Link
@@ -68,13 +68,13 @@ export function Header() {
             className="tap-none group flex min-h-11 min-w-0 items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
-            <span className="inline-block size-2.5 shrink-0 rotate-45 bg-primary transition-transform duration-300 group-hover:rotate-[135deg]" />
+            <span className="mobile-masthead-mark inline-block size-2.5 shrink-0 rotate-45 bg-primary transition-transform duration-300 group-hover:rotate-[135deg]" />
             <span className="flex min-w-0 flex-col justify-center leading-none">
-              <span className="truncate font-display text-lg leading-none tracking-wide sm:text-2xl">
-                <span className="text-gold">Klondike Kat</span>
+              <span className="mobile-wordmark truncate font-display text-lg leading-none tracking-wide sm:text-2xl">
+                <span className="text-gold"><span>Klondike</span> <span>Kat</span></span>
               </span>
               <span className="mt-1 hidden text-[0.6rem] font-bold tracking-[0.34em] text-muted-foreground uppercase sm:block">
-                The Lyrical Lion
+                Houston hip-hop legend
               </span>
             </span>
           </Link>
@@ -113,7 +113,7 @@ export function Header() {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
-            className="tap-none inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-border text-foreground transition-colors duration-200 hover:border-primary hover:text-primary lg:hidden"
+            className="mobile-menu-trigger tap-none inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border border-border text-foreground transition-colors duration-200 hover:border-primary hover:text-primary lg:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
