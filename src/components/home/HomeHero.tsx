@@ -1,20 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play } from "lucide-react";
-import heroBg from "@/assets/hero-lowrider.png.asset.json";
-import { images, mobManuscript } from "@/lib/site-data";
+import heroBg from "@/assets/klondike-kat-hero-section.png.asset.json";
+import { mobManuscript } from "@/lib/site-data";
 
 export function HomeHero() {
   return (
     <section className="hc-hero border-b border-border">
       <img
         src={heroBg.url}
-        alt="Klondike Kat standing beside a blue Cadillac lowrider at sunset"
+        alt="Gold lowrider in front of the South Park Houston monument"
         fetchPriority="high"
         className="hc-hero-media"
       />
       <img
-        src={images.hero}
-        alt="Portrait of Klondike Kat in the studio"
+        src={heroBg.url}
+        alt="Gold lowrider in front of the South Park Houston monument"
         fetchPriority="high"
         className="hc-hero-mobile-portrait"
       />
