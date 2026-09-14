@@ -9,6 +9,7 @@ import { LiveAndWork } from "@/components/home/LiveAndWork";
 import { MobileDestinationNav } from "@/components/home/MobileDestinationNav";
 import { MobileLatestMusic } from "@/components/home/MobileLatestMusic";
 import { MobileBookingBanner } from "@/components/home/MobileBookingBanner";
+import { MobilePortals } from "@/components/home/MobilePortals";
 import { site } from "@/lib/site-data";
 import homeCss from "@/styles/home.css?url";
 
@@ -62,6 +63,7 @@ function Home() {
       <Marquee />
       <LegacyPreview />
       <MobileLatestMusic />
+      <MobilePortals />
       <WorldGateway />
       <FeaturedRelease />
       <HomeStore />

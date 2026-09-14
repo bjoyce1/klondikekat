@@ -160,10 +160,11 @@
     backdrop-filter: blur(10px);
   }
 
-  .mobile-masthead > div { height: 4.35rem; }
-  .mobile-masthead-mark { width: 1.85rem; height: 1.85rem; border: 1px solid var(--primary); background: transparent; transform: rotate(45deg); }
-  .mobile-wordmark { font-size: 1.45rem; line-height: 0.82; }
+  .mobile-masthead > div { height: 4.7rem; }
+  .mobile-masthead-mark { width: 2.15rem; height: 2.15rem; border: 1px solid var(--primary); background: transparent; transform: rotate(45deg); box-shadow: inset 0 0 0 4px var(--background); }
+  .mobile-wordmark { font-size: 1.62rem; line-height: 0.78; }
   .mobile-wordmark > span { display: flex; flex-direction: column; }
+  .mobile-wordmark + span { display: block; margin-top: 0.35rem; font-size: 0.5rem; letter-spacing: 0.18em; }
   .mobile-menu-trigger { border: 0; border-radius: 0; color: var(--primary); }
   .mobile-menu-trigger svg { width: 1.85rem; height: 1.85rem; stroke-width: 2.5; }
 

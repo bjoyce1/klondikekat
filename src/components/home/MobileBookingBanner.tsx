@@ -10,7 +10,7 @@ export function MobileBookingBanner() {
       <div className="hc-mobile-booking-copy">
         <p>Bookings &amp; studio</p>
         <h2>Book Klondike Kat</h2>
-        <span>Performances · Features · Production</span>
+        <span>Features · Performances · Production</span>
         <Link to="/booking">
           Start a booking <ArrowRight aria-hidden="true" />
         </Link>
