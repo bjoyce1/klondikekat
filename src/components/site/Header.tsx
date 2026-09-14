@@ -68,6 +68,12 @@ export function Header() {
             className="tap-none group flex min-h-11 min-w-0 items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
+            <img
+              src="/favicon.png"
+              alt=""
+              aria-hidden="true"
+              className="mobile-masthead-crest hidden shrink-0"
+            />
             <span className="mobile-masthead-mark inline-block size-2.5 shrink-0 rotate-45 bg-primary transition-transform duration-300 group-hover:rotate-[135deg]" />
             <span className="flex min-w-0 flex-col justify-center leading-none">
               <span className="mobile-wordmark truncate font-display text-lg leading-none tracking-wide sm:text-2xl">

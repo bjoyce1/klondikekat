@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play } from "lucide-react";
 import heroBg from "@/assets/hero-lowrider.png.asset.json";
-import { images } from "@/lib/site-data";
+import { images, mobManuscript } from "@/lib/site-data";
 
 export function HomeHero() {
   return (
@@ -29,11 +29,33 @@ export function HomeHero() {
         <h1 className="hc-desktop-hero-title mt-3 font-display text-[2.5rem] leading-[0.95] tracking-[0.02em] text-foreground sm:mt-4 sm:text-7xl lg:text-8xl">
           Klondike Kat
         </h1>
-        <div className="hc-mobile-hero-title" aria-hidden="true">
-          <span>The voice.</span>
-          <span>The legacy.</span>
-          <span>The lion.</span>
+        <div className="hc-mobile-feature">
+          <p>Featured project</p>
+          <h2>
+            Mob
+            <span>Manuscript.</span>
+          </h2>
+          <span className="hc-mobile-feature-line">The new full album</span>
+          <Link
+            to="/music"
+            hash="music-mob-manuscript"
+            className="tap-none hc-mobile-feature-action"
+          >
+            Explore album
+            <ArrowRight aria-hidden="true" />
+          </Link>
         </div>
+        <Link
+          to="/music"
+          hash="music-mob-manuscript"
+          className="hc-mobile-album-art"
+          aria-label="Explore the Mob Manuscript album"
+        >
+          <img src={mobManuscript.image} alt="Mob Manuscript album cover" fetchPriority="high" />
+        </Link>
+        <p className="hc-mobile-hero-tagline" aria-hidden="true">
+          The voice. The legacy. <span>The lion.</span>
+        </p>
         <p className="mt-2 font-display text-lg tracking-[0.3em] text-gold uppercase sm:mt-3 sm:text-2xl sm:tracking-[0.4em]">
           The Lyrical Lion
         </p>

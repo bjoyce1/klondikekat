@@ -161,7 +161,8 @@
   }
 
   .mobile-masthead > div { height: 4.7rem; }
-  .mobile-masthead-mark { width: 2.15rem; height: 2.15rem; border: 1px solid var(--primary); background: transparent; transform: rotate(45deg); box-shadow: inset 0 0 0 4px var(--background); }
+  .mobile-masthead-crest { display: block; width: 3.25rem; height: 3.25rem; object-fit: contain; }
+  .mobile-masthead-mark { display: none; }
   .mobile-wordmark { font-size: 1.62rem; line-height: 0.78; }
   .mobile-wordmark > span { display: flex; flex-direction: column; }
   .mobile-wordmark + span { display: block; margin-top: 0.35rem; font-size: 0.5rem; letter-spacing: 0.18em; }
