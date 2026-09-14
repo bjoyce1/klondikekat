@@ -1,31 +1,18 @@
-# Lion’s Den Artwork-Led Podcast Rebuild
+# Mobile Editorial Redesign
 
-## Direction
-- Rebuild only `/podcast` so the supplied Lion’s Den artwork defines every section, surface, transition, and interaction.
-- Preserve the existing route, navigation, footer, metadata, structured data, canonical URL, and working 60-second preview.
-- Remove the motorcycle component, imports, motion values, and related styling completely.
+## Goal
+Translate the supplied mobile reference into an intentional black-and-gold Klondike Kat experience while preserving the existing premium desktop site.
 
-## Page experience
-- Turn the opening into a restrained title sequence: recognizable uncropped artwork, lion depth, localized eye glow, traced fire-ring arcs, smoke, embers, red signal line, and a branded scroll cue.
-- Replace the generic progress gauge with a drag-racing PRE-STAGE / STAGE chapter navigator: vertical on desktop and compact horizontal on mobile.
-- Recompose Music, Wisdom, and Horsepower as three forged badge chapters with artwork-specific microphone, lion/halo, and automotive instrumentation motifs.
-- Rebuild the player as a vintage microphone and broadcast console with grille ribs, engraved labels, illuminated signal lamps, VU meters, waveform, hardware controls, and accessible playback progress.
-- Replace the motorcycle scene with a low, wide muscle-car sequence using a detailed vector silhouette, hood scoop, grille, headlights, chrome trim, wheel details, smoke, asphalt reflection, speed lines, and scroll-driven tachometer motion.
-- Add an atmospheric Houston skyline and reflected city lights as the transition into the automotive chapter.
-- Present upcoming transmissions as beveled shield/plaque entries while preserving only the existing honest coming-soon copy.
-- Close with the lion, halo, microphone, and shield language so “Join the Pride” feels like the final title card from the same artwork.
-
-## Motion and accessibility
-- Drive ring traces, section progress, lion depth, waveform amplitude, car movement, headlights, and tachometer response from scroll or section visibility.
-- Animate VU needles only during playback and keep all controls keyboard-accessible with clear labels and focus states.
-- Pause or avoid perpetual heavy effects offscreen; provide a complete reduced-motion treatment with the same hierarchy and content.
-- Simplify layered motion on mobile, preserve the artwork without awkward cropping, clear the bottom navigation, and prevent horizontal overflow.
+## Build
+- Refine the mobile masthead and full-screen menu around the existing wordmark, with a compact gold/black treatment and safe-area support.
+- Recompose Home most closely to the reference: portrait-led editorial hero, five-icon destination strip, framed South Park legacy feature, two-column music shelf, visual portal modules, and booking banner.
+- Adapt Music, Podcast, Shop, Videos, Bio, Events, and Booking for denser mobile reading, strong imagery, square-edged framed modules, compact uppercase actions, and route-specific identities.
+- Keep album art two columns at phone width, introducing more columns only when space allows.
+- Reuse only existing official artwork and photography; do not fabricate a crest, wordmark, lowrider graphic, products, dates, or content.
+- Resolve fixed-control stacking among the mobile tab bar, music player, shop buy bar, and podcast controls.
 
 ## Technical details
-- Refactor `src/routes/podcast.tsx`, `src/components/site/PodcastMachinery.tsx`, and podcast-specific rules in `src/styles.css`.
-- Use React Motion, semantic design tokens, CSS, and lightweight SVG only; no 3D runtime.
-- Keep typography limited to a forged display face, condensed industrial labels, and the existing readable body family.
-
-## Verification
-- Verify desktop and mobile composition, sticky chapter navigation, scroll-linked effects, audio play/pause and 60-second limit, and reduced-motion behavior.
-- Check artwork framing, control visibility, horizontal overflow, console/runtime errors, and the production build.
+- Limit the redesign to responsive styles and focused presentation components; desktop behavior remains unchanged above mobile/tablet breakpoints.
+- Add shared mobile design tokens and utilities for gold rules, compact spacing, framed modules, buttons, and safe areas.
+- Preserve semantic headings, accessible labels, 44px touch targets, reduced-motion behavior, image focal positioning, and lazy loading.
+- Verify all main routes plus product and Diamond Dre pages at phone/tablet widths, then run TypeScript and production builds.
