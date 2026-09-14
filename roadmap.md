@@ -12,3 +12,4 @@
 - [x] Mobile-only black/gold editorial redesign across all routes
 - [x] Mobile responsive and fixed-control code/build verification
 - [ ] Mobile screenshot verification at 360/390/430/768px — blocked by the sandbox browser's missing system library
+- [x] Match the mobile homepage reference and feature Mob Manuscript in the hero

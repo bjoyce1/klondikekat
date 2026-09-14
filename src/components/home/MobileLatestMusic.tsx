@@ -18,7 +18,12 @@ export function MobileLatestMusic() {
       </div>
       <div className="hc-mobile-music-grid">
         {music.map((release) => (
-          <Link key={release.title} to="/music" className="hc-mobile-release">
+          <Link
+            key={release.title}
+            to="/music"
+            hash={release.title === mobManuscript.title ? "music-mob-manuscript" : "music-catalog"}
+            className="hc-mobile-release"
+          >
             <span className="hc-mobile-release-art">
               <img src={release.image} alt={`${release.title} cover artwork`} loading="lazy" />
               <span className="hc-mobile-play" aria-hidden="true">
