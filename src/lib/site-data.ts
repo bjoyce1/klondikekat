@@ -20,6 +20,7 @@ import artForever from "@/assets/Forever.webp.asset.json";
 import artGunSmoke from "@/assets/Gun_Smoke.webp.asset.json";
 import artHeavyweight from "@/assets/Heavyweight.webp.asset.json";
 import artMobManuscript from "@/assets/Mob_Manuscript.webp.asset.json";
+import mobManuscriptAlbum from "@/assets/mob-manuscript-album.png.asset.json";
 import artOG from "@/assets/OG.webp.asset.json";
 import artRememberMe from "@/assets/Remember_Me.webp.asset.json";
 import artRideLikeTheWind from "@/assets/Ride_Like_The_Wind.webp.asset.json";
@@ -102,6 +103,15 @@ export const diamondDre = {
     { title: "Don't Cha", externalUrl: `${P}/copy-of-copy-of-exclusive-diamond-dre-album` },
     { title: "Everything", externalUrl: `${P}/copy-of-exclusive-diamond-dre-album` },
   ] as BundleTrack[],
+};
+
+export const mobManuscript = {
+  title: "Mob Manuscript",
+  artist: "Klondike Kat",
+  image: mobManuscriptAlbum.url,
+  leadSingle: "Mob Manuscript: The Return",
+  audioUrl: audioTheReturn.url,
+  note: "The full album from Klondike Kat. Official artwork revealed; music and release details are coming next.",
 };
 
 /** Retired listings now folded into the Diamond Dre bundle page. */

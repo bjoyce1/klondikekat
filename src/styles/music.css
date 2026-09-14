@@ -380,6 +380,69 @@
   height: 23px;
 }
 
+/* Mob Manuscript: the new full album enters as a tall, heraldic reveal. */
+.mv-mob {
+  border-block: 1px solid var(--mv-line);
+  background:
+    radial-gradient(circle at 23% 45%, #c7a05a20, transparent 35%),
+    linear-gradient(115deg, #11100d, #080808);
+}
+.mv-mob-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) 1.18fr;
+  gap: clamp(50px, 8vw, 110px);
+  align-items: center;
+  max-width: 1160px;
+  margin: 52px auto 0;
+}
+.mv-mob-art {
+  position: relative;
+  padding: 8px;
+  border: 1px solid #8a7044;
+  background: #12110e;
+  box-shadow: 0 28px 60px #000a, inset 0 0 0 2px #2b261a;
+}
+.mv-mob-art img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+}
+.mv-mob-art figcaption {
+  padding: 13px 5px 5px;
+  color: var(--mv-muted);
+  font: 700 8px/1.5 "Courier New", monospace;
+  letter-spacing: 0.13em;
+}
+.mv-mob-copy h2 {
+  margin: 18px 0 24px;
+  font-size: clamp(62px, 7vw, 104px);
+  line-height: 0.92;
+}
+.mv-mob-copy > p {
+  max-width: 560px;
+  color: var(--mv-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.mv-mob-signal {
+  display: grid;
+  gap: 8px;
+  margin: 34px 0 26px;
+  border-block: 1px solid var(--mv-line);
+  padding: 18px 0;
+}
+.mv-mob-signal strong {
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .mv-mob-grid { grid-template-columns: 1fr; gap: 40px; margin-top: 34px; }
+  .mv-mob-art { width: min(100%, 390px); margin-inline: auto; }
+  .mv-mob-copy h2 { font-size: clamp(54px, 18vw, 78px); }
+}
+
 /* Chronological shelf. The purchase is a quiet annotation to the record. */
 .mv-catalog {
   border-top: 1px solid var(--mv-line);
