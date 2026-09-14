@@ -628,3 +628,20 @@
   color: var(--color-primary);
   background: transparent;
 }
+
+@media (max-width: 639px) {
+  .bio-page { overflow-x: clip; }
+  .bio-hero { min-height: 35rem; }
+  .bio-hero-frame { inset: 0.75rem; }
+  .bio-hero-title { font-size: clamp(3.2rem, 16vw, 5rem); }
+  .bio-chapters,
+  .bio-timeline,
+  .bio-affiliations,
+  .bio-ledger { padding-block: 3rem; }
+  .bio-section-title { font-size: clamp(2.1rem, 11vw, 3.2rem); }
+  .bio-chapter { padding: 1.1rem; border-radius: 0; }
+  .bio-timeline-card { border-radius: 0; }
+  .bio-stamp { padding: 1rem 0.5rem; }
+  .bio-ledger-row { grid-template-columns: 1.8rem minmax(0, 1fr) 3.2rem; gap: 0.45rem; }
+  .bio-ledger-media img { width: 2.75rem; height: 2.75rem; }
+}

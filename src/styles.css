@@ -48,6 +48,7 @@
 }
 
 :root {
+  --mobile-tabbar-offset: calc(3.55rem + env(safe-area-inset-bottom, 0px));
   --radius: 0.25rem;
 
   --background: oklch(0.135 0.008 60);

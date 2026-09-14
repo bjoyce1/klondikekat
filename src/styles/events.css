@@ -429,3 +429,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 639px) {
+  .live-page { overflow-x: clip; }
+  .live-hero { min-height: 35rem; }
+  .live-hero-title { font-size: clamp(3.2rem, 17vw, 5.2rem); }
+  .live-bill,
+  .live-goods,
+  .live-promo { padding-block: 3rem; }
+  .live-ticket-row,
+  .live-goods-card,
+  .live-promo-media { border-radius: 0; }
+  .live-goods-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+  .live-goods-body { padding: 0.8rem; }
+  .live-goods-blurb { display: none; }
+}

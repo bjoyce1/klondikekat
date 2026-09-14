@@ -9,5 +9,5 @@
 - [x] Header / Footer / MobileTabBar premium pass
 - [ ] Visual QA in a real browser (sandbox browser unavailable this session)
 
-- [ ] Mobile-only black/gold editorial redesign across all routes
+- [x] Mobile-only black/gold editorial redesign across all routes
 - [ ] Mobile responsive and fixed-control verification

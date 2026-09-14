@@ -591,3 +591,16 @@
   text-transform: uppercase;
   color: var(--video-gold-bright);
 }
+
+@media (max-width: 639px) {
+  .video-page { overflow-x: clip; }
+  .video-hero { min-height: 35rem; }
+  .video-hero-title { font-size: clamp(3.2rem, 16vw, 5rem); }
+  .video-feature { padding-block: 3rem; }
+  .video-feature-grid { gap: 1.25rem; }
+  .video-feature-frame,
+  .video-archive-card,
+  .video-boards { border-radius: 0; }
+  .video-archive { padding-bottom: 3rem; }
+  .video-archive-grid { grid-template-columns: 1fr; gap: 1rem; }
+}

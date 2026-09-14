@@ -1463,7 +1463,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--mobile-tabbar-offset) + 0.65rem);
     left: 50%;
     transform: translateX(-50%);
     width: min(700px, calc(100% - 32px));
@@ -2085,7 +2085,7 @@
     width: calc(100% - 24px);
     gap: 15px;
     padding: 12px;
-    bottom: calc(79px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--mobile-tabbar-offset) + 0.65rem);
   }
   .shop-buy-bar > .shop-button {
     min-width: 116px;
