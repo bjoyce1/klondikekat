@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play } from "lucide-react";
 import heroBg from "@/assets/klondike-kat-hero-section.png.asset.json";
-import { images, mobManuscript } from "@/lib/site-data";
+import { mobManuscript } from "@/lib/site-data";
 
 export function HomeHero() {
   return (
