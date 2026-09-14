@@ -30,7 +30,7 @@
   }
 
   .hc-hero {
-    min-height: min(69vh, 34rem);
+    min-height: min(58vh, 29rem);
     border-color: color-mix(in oklab, var(--primary) 55%, var(--border));
     background: var(--background);
   }
@@ -44,22 +44,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 34% center;
+    object-position: 30% center;
   }
 
   .hc-hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent 0 35%, color-mix(in oklab, var(--background) 34%, transparent) 55%, var(--background) 100%), linear-gradient(0deg, var(--background) 0%, transparent 40%);
+    background: linear-gradient(90deg, transparent 0 38%, color-mix(in oklab, var(--background) 48%, transparent) 58%, var(--background) 100%), linear-gradient(0deg, color-mix(in oklab, var(--background) 85%, transparent) 0%, transparent 34%);
   }
 
   .hc-hero-content {
     z-index: 2;
-    min-height: min(69vh, 34rem);
+    min-height: min(58vh, 29rem);
     justify-content: center;
     align-items: flex-end;
-    padding: 3rem var(--hc-mobile-gutter) 2rem 42%;
+    padding: 2.5rem var(--hc-mobile-gutter) 1.6rem 55%;
   }
 
   .hc-hero-content > .hc-signal-line,
@@ -74,7 +74,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-size: clamp(2.15rem, 10.6vw, 3rem);
+    font-size: clamp(1.85rem, 8.8vw, 2.65rem);
     line-height: 0.98;
     text-align: left;
     text-wrap: nowrap;
@@ -136,25 +136,25 @@
 
   .hc-legacy {
     margin: 0.85rem var(--hc-mobile-gutter) 0;
-    border: 1px solid color-mix(in oklab, var(--primary) 72%, var(--border));
+    border: 2px solid color-mix(in oklab, var(--primary) 82%, var(--border));
     background: var(--surface);
-    box-shadow: inset 0 0 0 3px var(--background), inset 0 0 0 4px color-mix(in oklab, var(--primary) 28%, transparent);
+    box-shadow: inset 0 0 0 3px var(--background), inset 0 0 0 4px color-mix(in oklab, var(--primary) 45%, transparent);
   }
 
   .hc-legacy > div {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
     gap: 0;
     padding: 0;
   }
 
-  .hc-legacy > div > div:first-child { padding: 1rem 0.4rem 1rem 1rem; }
+  .hc-legacy > div > div:first-child { padding: 1rem 0.45rem 1rem 1rem; }
   .hc-legacy .flex { display: none; }
   .hc-mobile-legacy-title { display: block; color: var(--primary); font-size: 1.6rem; }
-  .hc-legacy p.mt-6 { margin-top: 0.55rem; font-size: 0.78rem; line-height: 1.48; }
+  .hc-legacy p.mt-6 { display: -webkit-box; margin-top: 0.55rem; overflow: hidden; font-size: 0.72rem; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 7; }
   .hc-legacy-marks { display: none; }
   .hc-legacy a { margin-top: 0.65rem; min-height: 2.75rem; font-size: 0.65rem; }
   .hc-legacy-image { align-self: stretch; box-shadow: none; }
-  .hc-legacy-image img { height: 100%; aspect-ratio: auto; object-position: 68% center; }
+  .hc-legacy-image img { height: 100%; aspect-ratio: auto; object-position: 70% center; }
 
   .hc-mobile-music {
     display: block;
