@@ -29,11 +29,11 @@ export function HomeHero() {
         <h1 className="hc-desktop-hero-title mt-3 font-display text-[2.5rem] leading-[0.95] tracking-[0.02em] text-foreground sm:mt-4 sm:text-7xl lg:text-8xl">
           Klondike Kat
         </h1>
-        <h1 className="hc-mobile-hero-title">
+        <div className="hc-mobile-hero-title" aria-hidden="true">
           <span>The voice.</span>
           <span>The legacy.</span>
           <span>The lion.</span>
-        </h1>
+        </div>
         <p className="mt-2 font-display text-lg tracking-[0.3em] text-gold uppercase sm:mt-3 sm:text-2xl sm:tracking-[0.4em]">
           The Lyrical Lion
         </p>
