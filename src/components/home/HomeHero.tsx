@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Play } from "lucide-react";
 import heroBg from "@/assets/hero-lowrider.png.asset.json";
+import { images } from "@/lib/site-data";
 
 export function HomeHero() {
   return (
@@ -11,31 +12,43 @@ export function HomeHero() {
         fetchPriority="high"
         className="hc-hero-media"
       />
+      <img
+        src={images.hero}
+        alt="Portrait of Klondike Kat in the studio"
+        fetchPriority="high"
+        className="hc-hero-mobile-portrait"
+      />
       <div className="hc-hero-scrim" aria-hidden="true" />
       <div className="hc-hero-glow" aria-hidden="true" />
 
-      <div className="grain relative mx-auto flex max-w-7xl flex-col justify-end px-4 py-10 sm:min-h-[600px] sm:px-6 sm:py-20 lg:min-h-[720px] lg:py-24">
+      <div className="hc-hero-content grain relative mx-auto flex max-w-7xl flex-col justify-end px-4 py-10 sm:min-h-[600px] sm:px-6 sm:py-20 lg:min-h-[720px] lg:py-24">
         <span className="hc-signal-line mb-4 sm:mb-6" aria-hidden="true" />
         <p className="text-[0.65rem] font-bold tracking-[0.26em] text-primary uppercase sm:text-xs sm:tracking-[0.3em]">
           South Park · Houston, Texas
         </p>
-        <h1 className="mt-3 font-display text-[2.5rem] leading-[0.95] tracking-[0.02em] text-foreground sm:mt-4 sm:text-7xl lg:text-8xl">
+        <h1 className="hc-desktop-hero-title mt-3 font-display text-[2.5rem] leading-[0.95] tracking-[0.02em] text-foreground sm:mt-4 sm:text-7xl lg:text-8xl">
           Klondike Kat
+        </h1>
+        <h1 className="hc-mobile-hero-title">
+          <span>The voice.</span>
+          <span>The legacy.</span>
+          <span>The lion.</span>
         </h1>
         <p className="mt-2 font-display text-lg tracking-[0.3em] text-gold uppercase sm:mt-3 sm:text-2xl sm:tracking-[0.4em]">
           The Lyrical Lion
         </p>
-        <p className="mt-5 max-w-lg text-base text-muted-foreground sm:mt-6 sm:text-lg">
+        <p className="hc-hero-description mt-5 max-w-lg text-base text-muted-foreground sm:mt-6 sm:text-lg">
           Thirty years of Houston underground rap. Lyricist, producer, singer. South Park
           Coalition, Killa Klan, Wreckless Klan.
         </p>
-        <div className="mt-7 grid grid-cols-1 gap-3 sm:mt-9 sm:flex sm:flex-wrap">
+        <div className="hc-hero-actions mt-7 grid grid-cols-1 gap-3 sm:mt-9 sm:flex sm:flex-wrap">
           <Link
             to="/music"
             className="tap-none inline-flex min-h-13 cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-bold tracking-[0.12em] uppercase text-primary-foreground transition-colors duration-200 hover:bg-primary/85 sm:rounded-sm"
           >
             <Play className="size-4" aria-hidden="true" />
-            Hear the music
+            <span className="hc-desktop-cta-label">Hear the music</span>
+            <span className="hc-mobile-cta-label">Listen now</span>
           </Link>
           <Link
             to="/podcast"
