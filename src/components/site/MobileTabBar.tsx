@@ -13,7 +13,7 @@ export function MobileTabBar() {
   return (
     <nav
       aria-label="Primary"
-      className="pb-safe fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 backdrop-blur-xl lg:hidden"
+      className="pb-safe fixed inset-x-0 bottom-0 z-50 border-t border-primary/25 bg-background/95 backdrop-blur-xl lg:hidden"
     >
       <ul className="mx-auto flex max-w-md items-stretch justify-between px-1">
         {TABS.map(({ to, label, icon: Icon, exact }) => (
@@ -21,13 +21,19 @@ export function MobileTabBar() {
             <Link
               to={to}
               activeOptions={{ exact }}
-              className="tap-none group flex min-h-[3.75rem] cursor-pointer flex-col items-center justify-center gap-1 py-2 text-muted-foreground transition-colors duration-200 active:text-primary"
+              className="tap-none group relative flex min-h-[3.5rem] cursor-pointer flex-col items-center justify-center gap-1 py-2 text-muted-foreground transition-colors duration-200 active:text-primary"
               activeProps={{ className: "text-primary" }}
             >
               {({ isActive }) => (
                 <>
                   <span
-                    className={`flex size-8 items-center justify-center rounded-full transition-colors duration-200 ${
+                    aria-hidden="true"
+                    className={`pointer-events-none absolute top-0 left-1/2 h-px w-8 -translate-x-1/2 bg-primary transition-opacity duration-200 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                  <span
+                    className={`flex size-7 items-center justify-center rounded-full transition-colors duration-200 ${
                       isActive ? "bg-primary/15" : "bg-transparent"
                     }`}
                   >
@@ -38,6 +44,12 @@ export function MobileTabBar() {
                   </span>
                 </>
               )}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
             </Link>
           </li>
         ))}
