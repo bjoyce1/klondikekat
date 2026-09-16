@@ -366,15 +366,14 @@
     width: 96px;
   }
   .kh-card .ld-engraving {
-    grid-area: head;
-    align-self: end;
+    grid-area: eyebrow;
     font-size: 10px;
   }
   .kh-card h3 {
     grid-area: head;
     font-size: 19px;
-    margin-top: 14px;
   }
+
   .kh-card > .ld-plaque-core > p {
     grid-area: body;
     font-size: 14px;
