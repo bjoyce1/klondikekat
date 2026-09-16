@@ -349,7 +349,7 @@
   .kh-card {
     padding: 10px;
   }
-  .kh-card .ld-plaque-core {
+  .kh-catalog-grid > .kh-card > .ld-plaque-core {
     display: grid;
     grid-template-columns: 96px minmax(0, 1fr);
     grid-template-areas:
@@ -357,36 +357,48 @@
       "media head"
       "media body"
       "link  link";
-    grid-template-rows: auto auto auto auto;
-
+    grid-template-rows: 14px 46px 68px auto;
     align-items: start;
     column-gap: 14px;
     row-gap: 6px;
     padding: 14px;
   }
-  .kh-card-media {
+  .kh-catalog-grid .kh-card-media {
     grid-area: media;
     width: 96px;
+    height: 96px;
   }
-  .kh-card .ld-engraving {
+  .kh-catalog-grid .kh-card .ld-engraving {
     grid-area: eyebrow;
     font-size: 10px;
+    align-self: center;
   }
-  .kh-card h3 {
+  .kh-catalog-grid .kh-card h3 {
     grid-area: head;
-    font-size: 19px;
+    font-size: 18px;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 
-  .kh-card > .ld-plaque-core > p {
+  .kh-catalog-grid .kh-card > .ld-plaque-core > p {
     grid-area: body;
-    font-size: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
-  .kh-card .ld-text-link {
+  .kh-catalog-grid .kh-card .ld-text-link {
     grid-area: link;
     font-size: 10px;
-    margin-top: 4px;
+    margin-top: 6px;
+    align-self: end;
   }
+
 
   /* Store + stage */
   .kh-store-grid {
