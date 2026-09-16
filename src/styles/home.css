@@ -350,9 +350,12 @@
     display: grid;
     grid-template-columns: 96px minmax(0, 1fr);
     grid-template-areas:
+      "media eyebrow"
       "media head"
       "media body"
       "link  link";
+    grid-template-rows: auto auto auto auto;
+
     align-items: start;
     column-gap: 14px;
     row-gap: 6px;
