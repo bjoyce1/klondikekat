@@ -1,0 +1,181 @@
+/* Videos page: extends the Lion's Den material language with a projection-room treatment. */
+.kv-page .ld-hero {
+  min-height: 720px;
+}
+
+.kv-hero-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kv-hero-frame {
+  position: relative;
+  width: 100%;
+  border: 1px solid #77582c;
+  background: #0a0806;
+  box-shadow:
+    0 0 0 1px #1c150c,
+    0 30px 70px #000000cc,
+    inset 0 0 60px #00000099;
+  transform: translateY(calc(var(--scene-progress, 0) * -14px));
+}
+
+.kv-hero-frame img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.05);
+}
+
+.kv-hero-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 45%, transparent 45%, #000000b0 100%),
+    linear-gradient(180deg, #d5a3501f, transparent 40%);
+}
+
+.kv-scanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background: repeating-linear-gradient(
+    to bottom,
+    #ffffff0f 0 1px,
+    transparent 1px 4px
+  );
+}
+
+.kv-frame-tag {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  z-index: 2;
+  padding: 7px 13px;
+  font: 500 11px var(--condensed);
+  letter-spacing: 0.2em;
+  color: #e6c894;
+  background: #0a0806e6;
+  border: 1px solid #6d5029;
+}
+
+.kv-theater {
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.kv-theater-rail,
+.kv-theater-foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 500 11px var(--condensed);
+  letter-spacing: 0.2em;
+  color: #a98c58;
+  text-transform: uppercase;
+}
+
+.kv-theater-rail i,
+.kv-theater-foot .ld-waveform {
+  flex: 1;
+  height: 1px;
+  background: #5c4423;
+}
+
+.kv-theater-rail i {
+  max-width: 60px;
+}
+
+.kv-theater-foot .ld-waveform {
+  height: 22px;
+  background: none;
+  opacity: 0.7;
+}
+
+.kv-screen {
+  position: relative;
+  border: 1px solid #6d5029;
+  background: #000;
+  box-shadow:
+    inset 0 0 0 1px #17110a,
+    0 22px 50px #000000b3;
+}
+
+.kv-screen video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: contain;
+}
+
+.kv-studio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.kv-still {
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.kv-still-media {
+  overflow: hidden;
+  border: 1px solid #5f462311;
+  box-shadow: inset 0 0 40px #00000080;
+}
+
+.kv-still-media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.kv-still:hover .kv-still-media img {
+  transform: scale(1.04);
+}
+
+.kv-still h3 {
+  font-family: var(--display);
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  color: #efe4cf;
+}
+
+@media (max-width: 1023px) {
+  .kv-page .ld-hero {
+    min-height: 0;
+    display: block;
+    padding: 84px 6% 96px;
+  }
+  .kv-page .ld-hero-copy {
+    width: 100%;
+  }
+  .kv-hero-art {
+    position: static;
+    width: 100%;
+    margin-top: 28px;
+  }
+  .kv-page .ld-hero-bottom {
+    position: static;
+    margin-top: 26px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 18px;
+  }
+  .kv-studio-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .kv-theater {
+    padding: 13px;
+  }
+}
