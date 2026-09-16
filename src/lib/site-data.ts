@@ -306,13 +306,15 @@ export type VideoItem = {
   title: string;
   image: string;
   description: string;
+  videoUrl?: string;
 };
 
 export const videos: VideoItem[] = [
   {
     title: "You Wrong — Main Edit",
-    image: videoYouWrong.url,
+    image: youWrongPoster.url,
     description: "The official main edit visual for \u201cYou Wrong.\u201d",
+    videoUrl: youWrongVideo.url,
   },
 ];
 
