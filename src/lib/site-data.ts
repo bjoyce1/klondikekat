@@ -40,6 +40,7 @@ import audioWeShallReign from "@/assets/WE_SHALL_REIGN_feat_Krino.mp3.asset.json
 import coverBiographyOfAMadeMan from "@/assets/Biography_of_a_Made_Man.png.asset.json";
 import coverMobbinMuzikMelodies from "@/assets/Mobbin_Muzik_Melodies.png.asset.json";
 import coverTheLyricalLion from "@/assets/The_Lyrical_Lion.png.asset.json";
+import coverMobManuscript from "@/assets/mob-manuscript-cover.png.asset.json";
 
 export const site = {
   name: "Klondike Kat",
@@ -272,6 +273,13 @@ export const releases: Release[] = [
     cdPrice: 19.99,
   },
 ];
+
+export const featuredAlbum = {
+  title: "Mob Manuscript",
+  kind: "Album" as const,
+  image: coverMobManuscript.url,
+  note: "The new full-length from Klondike Kat. Tracklist and audio drop here soon.",
+};
 
 export const singles = [
   "Hold You Down",

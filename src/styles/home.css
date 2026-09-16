@@ -1,0 +1,259 @@
+/* Homepage: Lion's Den material language applied to the artist landing scroll. */
+.kh-page .ld-hero {
+  min-height: 760px;
+}
+
+.kh-hero-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kh-cover-frame {
+  position: relative;
+  width: min(100%, 520px);
+  border: 1px solid #77582c;
+  background: #0a0806;
+  box-shadow:
+    0 0 0 1px #1c150c,
+    0 34px 80px #000000cc,
+    inset 0 0 60px #00000099;
+  transform: translateY(calc(var(--scene-progress, 0) * -16px));
+}
+
+.kh-cover-frame img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.kh-cover-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 45%, transparent 52%, #000000a6 100%),
+    linear-gradient(180deg, #d5a3501f, transparent 40%);
+}
+
+.kh-frame-tag {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  z-index: 2;
+  padding: 7px 13px;
+  font: 500 11px var(--condensed);
+  letter-spacing: 0.2em;
+  color: #e6c894;
+  background: #0a0806e6;
+  border: 1px solid #6d5029;
+}
+
+.kh-feature-plaque {
+  padding: 22px;
+}
+
+.kh-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.kh-feature-art {
+  border: 1px solid #6d5029;
+  box-shadow: inset 0 0 40px #00000080;
+  overflow: hidden;
+}
+
+.kh-feature-art img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.kh-feature-copy {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+
+.kh-feature-copy h3 {
+  font-family: var(--display);
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -0.02em;
+  color: #efe4cf;
+}
+
+.kh-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 500 11px var(--condensed);
+  letter-spacing: 0.22em;
+  color: #a98c58;
+  text-transform: uppercase;
+}
+
+.kh-feature-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.kh-feature-copy .ld-waveform {
+  height: 22px;
+  opacity: 0.6;
+}
+
+.kh-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.kh-card {
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.kh-card-media {
+  overflow: hidden;
+  border: 1px solid #5f4623;
+  box-shadow: inset 0 0 40px #00000080;
+}
+
+.kh-card-media img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.kh-card:hover .kh-card-media img {
+  transform: scale(1.04);
+}
+
+.kh-card h3 {
+  font-family: var(--display);
+  font-size: 23px;
+  letter-spacing: -0.02em;
+  color: #efe4cf;
+}
+
+.kh-list {
+  display: grid;
+  gap: 12px;
+}
+
+.kh-list li {
+  display: grid;
+  gap: 3px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #40301a;
+}
+
+.kh-list strong {
+  color: #efe4cf;
+  font-weight: 600;
+}
+
+.kh-list span {
+  font: 500 12px var(--condensed);
+  letter-spacing: 0.14em;
+  color: #a98c58;
+  text-transform: uppercase;
+}
+
+.kh-store-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.kh-store-card {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #4b381d;
+  background: #0b0907;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.kh-store-card:hover {
+  border-color: #a47e3d;
+  transform: translateY(-3px);
+}
+
+.kh-store-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #2a2014;
+}
+
+.kh-store-title {
+  color: #efe4cf;
+  font-size: 15px;
+}
+
+.kh-store-price {
+  font: 500 12px var(--condensed);
+  letter-spacing: 0.16em;
+  color: #d5a350;
+}
+
+.kh-floor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 1023px) {
+  .kh-page .ld-hero {
+    min-height: 0;
+    display: block;
+    padding: 84px 6% 96px;
+  }
+  .kh-page .ld-hero-copy {
+    width: 100%;
+  }
+  .kh-hero-art {
+    position: static;
+    width: 100%;
+    margin-top: 28px;
+  }
+  .kh-page .ld-hero-bottom {
+    position: static;
+    margin-top: 26px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 18px;
+  }
+  .kh-feature-grid,
+  .kh-floor-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .kh-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kh-store-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .kh-feature-plaque {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .kh-catalog-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
