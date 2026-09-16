@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero } from "@/components/site/PageHero";
-import { images, videos } from "@/lib/site-data";
+import { VideosExperience } from "@/components/videos/VideosExperience";
+import podcastCss from "@/styles/podcast.css?url";
+import videosCss from "@/styles/videos.css?url";
+
+const PAGE_URL = "https://klondikekat.lovable.app/videos";
 
 export const Route = createFileRoute("/videos")({
   head: () => ({
@@ -9,70 +12,23 @@ export const Route = createFileRoute("/videos")({
       {
         name: "description",
         content:
-          "Official Klondike Kat music videos and visuals, including the main edit of \u201cYou Wrong.\u201d",
+          "Official Klondike Kat music videos and studio visuals, including the main edit of \u201cYou Wrong.\u201d",
       },
       { property: "og:title", content: "Videos | Klondike Kat" },
       {
         property: "og:description",
-        content: "Music videos and visuals from Houston's Lyrical Lion.",
+        content: "Music videos and studio visuals from Houston's Lyrical Lion.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: PAGE_URL },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "canonical", href: PAGE_URL },
+      { rel: "stylesheet", href: "/fonts/podcast/fonts.css" },
+      { rel: "stylesheet", href: podcastCss },
+      { rel: "stylesheet", href: videosCss },
     ],
   }),
-  component: VideosPage,
+  component: VideosExperience,
 });
-
-function VideosPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="Visuals"
-        title="Videos"
-        lead="Official visuals and studio footage from the Kat."
-      />
-
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-20">
-        <div className="grid items-start gap-5 sm:gap-8 lg:grid-cols-2">
-
-          {videos.map((v) => (
-            <article key={v.title} className="card-elevated overflow-hidden rounded-sm">
-              <div className="grain relative aspect-video bg-black">
-                <video
-                  src={v.videoUrl}
-                  poster={v.image}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  aria-label={v.title}
-                  className="size-full object-contain"
-                />
-              </div>
-              <div className="p-5">
-                <h2 className="text-2xl text-foreground">{v.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{v.description}</p>
-              </div>
-            </article>
-          ))}
-
-          <article className="card-elevated hover-lift overflow-hidden rounded-sm">
-            <div className="grain media-zoom relative aspect-video">
-              <img
-                src={images.studioSession}
-                alt="Klondike Kat during a studio session"
-                loading="lazy"
-                decoding="async"
-                className="size-full object-cover"
-              />
-            </div>
-            <div className="p-5">
-              <h2 className="text-2xl text-foreground">In the studio</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Behind the boards on the Ties That Bind Us sessions.
-              </p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-    </>
-  );
-}
