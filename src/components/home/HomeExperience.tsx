@@ -113,7 +113,10 @@ export function HomeExperience() {
               fetchPriority="high"
               alt={`Album cover for ${featuredAlbum.title} by Klondike Kat`}
             />
-            <span className="kh-frame-tag">NEW ALBUM</span>
+            <span className="kh-frame-tag">
+              NEW ALBUM <b>·</b> {featuredAlbum.title.toUpperCase()}
+            </span>
+
           </div>
           <div className="ld-embers" aria-hidden="true">
             {Array.from({ length: 14 }, (_, i) => (
