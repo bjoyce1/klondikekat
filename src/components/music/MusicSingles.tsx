@@ -28,7 +28,7 @@ export function MusicSingles({ singles }: { singles: NewSingle[] }) {
         <h2 id="singles-title">
           NEW
           <br />
-          <span>SIGNAL.</span>
+          <span>SINGLES.</span>
           <i className="mv-signal-led" aria-hidden="true" />
         </h2>
         <div>
