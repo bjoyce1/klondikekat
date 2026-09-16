@@ -114,11 +114,32 @@
   gap: 22px;
 }
 
+.kh-catalog-grid > .kh-card {
+  height: 100%;
+}
+
 .kh-card {
   padding: 18px;
-  display: grid;
-  gap: 10px;
-  align-content: start;
+}
+
+.kh-card .ld-plaque-core {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.kh-card .ld-engraving {
+  margin-top: 2px;
+}
+
+.kh-card > .ld-plaque-core > p {
+  flex: 1;
+}
+
+.kh-card .ld-text-link {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .kh-card-media {
