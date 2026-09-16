@@ -274,6 +274,9 @@
 }
 
 @media (max-width: 760px) {
+  .kh-page .ld-section {
+    padding: 54px 6%;
+  }
   /* Hero: bring Mob Manuscript above the fold and kill dead space. */
   .kh-page .ld-hero {
     padding: 34px 6% 22px;
