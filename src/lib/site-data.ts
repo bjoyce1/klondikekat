@@ -21,7 +21,7 @@ import artFoolish from "@/assets/Foolish.webp.asset.json";
 import artForever from "@/assets/Forever.webp.asset.json";
 import artGunSmoke from "@/assets/Gun_Smoke.webp.asset.json";
 import artHeavyweight from "@/assets/Heavyweight.webp.asset.json";
-import artMobManuscript from "@/assets/Mob_Manuscript.webp.asset.json";
+
 import artOG from "@/assets/OG.webp.asset.json";
 import artRememberMe from "@/assets/Remember_Me.webp.asset.json";
 import artRideLikeTheWind from "@/assets/Ride_Like_The_Wind.webp.asset.json";
