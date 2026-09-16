@@ -21,8 +21,6 @@ export const Route = createFileRoute("/videos")({
   component: VideosPage,
 });
 
-const YT_SEARCH = "https://www.youtube.com/results?search_query=Klondike+Kat";
-
 function VideosPage() {
   return (
     <>
