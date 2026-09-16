@@ -26,6 +26,7 @@ import artOG from "@/assets/OG.webp.asset.json";
 import artRememberMe from "@/assets/Remember_Me.webp.asset.json";
 import artRideLikeTheWind from "@/assets/Ride_Like_The_Wind.webp.asset.json";
 import artTakeover from "@/assets/Takeover.webp.asset.json";
+import artTheReturn from "@/assets/the-return.png.asset.json";
 import audioTheReturn from "@/assets/THE_RETURN.mp3.asset.json";
 import audioForever from "@/assets/Forever.mp3.asset.json";
 import audioOG from "@/assets/OG_feat._Flea_the_Boss_Dog.mp3.asset.json";
