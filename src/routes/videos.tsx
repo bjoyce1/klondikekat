@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink, Play } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { images, videos } from "@/lib/site-data";
 
