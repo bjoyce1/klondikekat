@@ -300,7 +300,7 @@ export type NewSingle = {
 };
 
 export const newSingles: NewSingle[] = [
-  { title: "THE RETURN", image: artMobManuscript.url, audioUrl: audioTheReturn.url },
+  { title: "THE RETURN", image: artTheReturn.url, audioUrl: audioTheReturn.url },
   { title: "Heavyweight", image: artHeavyweight.url, audioUrl: audioHeavyweight.url },
   { title: "OG", image: artOG.url, credit: "Klondike Kat x Lil Flea", audioUrl: audioOG.url },
   { title: "Remember Me", image: artRememberMe.url, credit: "Klondike Kat x K-Rino", audioUrl: audioRememberMe.url },
