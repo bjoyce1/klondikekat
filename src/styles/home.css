@@ -273,8 +273,138 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 760px) {
+  /* Hero: bring Mob Manuscript above the fold and kill dead space. */
+  .kh-page .ld-hero {
+    padding: 34px 6% 22px;
+    display: flex;
+    flex-direction: column;
+  }
+  .kh-page .ld-hero h1 {
+    margin: 16px 0 12px;
+  }
+  .kh-page .ld-metal-title {
+    font-size: clamp(44px, 11.5vw, 68px);
+  }
+  .kh-page .ld-manifesto {
+    margin: 14px 0 10px;
+  }
+  .kh-page .ld-hero-copy > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .kh-page .ld-hero-actions {
+    margin-top: 18px;
+  }
+  .kh-page .kh-hero-art {
+    aspect-ratio: auto;
+    height: auto;
+    width: min(100%, 380px);
+    margin: 22px auto 0;
+  }
+  .kh-cover-frame {
+    width: 100%;
+  }
+  .kh-page .ld-hero-bottom {
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    padding: 14px 0 0;
+    border-top: 1px solid #2a2014;
+  }
+  .kh-page .ld-hero-bottom a {
+    font-size: 10px;
+  }
+
+  /* Featured plaque */
+  .kh-feature-plaque {
+    padding: 10px;
+  }
+  .kh-feature-grid {
+    gap: 18px;
+  }
+  .kh-feature-copy h3 {
+    font-size: 30px;
+  }
+  .kh-feature-copy p {
+    font-size: 15px;
+  }
+  .kh-feature-actions {
+    gap: 12px;
+  }
+  .kh-feature-actions .ld-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Catalog: compact rows so the scroll stays short */
   .kh-catalog-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .kh-card {
+    padding: 10px;
+  }
+  .kh-card .ld-plaque-core {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-areas:
+      "media head"
+      "media body"
+      "link  link";
+    align-items: start;
+    column-gap: 14px;
+    row-gap: 6px;
+    padding: 14px;
+  }
+  .kh-card-media {
+    grid-area: media;
+    width: 96px;
+  }
+  .kh-card .ld-engraving {
+    grid-area: head;
+    align-self: end;
+    font-size: 10px;
+  }
+  .kh-card h3 {
+    grid-area: head;
+    font-size: 19px;
+    margin-top: 14px;
+  }
+  .kh-card > .ld-plaque-core > p {
+    grid-area: body;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .kh-card .ld-text-link {
+    grid-area: link;
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  /* Store + stage */
+  .kh-store-grid {
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+  .kh-store-card {
+    padding: 9px;
+  }
+  .kh-store-title {
+    font-size: 14px;
+  }
+  .kh-floor-grid {
+    gap: 14px;
+  }
+  .kh-floor .kh-card .ld-plaque-core {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px;
+  }
+  .kh-floor .kh-card .ld-button {
+    width: 100%;
+    justify-content: center;
   }
 }
+
