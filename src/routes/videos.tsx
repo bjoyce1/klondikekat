@@ -34,37 +34,21 @@ function VideosPage() {
         <div className="grid items-start gap-5 sm:gap-8 lg:grid-cols-2">
 
           {videos.map((v) => (
-            <article key={v.title} className="card-elevated hover-lift overflow-hidden rounded-sm">
-              <a
-                href={YT_SEARCH}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grain group relative block aspect-video cursor-pointer overflow-hidden"
-              >
-                <img
-                  src={v.image}
-                  alt={`Still from the video ${v.title}`}
-                  loading="lazy"
-                  className="size-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+            <article key={v.title} className="card-elevated overflow-hidden rounded-sm">
+              <div className="grain relative aspect-video bg-black">
+                <video
+                  src={v.videoUrl}
+                  poster={v.image}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  aria-label={v.title}
+                  className="size-full object-contain"
                 />
-                <span className="absolute inset-0 z-10 flex items-center justify-center">
-                  <span className="flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors duration-200 group-hover:bg-primary/85">
-                    <Play className="size-6" aria-hidden="true" />
-                  </span>
-                </span>
-              </a>
+              </div>
               <div className="p-5">
                 <h2 className="text-2xl text-foreground">{v.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{v.description}</p>
-                <a
-                  href={YT_SEARCH}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-sweep mt-4 inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-bold tracking-[0.14em] text-primary uppercase"
-                >
-                  Watch on YouTube
-                  <ExternalLink className="size-3.5" aria-hidden="true" />
-                </a>
               </div>
             </article>
           ))}
