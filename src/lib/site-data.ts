@@ -14,6 +14,8 @@ import studioSession from "@/assets/studio-session.jpg.asset.json";
 import cookingUp from "@/assets/cooking-up.jpg.asset.json";
 import collab from "@/assets/collab.jpg.asset.json";
 import videoYouWrong from "@/assets/video-you-wrong.jpg.asset.json";
+import youWrongVideo from "@/assets/you-wrong.mp4.asset.json";
+import youWrongPoster from "@/assets/you-wrong-poster.jpg.asset.json";
 import artFlowrocious from "@/assets/Flowrocious.webp.asset.json";
 import artFoolish from "@/assets/Foolish.webp.asset.json";
 import artForever from "@/assets/Forever.webp.asset.json";
@@ -306,13 +308,15 @@ export type VideoItem = {
   title: string;
   image: string;
   description: string;
+  videoUrl?: string;
 };
 
 export const videos: VideoItem[] = [
   {
     title: "You Wrong — Main Edit",
-    image: videoYouWrong.url,
+    image: youWrongPoster.url,
     description: "The official main edit visual for \u201cYou Wrong.\u201d",
+    videoUrl: youWrongVideo.url,
   },
 ];
 
